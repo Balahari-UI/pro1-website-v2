@@ -3,26 +3,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
 
-const menu = [
+const desktopMenu = [
   { name: "Home", path: "/" },
   {
     name: "Services",
     sub: [
-      { name: "Risk Adjustment Coding", path: "/risk-adjustment-coding" },
+      {
+        name: "Revenue Cycle Management",
+        path: "/medical-revenue-cycle-management",
+      },
+      {
+        name: "Dental Revenue Cycle Management",
+        path: "/dental-revenue-cycle-management",
+      },
+      { name: "Risk Adjustment Coding", path: "/risk-adjustment" },
       {
         name: "Clinical Documentation Improvement",
         path: "/clinical-documentation-improvement",
       },
       { name: "HEDIS Abstraction", path: "/hedis-abstraction" },
       { name: "RADV Audit Support", path: "/radv-audit-support" },
-      { name: "Audit as a Service", path: "/audit-as-a-service" },
-      { name: "Dental RCM", path: "/drcm" },
-      { name: "Medical RCM", path: "/mrcm" },
     ],
   },
+  { name: "Whom We Serve", path: "/whom-we-serve" },
+  { name: "Why Pro1", path: "/why-pro1" },
   {
     name: "Capabilities",
     sub: [
@@ -31,207 +38,200 @@ const menu = [
       { name: "Technology", path: "/technology" },
     ],
   },
-  { name: "Compliance", path: "/compliance" },
   { name: "Careers", path: "/careers" },
-  {
-    name: "About Us",
-    sub: [
-      { name: "Why PRO1?", path: "/why-pro1" },
-      { name: "Who We Are?", path: "/who-we-are" },
-    ],
-  },
+  { name: "About Us", path: "/about-us" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [showNav, setShowNav] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [openMenu, setOpenMenu] = useState(null);
-  // Hide/show navbar on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowNav(window.scrollY < lastScrollY || window.scrollY < 50);
-      setLastScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setOpenSubmenu(null);
+  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-transform duration-300 py-2 ${
-        showNav ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
-      <div className="max-w-[90%] mx-auto">
-        <div className="h-16 flex items-center justify-between">
-          {/* Logo */}
+    <>
+      <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white">
+        <div className="mx-auto flex h-[76px] w-[90%] max-w-[1440px] items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/pro1logo.svg"
               alt="Pro1 Logo"
-              width={80}
-              height={32}
-              className="md:w-[90px] md:h-[36px] lg:w-[100px] lg:h-[45px]"
+              width={126}
+              height={42}
+              className="h-auto w-[110px] sm:w-[126px]"
               priority
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <ul className="hidden nav:flex flex-wrap items-center gap-4 nav:gap-6">
-            {menu.map((item, idx) => {
-              const isActive =
-                pathname === item.path ||
-                item.sub?.some((sub) => sub.path === pathname);
-
-              return (
-                <li key={idx} className="relative group">
-                  {item.sub ? (
-                    <>
-                      <button
-                        className={`relative cursor-pointer flex items-center px-2 py-2 text-sm lg:text-[15px] xl:text-base font-medium transition-colors ${
+          <div className="hidden nav:flex nav:items-center nav:gap-2 lg:gap-3">
+            <ul className="flex items-center gap-1 lg:gap-2">
+              {desktopMenu.map((item) => {
+                const isActive =
+                  pathname === item.path ||
+                  item.sub?.some((subItem) => subItem.path === pathname);
+                return (
+                  <li key={item.name} className="group relative">
+                    {item.sub ? (
+                      <>
+                        <button
+                          className={`flex items-center gap-2 rounded-md px-3 py-2 text-[15px] font-medium transition ${
+                            isActive
+                              ? "text-primary"
+                              : "text-cetacean-blue hover:text-primary"
+                          }`}
+                        >
+                          {item.name}
+                          <FaChevronDown className="text-xs" />
+                        </button>
+                        <ul
+                          className={[
+                            "invisible absolute left-0 top-full z-50 mt-1 min-w-[290px] rounded-md bg-white py-2 shadow-xl opacity-0 transition",
+                            item.name === "Services" ? "w-[380px]" : "w-[220px]",
+                            "group-hover:visible group-hover:opacity-100",
+                          ].join(" ")}
+                        >
+                          {item.sub.map((subItem) => (
+                            <li key={subItem.name}>
+                              <Link
+                                href={subItem.path}
+                                className={`block px-4 py-2 text-sm transition ${
+                                  pathname === subItem.path
+                                    ? "bg-primary text-white"
+                                    : "text-cetacean-blue hover:bg-primary hover:text-white"
+                                }`}
+                              >
+                                {subItem.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.path}
+                        className={`rounded-md px-3 py-2 text-[15px] font-medium transition ${
                           isActive
-                            ? "text-blue-600 font-semibold"
-                            : "text-gray-800 hover:text-blue-600"
-                        } after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all group-hover:after:w-full`}
+                            ? "text-primary"
+                            : "text-cetacean-blue hover:text-primary"
+                        }`}
                       >
                         {item.name}
-                        <FaChevronDown className="ml-1 text-xs lg:text-sm" />
-                      </button>
-
-                      <div
-                        className={[
-                          "absolute top-full left-1/2 -translate-x-1/2 mt-1 bg-white shadow-lg rounded-xl p-4",
-                          item.name === "Services"
-                            ? "grid grid-cols-2 gap-x-8 gap-y-2 w-[90vw] max-w-[600px]"
-                            : "grid grid-cols-1 gap-y-2 w-[70vw] max-w-[280px]",
-                          "opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-300",
-                        ].join(" ")}
-                        role="menu"
-                      >
-                        {item.sub.map((sub, sidx) => (
-                          <Link
-                            key={sidx}
-                            href={sub.path}
-                            className={`block px-3 py-2 text-sm whitespace-nowrap border-b border-blue-600 transition ${
-                              pathname === sub.path
-                                ? "bg-blue-600 text-white font-medium"
-                                : "text-gray-700 hover:bg-blue-600 hover:text-white"
-                            }`}
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <Link
-                      href={item.path}
-                      className={`relative px-1.5 md:px-2 py-1.5 md:py-2 text-sm md:text-[15px] lg:text-base font-medium transition-colors ${
-                        isActive
-                          ? "text-blue-600 font-semibold"
-                          : "text-gray-800 hover:text-blue-600"
-                      } after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full`}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* CTA */}
-          <div className="hidden nav:flex">
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
             <Link
-              href="/contact"
-              className="px-3 nav:px-4 py-1.5 nav:py-2 rounded-full bg-blue-600 text-white text-sm nav:text-base font-medium shadow hover:bg-blue-700 transition"
+              href="/contact-us"
+              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Contact Us
             </Link>
           </div>
 
-          {/* Mobile toggle */}
           <button
-            onClick={() => setMobileOpen((s) => !s)}
-            className="nav:hidden text-2xl text-gray-800"
+            onClick={() => setMobileOpen(true)}
+            className="nav:hidden text-2xl text-cetacean-blue"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <FaTimes /> : <FaBars />}
+            <FaBars />
           </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="nav:hidden bg-white shadow-lg border-t">
-          <ul className="flex flex-col p-4 space-y-2">
-            {menu.map((item, idx) => {
-              const isActive =
-                pathname === item.path ||
-                item.sub?.some((sub) => sub.path === pathname);
-
-              return (
-                <li key={idx}>
-                  {item.sub ? (
-                    <details open={isActive}>
-                      <summary
-                        className={`flex items-center justify-between cursor-pointer px-2 py-2 text-base font-medium ${
+        <div className="fixed inset-0 z-[60] nav:hidden">
+          <div
+            className="absolute inset-0 bg-black/50"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div className="absolute right-0 top-0 h-full w-[90%] max-w-[360px] overflow-y-auto bg-white p-6">
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="ml-auto block text-3xl text-cetacean-blue"
+              aria-label="Close menu"
+            >
+              <FaTimes />
+            </button>
+            <ul className="mt-4 space-y-1">
+              {desktopMenu.map((item) => {
+                const isActive =
+                  pathname === item.path ||
+                  item.sub?.some((subItem) => subItem.path === pathname);
+                if (!item.sub) {
+                  return (
+                    <li key={item.name}>
+                      <Link
+                        href={item.path}
+                        onClick={closeMobileMenu}
+                        className={`block rounded-md px-2 py-2.5 text-base font-medium ${
                           isActive
-                            ? "text-blue-600 font-semibold"
-                            : "text-gray-800"
+                            ? "text-primary"
+                            : "text-cetacean-blue hover:text-primary"
                         }`}
                       >
                         {item.name}
-                        <FaChevronDown className="ml-2 text-sm" />
-                      </summary>
-                      <ul className="pl-4 mt-1 space-y-1">
-                        {item.sub.map((sub, sidx) => (
-                          <li key={sidx}>
+                      </Link>
+                    </li>
+                  );
+                }
+                const isOpen = openSubmenu === item.name;
+                return (
+                  <li key={item.name}>
+                    <button
+                      onClick={() =>
+                        setOpenSubmenu((prev) => (prev === item.name ? null : item.name))
+                      }
+                      className={`flex w-full items-center justify-between rounded-md px-2 py-2.5 text-left text-base font-medium ${
+                        isActive
+                          ? "text-primary"
+                          : "text-cetacean-blue hover:text-primary"
+                      }`}
+                    >
+                      {item.name}
+                      <FaChevronDown
+                        className={`text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <ul className="mt-1 space-y-1 pl-4">
+                        {item.sub.map((subItem) => (
+                          <li key={subItem.name}>
                             <Link
-                              href={sub.path}
-                              onClick={() => setMobileOpen(false)}
-                              className={`block px-2 py-2 text-sm border-b border-blue-600 ${
-                                pathname === sub.path
-                                  ? "bg-blue-600 text-white font-medium"
-                                  : "text-gray-700 hover:bg-blue-600 hover:text-white"
+                              href={subItem.path}
+                              onClick={closeMobileMenu}
+                              className={`block rounded-sm px-2 py-2 text-sm ${
+                                pathname === subItem.path
+                                  ? "bg-primary text-white"
+                                  : "text-cetacean-blue hover:bg-primary hover:text-white"
                               }`}
                             >
-                              {sub.name}
+                              {subItem.name}
                             </Link>
                           </li>
                         ))}
                       </ul>
-                    </details>
-                  ) : (
-                    <Link
-                      href={item.path}
-                      onClick={() => setMobileOpen(false)}
-                      className={`block px-2 py-2 text-base font-medium ${
-                        isActive
-                          ? "text-blue-600 font-semibold"
-                          : "text-gray-800 hover:text-blue-600"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              );
-            })}
-            <li>
-              <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="block px-2 py-2 text-base font-medium text-gray-800 hover:text-blue-600"
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
+                    )}
+                  </li>
+                );
+              })}
+              <li className="pt-2">
+                <Link
+                  href="/contact-us"
+                  onClick={closeMobileMenu}
+                  className="inline-block rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }
