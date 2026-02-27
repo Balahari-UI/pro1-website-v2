@@ -1,3 +1,4 @@
+/* @import "tailwindcss";
 @import "tailwindcss";
 
 :root {
@@ -23,4 +24,26 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3c3cfb;
+  /* Primary color blue */
+  --color-secondary: #ff2791;
+  /* Primary color pink */
+  --color-navyblue: #060653;
+  /* Primary color navyblue */
+  --color-cetacean-blue: #00003d;
+  /* Primary color for text */
+  --color-gray: #4d4d4d;
+  --color-light: #f8f9fa;
+  --text-font12: 12px;
+  --text-font14: 14px;
+  --text-font16: 16px;
+  --text-font20: 20px;
+  --text-font24: 24px;
+  --text-font28: 28px;
+  --text-font40: 40px;
+  --breakpoint-nav: 960px;
 }
