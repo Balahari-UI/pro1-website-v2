@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 
 export default function Tabs({ tabs, onChange, initialIndex = 0 }) {
   const [activeTab, setActiveTab] = useState(initialIndex);
+
+  useEffect(() => {
+    setActiveTab(initialIndex);
+  }, [initialIndex]);
 
   const handleClick = (index) => {
     setActiveTab(index);

@@ -1,162 +1,401 @@
+// import Image from "next/image";
+// import Link from "next/link";
+// import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
+// export default function Footer() {
+//   const year = new Date().getFullYear();
+
+//   return (
+//     <footer className="bg-cetacean-blue text-white">
+//       <section>
+//         <div className="mx-auto w-[90%] max-w-[1520px] py-10">
+//           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+//             <div className="lg:col-span-4">
+//               <div className="flex flex-col gap-4">
+//                 <Link href="/">
+//                   <Image
+//                     src="/images/footer/pro1logo-white.png"
+//                     alt="PRO1 Health"
+//                     width={170}
+//                     height={56}
+//                     className="h-auto w-[150px]"
+//                     priority
+//                   />
+//                 </Link>
+
+//                 <div className="flex items-center gap-5 text-white">
+//                   <a
+//                     href="https://www.linkedin.com/company/pro1-health/"
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="transition hover:text-blue-300"
+//                     aria-label="LinkedIn"
+//                   >
+//                     <FaLinkedinIn className="text-base" />
+//                   </a>
+//                   <a
+//                     href="https://www.facebook.com/profile.php?id=61579464304273"
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="transition hover:text-blue-300"
+//                     aria-label="Facebook"
+//                   >
+//                     <FaFacebookF className="text-base" />
+//                   </a>
+//                   <a
+//                     href="https://www.instagram.com/_pro1health/"
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="transition hover:text-blue-300"
+//                     aria-label="Instagram"
+//                   >
+//                     <FaInstagram className="text-base" />
+//                   </a>
+//                 </div>
+//               </div>
+//             </div>
+
+//             <div className="lg:col-span-8">
+//               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+//                 <div className="space-y-3">
+//                   <Link
+//                     href="/"
+//                     className="block text-sm font-semibold uppercase text-gray-200"
+//                   >
+//                     Home
+//                   </Link>
+//                   <h6 className="text-sm font-semibold uppercase text-gray-200">
+//                     Services
+//                   </h6>
+//                   <Link
+//                     href="/medical-revenue-cycle-management"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     Revenue Cycle Management
+//                   </Link>
+//                   <Link
+//                     href="/dental-revenue-cycle-management"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     Dental RCM
+//                   </Link>
+//                   <Link
+//                     href="/risk-adjustment"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     Risk Adjustment Coding
+//                   </Link>
+//                 </div>
+
+//                 <div className="space-y-3">
+//                   <Link
+//                     href="/clinical-documentation-improvement"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     CDI
+//                   </Link>
+//                   <Link
+//                     href="/hedis-abstraction"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     HEDIS Abstraction
+//                   </Link>
+//                   <Link
+//                     href="/radv-audit-support"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     RADV Audit Support
+//                   </Link>
+//                   <Link
+//                     href="/whom-we-serve"
+//                     className="block pt-1 text-sm font-semibold uppercase text-gray-200"
+//                   >
+//                     Whom We Serve
+//                   </Link>
+//                   <Link
+//                     href="/why-pro1"
+//                     className="block text-sm font-semibold uppercase text-gray-200"
+//                   >
+//                     Why Pro1
+//                   </Link>
+//                 </div>
+
+//                 <div className="space-y-3">
+//                   <h6 className="text-sm font-semibold uppercase text-gray-200">
+//                     Capabilities
+//                   </h6>
+//                   <Link
+//                     href="/people"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     People
+//                   </Link>
+//                   <Link
+//                     href="/process"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     Process
+//                   </Link>
+//                   <Link
+//                     href="/technology"
+//                     className="block text-sm text-gray-400 transition hover:text-white"
+//                   >
+//                     Technology
+//                   </Link>
+//                 </div>
+
+//                 <div className="space-y-3">
+//                   <Link
+//                     href="/careers"
+//                     className="block text-sm font-semibold uppercase text-gray-200"
+//                   >
+//                     Careers
+//                   </Link>
+//                   <Link
+//                     href="/about-us"
+//                     className="block text-sm font-semibold uppercase text-gray-200"
+//                   >
+//                     About Us
+//                   </Link>
+//                   <Link
+//                     href="/contact-us"
+//                     className="block text-sm font-semibold uppercase text-gray-200"
+//                   >
+//                     Contact Us
+//                   </Link>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="flex items-center gap-5 py-5">
+//             <Image
+//               src="/images/footer/iso-white.png"
+//               alt="ISO"
+//               width={90}
+//               height={42}
+//               className="h-auto w-[78px]"
+//             />
+// <Image
+//   src="/images/footer/soc-white.png"
+//   alt="SOC"
+//   width={90}
+//   height={42}
+//   className="h-auto w-[78px]"
+// />
+//             <Image
+//               src="/images/footer/hippa-white.png"
+//               alt="HIPAA"
+//               width={90}
+//               height={42}
+//               className="h-auto w-[78px]"
+//             />
+//           </div>
+//         </div>
+
+//         <hr className="border-white/20" />
+
+//         <div className="mx-auto flex w-[90%] max-w-[1520px] flex-col justify-between gap-2 py-4 text-sm text-gray-400 md:flex-row md:items-center">
+//           <p>Copyright © {year} Pro1 Health. All rights reserved.</p>
+//           <p>Privacy Policy | Data Access Request | Terms of Use</p>
+//         </div>
+//       </section>
+//     </footer>
+//   );
+// }
+
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { ImLinkedin, ImFacebook2 } from "react-icons/im";
+import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#00023D] text-white  mx-auto px-6 sm:px-6 md:px-12 lg:px-24">
-      <div className=" py-10">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {/* === Link Sections === */}
-          <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {/* Services */}
-            <div>
-              <h6 className="mb-4 text-gray-300 font-semibold">SERVICES</h6>
-              <ul className="space-y-2 text-sm sm:text-base text-gray-400">
-                <li>
-                  <Link href="/risk-adjustment-coding">
-                    Risk Adjustment Coding
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/clinical-documentation-improvement">CID</Link>
-                </li>
-                <li>
-                  <Link href="/hedis-abstraction">HEDIS Abstraction</Link>
-                </li>
-                <li>
-                  <Link href="/radv-audit-support">RADV Audit Support</Link>
-                </li>
-                <li>
-                  <Link href="/audit-as-a-service">Audit as a Service</Link>
-                </li>
-                <li>
-                  <Link href="/drcm">Dental RCM</Link>
-                </li>
-                <li>
-                  <Link href="/mrcm">Medical RCM</Link>
-                </li>
-              </ul>
+    <footer className="bg-[#05054F] text-white">
+      <div className="max-w-[90%] mx-auto py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* LEFT SECTION */}
+          <div className="lg:col-span-4 flex flex-col gap-5">
+            {/* Logo */}
+            <Image
+              src="/images/footer/pro1logo-white.png"
+              alt="Pro1 Health"
+              width={130}
+              height={60}
+              className="w-[130px]"
+            />
+
+            {/* Social Icons */}
+            <div className="flex gap-5 text-lg">
+              <Link
+                href="https://www.linkedin.com/company/pro1-health/"
+                target="_blank"
+              >
+                <FaLinkedinIn className="hover:text-pink-500 transition" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/profile.php?id=61579464304273"
+                target="_blank"
+              >
+                <FaFacebookF className="hover:text-pink-500 transition" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/_pro1health/"
+                target="_blank"
+              >
+                <FaInstagram className="hover:text-pink-500 transition" />
+              </Link>
             </div>
 
-            {/* Capabilities */}
-            <div>
-              <h6 className="mb-4 text-gray-300 font-semibold">CAPABILITIES</h6>
-              <ul className="space-y-2 text-sm sm:text-base text-gray-400">
-                <li>
-                  <Link href="/people">People</Link>
-                </li>
-                <li>
-                  <Link href="/process">Process</Link>
-                </li>
-                <li>
-                  <Link href="/technology">Technology</Link>
-                </li>
-              </ul>
-
-              <h6 className="mt-6 mb-2 text-gray-300 font-semibold">
-                <Link href="/careers">CAREERS</Link>
-              </h6>
-
-              <h6 className="mt-6 mb-2 text-gray-300 font-semibold">
-                <Link href="/compliance">COMPLIANCE</Link>
-              </h6>
-            </div>
-
-            {/* About */}
-            <div>
-              <h6 className="mb-4 text-gray-300 font-semibold">ABOUT US</h6>
-              <ul className="space-y-2 text-sm sm:text-base text-gray-400">
-                <li>
-                  <Link href="/why-pro1">Why PRO1?</Link>
-                </li>
-                <li>
-                  <Link href="/who-we-are">Who We Are?</Link>
-                </li>
-              </ul>
-
-              <h6 className="mt-6 mb-2 text-gray-300 font-semibold">
-                <Link href="/contact">CONTACT US</Link>
-              </h6>
+            {/* Desktop Certifications */}
+            <div className="hidden xl:flex gap-5 mt-4 items-center">
+              <Image
+                src="/images/footer/iso-white.png"
+                alt="ISO"
+                width={100}
+                height={100}
+              />
+              <Image
+                src="/images/footer/soc-white.png"
+                alt="SOC"
+                width={100}
+                height={100}
+              />
+              <Image
+                src="/images/footer/hippa-white.png"
+                alt="HIPAA"
+                width={180}
+                height={80}
+                className="h-[80px] w-auto"
+              />
             </div>
           </div>
 
-          {/* === Logos === */}
-          <div className="flex justify-center lg:justify-end items-center">
-            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
-              <Image
-                src="/images/iso_image.png"
-                alt="ISO"
-                width={90}
-                height={50}
-                className="object-contain"
-              />
-              <Image
-                src="/images/soc.png"
-                alt="SOC"
-                width={90}
-                height={50}
-                className="object-contain"
-              />
-              <Image
-                src="/images/hippa_white.png"
-                alt="HIPAA"
-                width={120}
-                height={50}
-                className="object-contain"
-              />
+          {/* LINKS SECTION */}
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {/* Column 1 */}
+            <div>
+              <Link href="/">
+                <h6 className="mb-5 text-gray-300 font-semibold">HOME</h6>
+              </Link>
+
+              <h6 className="mb-5 text-gray-300 font-semibold">SERVICES</h6>
+
+              <Link href="/medical-revenue-cycle-management">
+                <p className="text-base text-gray-400 hover:text-white mb-5">
+                  Revenue Cycle Management
+                </p>
+              </Link>
+              <Link href="/dental-revenue-cycle-management">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  Dental RCM
+                </p>
+              </Link>
+              <Link href="/risk-adjustment">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  Risk Adjustment Coding
+                </p>
+              </Link>
             </div>
+
+            {/* Column 2 */}
+            <div>
+              <Link href="/clinical-documentation-improvement">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  CDI
+                </p>
+              </Link>
+              <Link href="/hedis-abstraction">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  HEDIS Abstraction
+                </p>
+              </Link>
+              <Link href="/radv-audit-support">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  RADV Audit Support
+                </p>
+              </Link>
+
+              <Link href="/whom-we-serve">
+                <h6 className="mt-6 mb-4 text-gray-300 font-semibold">
+                  WHOM WE SERVE
+                </h6>
+              </Link>
+              <Link href="/why-pro1">
+                <h6 className="text-gray-300 font-semibold">WHY PRO1</h6>
+              </Link>
+            </div>
+
+            {/* Column 3 */}
+            <div>
+              <h6 className="mb-3 text-gray-300 font-semibold">CAPABILITIES</h6>
+
+              <Link href="/people">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  People
+                </p>
+              </Link>
+              <Link href="/process">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  Process
+                </p>
+              </Link>
+              <Link href="/technology">
+                <p className="text-base  text-gray-400 hover:text-white mb-5">
+                  Technology
+                </p>
+              </Link>
+            </div>
+
+            {/* Column 4 */}
+            <div>
+              <Link href="/careers">
+                <h6 className="mb-5 text-white font-semibold">CAREERS</h6>
+              </Link>
+              <Link href="/about-us">
+                <h6 className="mb-5 text-gray-300 font-semibold">ABOUT US</h6>
+              </Link>
+              <Link href="/contact-us">
+                <h6 className="text-gray-300 font-semibold">CONTACT US</h6>
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile Certifications */}
+          <div className="col-span-12 flex xl:hidden gap-6 mt-8 justify-start sm:justify-center">
+            <Image
+              src="/images/footer/iso-image.png"
+              alt="ISO"
+              width={100}
+              height={100}
+            />
+            {/* <Image src="/images/soc.png" alt="SOC" width={100} height={100} /> */}
+            <Image
+              src="/images/footer/soc-white.png"
+              alt="SOC"
+              width={100}
+              height={100}
+            />
+            <Image
+              src="/images/footer/hippa-white.png"
+              alt="HIPAA"
+              width={160}
+              height={80}
+              className="h-[80px] w-auto"
+            />
           </div>
         </div>
+      </div>
 
-        {/* Divider */}
-        <hr className="border-gray-700 my-10" />
-
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm sm:text-base text-gray-400 text-center">
-          <p>Copyright © 2024 Pro1 Health. All rights reserved.</p>
-
-          <div className="flex items-center gap-4 text-white">
-            <a
-              href="https://www.linkedin.com/company/pro1-health/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedinIn className="hover:text-blue-400 transition-colors text-xl" />
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61579464304273"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookF className="hover:text-blue-400 transition-colors text-xl" />
-            </a>
-            <a
-              href="https://www.instagram.com/_pro1health/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className="hover:text-secondary transition-colors text-xl" />
-            </a>
-          </div>
-
-          {/* <p className="flex flex-wrap gap-2 justify-center md:justify-end">
-            <Link href="/privacy-policy">Privacy Policy</Link> |{" "}
-            <Link href="/data-access">Data Access Request</Link> |{" "}
-            <Link href="/terms">Terms of Use</Link>
-          </p> */}
-
-          <p className="flex flex-wrap gap-2 justify-center md:justify-end">
-            <span>Privacy Policy</span> |<span>Data Access Request</span> |
-            <span>Terms of Use</span>
+      {/* Bottom Bar */}
+      <div className="border-t border-white/20">
+        <div className="max-w-[90%] mx-auto py-4 flex flex-col md:flex-row justify-between text-sm text-gray-400">
+          <p>
+            Copyright © {new Date().getFullYear()} Pro1 Health. All rights
+            reserved.
+          </p>
+          <p className="mt-2 md:mt-0">
+            Privacy Policy | Data Access Request | Terms of Use
           </p>
         </div>
       </div>

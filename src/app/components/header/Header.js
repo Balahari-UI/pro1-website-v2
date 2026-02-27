@@ -53,11 +53,11 @@ export default function Header() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white">
-        <div className="mx-auto flex h-[76px] w-[90%] max-w-[1440px] items-center justify-between">
+      <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white p-3">
+        <div className="mx-auto flex h-[60px] w-[95%] max-w-[1520px] items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/pro1logo.svg"
+              src="/images/header/pro1logo.svg"
               alt="Pro1 Logo"
               width={126}
               height={42}
@@ -89,7 +89,9 @@ export default function Header() {
                         <ul
                           className={[
                             "invisible absolute left-0 top-full z-50 mt-1 min-w-[290px] rounded-md bg-white py-2 shadow-xl opacity-0 transition",
-                            item.name === "Services" ? "w-[380px]" : "w-[220px]",
+                            item.name === "Services"
+                              ? "w-[380px]"
+                              : "w-[220px]",
                             "group-hover:visible group-hover:opacity-100",
                           ].join(" ")}
                         >
@@ -184,7 +186,9 @@ export default function Header() {
                   <li key={item.name}>
                     <button
                       onClick={() =>
-                        setOpenSubmenu((prev) => (prev === item.name ? null : item.name))
+                        setOpenSubmenu((prev) =>
+                          prev === item.name ? null : item.name,
+                        )
                       }
                       className={`flex w-full items-center justify-between rounded-md px-2 py-2.5 text-left text-base font-medium ${
                         isActive

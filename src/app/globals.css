@@ -47,3 +47,9 @@ body {
   --text-font40: 40px;
   --breakpoint-nav: 960px;
 }
+
+.active-card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  z-index: 10;
+}
