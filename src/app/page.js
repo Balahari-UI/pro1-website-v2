@@ -66,7 +66,7 @@ export default function HomePage() {
         onMouseEnter={() => setHeroPaused(true)}
         onMouseLeave={() => setHeroPaused(false)}
       >
-        <div className="mx-auto h-full w-[90%] max-w-[1900px]">
+        <div className="mx-auto h-full w-[90%]">
           <div className="flex h-full items-center gap-4 lg:gap-8">
             <div className="flex h-full w-full flex-col justify-start lg:basis-3/5 lg:justify-between">
               <div className="mt-2 lg:mt-5">
@@ -127,7 +127,7 @@ export default function HomePage() {
 
       {/* section2 */}
       <section className="py-14">
-        <div className="mx-auto w-[90%] max-w-[1900px] rounded-2xl border border-[#e5e5e5] bg-[#f4f4f4] px-6 py-14  lg:px-16">
+        <div className="mx-auto w-[90%] rounded-2xl border border-[#e5e5e5] bg-[#f4f4f4] px-6 py-14  lg:px-16">
           {/* Wrapper */}
           <div className="flex flex-col gap-12 xl:flex-row xl:items-center xl:justify-between">
             <div className="grid gap-10 text-center sm:grid-cols-2 xl:grid-cols-4 xl:gap-16">
@@ -221,7 +221,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="mx-auto w-[90%] max-w-[1900px]">
+        <div className="mx-auto w-[90%]">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             {/* Left Content */}
             <div className="lg:col-span-6">
@@ -296,7 +296,7 @@ export default function HomePage() {
 
       {/* section5 */}
       <section className="py-6">
-        <div className="mx-auto w-[90%] max-w-[1900px] rounded-3xl bg-[linear-gradient(261.69deg,_#3e3df3_0.83%,_#ff007c_100%)] px-12 py-16 text-white shadow ">
+        <div className="mx-auto w-[90%] rounded-3xl bg-[linear-gradient(261.69deg,_#3e3df3_0.83%,_#ff007c_100%)] px-12 py-16 text-white shadow ">
           <h2 className="text-3xl font-semibold lg:text-5xl">
             Trusted by Healthcare Providers, Backed by Proven Results
           </h2>
@@ -310,7 +310,7 @@ export default function HomePage() {
 
       {/* section6 */}
       <section className="py-16">
-        <div className="mx-auto w-[92%] max-w-[1900px] rounded-3xl border border-gray-200  p-8">
+        <div className="mx-auto w-[92%] max- rounded-3xl border border-gray-200  p-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             {/* LEFT TITLE */}
             <div className="lg:col-span-3">
@@ -381,7 +381,7 @@ export default function HomePage() {
       </section>
 
       <section className=" bg-[#F8F9FA] py-16 ">
-        <div className="mx-auto grid w-[90%] max-w-[1900px] gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
+        <div className="mx-auto grid w-[90%] gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
           <div className="lg:col-span-8">
             <h2 className="text-4xl font-semibold text-cetacean-blue sm:text-5xl lg:text-[40px]">
               People Advantage

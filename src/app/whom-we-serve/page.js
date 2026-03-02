@@ -23,18 +23,18 @@ export default function WhomWeServe() {
             {
               title: "Hospitals",
               text: "We partner with hospitals and healthcare systems to improve claim performance, manage compliance, and maintain financial stability, enabling hospitals to focus on delivering high-quality patient care.",
-              link: "/hospitals",
+              link: "/whom-we-serve/hospital",
             },
             {
               title: "Physician Groups",
               text: "We support physicians and medical groups with efficient revenue cycle solutions, allowing providers to focus on patients instead of paperwork.",
-              link: "/physician-groups",
+              link: "/whom-we-serve/physician-groups",
             },
 
             {
               title: "Medical Billing Companies",
               text: "We act as a partner to streamline operations, enhance transparency, and boost profitability for billing organizations across the healthcare ecosystem.",
-              link: "/medical-billing-companies",
+              link: "/whom-we-serve/medical-billing-companies",
             },
           ]}
         />

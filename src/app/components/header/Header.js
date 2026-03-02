@@ -68,7 +68,7 @@ export default function Header() {
   return (
     <>
       {/* <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white p-3">
-        <div className="mx-auto flex h-[60px] w-[95%] max-w-[1900px] items-center justify-between"> */}
+        <div className="mx-auto flex h-[60px] w-[95%] max- items-center justify-between"> */}
       <nav
         className={`fixed top-0 left-0 z-50 w-full bg-white p-3 transition-colors ${
           hasScrolled
@@ -76,7 +76,7 @@ export default function Header() {
             : "border-b border-transparent"
         }`}
       >
-        <div className="mx-auto flex h-[60px] w-[95%] max-w-[1900px] items-center justify-between">
+        <div className="mx-auto flex h-[60px] w-[90%]  items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/header/pro1logo.svg"

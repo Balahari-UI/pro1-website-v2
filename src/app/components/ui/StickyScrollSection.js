@@ -11,7 +11,7 @@ export default function StickyScrollSection({
 }) {
   return (
     <section className="py-24">
-      <div className="mx-auto w-[90%] max-w-[1900px]">
+      <div className="mx-auto w-[90%]">
         <div className="grid lg:grid-cols-12 gap-12">
           {/* LEFT SIDE */}
           <div className="lg:col-span-7">
