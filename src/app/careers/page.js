@@ -9,6 +9,7 @@ export default function CareersPage() {
         image="/images/careers/careers.svg"
         buttonText="Apply Now"
         buttonLink="/contact-us"
+        showCareerBox={true}
       />
     </>
   );
