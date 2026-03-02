@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-cetacean-blue text-white">
       <section>
-        <div className="mx-auto w-[90%] max-w-[1900px] pt-10 pb-5">
+        <div className="mx-auto w-[90%] pt-10 pb-5">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-4">
               <div className="flex flex-col gap-4">
@@ -219,7 +219,7 @@ export default function Footer() {
 
         <hr className="border-white/20" />
 
-        <div className="mx-auto flex w-[90%] max-w-[1900px] flex-col justify-between gap-2 py-4 text-sm text-gray-400 md:flex-row md:items-center">
+        <div className="mx-auto flex w-[90%] flex-col justify-between gap-2 py-4 text-sm text-gray-400 md:flex-row md:items-center">
           <p>Copyright © {year} Pro1 Health. All rights reserved.</p>
           <p>Privacy Policy | Data Access Request | Terms of Use</p>
         </div>

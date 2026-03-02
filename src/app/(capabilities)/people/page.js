@@ -1,19 +1,20 @@
 import HeroSection from "@/app/components/ui/HeroSection";
+import { PeopleCards } from "@/app/data/home";
+import Image from "next/image";
 
 export default function PeoplePage() {
   return (
-    <>
-      <div>
-        <HeroSection
-          title="People"
-          description="At Pro1Health, our people are our greatest asset. We are committed to providing an environment that nurtures talent, fosters professional growth, and upholds the highest standards of the industry. Through rigorous training, focused recruitment, and continuous support for certifications, we ensure that our team is equipped to deliver excellence in every aspect of their work."
-          image="/images/people/radvbg.svg"
-        />
-      </div>
+    <div>
+      <HeroSection
+        title="People"
+        description="At Pro1Health, our people are our greatest asset. We are committed to providing an environment that nurtures talent, fosters professional growth, and upholds the highest standards of the industry. Through rigorous training, focused recruitment, and continuous support for certifications, we ensure that our team is equipped to deliver excellence in every aspect of their work."
+        image="/images/people/radvbg.svg"
+      />
+
       {/* card section  */}
       <section className="mt-20 mb-10">
         <div className="space-y-10">
-          {hedisCards.map((card, index) => (
+          {PeopleCards.map((card, index) => (
             <section
               key={index}
               className={`max-w-350 mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
@@ -28,8 +29,6 @@ export default function PeoplePage() {
                 <div className="grid grid-cols-1 gap-8">
                   {/* SERVICES */}
                   <div>
-                    <h3 className="font-semibold  mb-3">{card.subheading1}</h3>
-
                     <ul className="space-y-2">
                       {card.services.map((item, i) =>
                         item ? (
@@ -46,8 +45,6 @@ export default function PeoplePage() {
                       )}
                     </ul>
                   </div>
-
-                  <p className="text-gray-600 mb-2">{card.description2}</p>
                 </div>
               </div>
 
@@ -66,6 +63,6 @@ export default function PeoplePage() {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }

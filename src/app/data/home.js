@@ -1,3 +1,5 @@
+// Home
+
 export const tabs = [
   {
     id: 0,
@@ -147,6 +149,370 @@ export const partnerCards = [
     image: "/images/home/whypartner9.svg",
   },
 ];
+
+// Whom We Serve
+
+export const whomWeServeRevenueData = {
+  hospital: {
+    title: "Maximize Revenue, Minimize Hassle",
+    description:
+      "We combine expertise, technology, and AI-driven solutions to streamline hospital revenue cycles, reduce denials, and ensure predictable cash flow — so your team can focus on patient care.",
+    features: [
+      {
+        title: "Professional Coding",
+        text: "Delivered by credentialed specialists to ensure accuracy and compliance.",
+      },
+      {
+        title: "Reduce DNFB & DNFC",
+        text: "Minimize Discharged Not Final Billed and Discharged Not Final Coded cases.",
+      },
+      {
+        title: "Optimize Revenue",
+        text: "Improve CMI and DRG-reimbursed revenue.",
+      },
+      {
+        title: "Support Staff",
+        text: "Ease workload and reduce stress on internal teams.",
+      },
+      {
+        title: "Coding Audits",
+        text: "Identify red flags and missed revenue opportunities.",
+      },
+      {
+        title: "Claim Backlog Cleanup",
+        text: "Streamline pending claims efficiently.",
+      },
+      {
+        title: "Denial Management",
+        text: "Resolve denials quickly to improve cash flow.",
+      },
+      {
+        title: "Patient-Centric Collections",
+        text: "Maintain a caring approach while securing payments.",
+      },
+      {
+        title: "Data-Driven Insights",
+        text: "Empower decision-making with actionable analytics.",
+      },
+      {
+        title: "Automation & Efficiency",
+        text: "Reduce manual tasks with technology-driven solutions.",
+      },
+    ],
+  },
+
+  physician: {
+    title: "Tailored RCM Solution for Physicians",
+    description:
+      "We deliver customized billing, coding, and claims solutions that maximize revenue, reduce denials, and streamline operations—so physicians can focus on patient care. Optimizing Physician Revenue Cycle Management Just as you track patient outcomes, we measure the performance of your revenue cycle. Physician groups partnering with us experience higher collections, cleaner claims, and increased revenue. We modernize RCM by,",
+    features: [
+      {
+        title: "Documentation Guidance",
+        text: "Ensuring clinicians capture coding accurately.",
+      },
+      {
+        title: "Pre-Claim Checks",
+        text: "Verifying claims for first-pass payment success.",
+      },
+      {
+        title: "Denial Management",
+        text: "Overturning inappropriate denials efficiently.",
+      },
+      {
+        title: "Payment Monitoring",
+        text: "Ensuring payments match contractual rates.",
+      },
+      {
+        title: "Charge Capture Reconciliation",
+        text: "100% alignment against scheduled appointments.",
+      },
+      {
+        title: "KPI Tracking",
+        text: "Meeting or exceeding industry benchmarks.",
+      },
+    ],
+  },
+
+  medicalBilling: {
+    title: "RCM Solutions for Medical Billing Companies",
+    description:
+      "We empower medical billing companies to deliver accurate, efficient, and compliant revenue cycle services for their clients. Our solutions combine AI-driven automation, expert coding, and end-to-end billing management to streamline workflows, reduce denials, and accelerate reimbursements.",
+    features: [
+      {
+        title: "Seamless Claim Management",
+        text: "From submission to payment posting.",
+      },
+      {
+        title: "Professional Coding Services",
+        text: "ICD-10/CPT coding with specialty expertise.",
+      },
+      {
+        title: "Denial Management & Resolution",
+        text: "Rapidly overturn claim denials.",
+      },
+      {
+        title: "Analytics & Reporting",
+        text: "Data-driven insights for revenue optimization.",
+      },
+      {
+        title: "Automation & Integration",
+        text: "Reduce manual tasks and integrate with client systems.",
+      },
+    ],
+  },
+};
+
+export const whomWeServeCapabilitiesData = {
+  hospital: {
+    images: [
+      "/images/whom-we-serve/hospitals/hrc1.svg",
+      "/images/whom-we-serve/hospitals/hrc2.svg",
+      "/images/whom-we-serve/hospitals/hrc3.svg",
+      "/images/whom-we-serve/hospitals/hrc4.svg",
+    ],
+
+    servicesTitle: "Our Services Include",
+
+    services: [
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Claim Backlog Cleanup",
+        text: "Efficiently manage pending claims to accelerate cash flow.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Audit & Quality Assurance",
+        text: "Identify missed revenue and prevent compliance risks.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Patient-Centric Collections",
+        text: "Caring approach to securing payments.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Analytics & Insights",
+        text: "Data-driven reporting to guide strategic decisions.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Automation & Technology Integration",
+        text: "Reduce manual work and improve operational efficiency.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Patient Intake & Scheduling",
+        text: "Streamlined registration and appointment management.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Insurance Verification & Eligibility",
+        text: "Accurate pre-authorization and coverage checks.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Professional Coding Services",
+        text: "Credentialed coders ensuring compliance and optimized revenue.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Claim Management & Billing",
+        text: "Complete billing lifecycle from service capture to payment.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Denial & Accounts Receivable Management",
+        text: "Timely follow-up and resolution of denied claims.",
+      },
+    ],
+  },
+  physician: {
+    images: [
+      "/images/whom-we-serve/physician-groups/prc1.svg",
+      "/images/whom-we-serve/physician-groups/prc2.svg",
+      "/images/whom-we-serve/physician-groups/prc3.svg",
+      "/images/whom-we-serve/physician-groups/prc4.svg",
+    ],
+
+    servicesTitle: "Our Services Include",
+
+    services: [
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Patient Intake & Scheduling",
+        text: "Streamlined registration and appointment management.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Insurance Verification & Eligibility",
+        text: "Accurate pre-authorization and coverage checks.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Professional Coding Services",
+        text: "Specialty-specific coding for accurate reimbursements.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Billing & Claims Management",
+        text: "End-to-end handling from service capture to payment posting.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Denial Management & Collections",
+        text: "Rapid resolution of denied claims and patient-friendly collections.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Charge Capture & Reconciliation",
+        text: "Ensuring all services are accurately recorded and billed.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Analytics & KPI Reporting",
+        text: "Data-driven insights for improved decision-making",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Compliance & Quality Assurance",
+        text: "Regular audits to maintain accuracy and regulatory adherence.",
+      },
+    ],
+  },
+  medicalBilling: {
+    images: [
+      "/images/whom-we-serve/medical-billing-companies/mrc1.svg",
+      "/images/whom-we-serve/medical-billing-companies/mrc2.svg",
+      "/images/whom-we-serve/medical-billing-companies/mrc3.svg",
+      "/images/whom-we-serve/medical-billing-companies/mrc4.svg",
+    ],
+
+    servicesTitle: "Our Services Include",
+
+    services: [
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "End-to-End Claim Management",
+        text: "Submission, tracking, posting, and reconciliation.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Professional Coding Services",
+        text: "Accurate ICD-10/CPT coding across multiple speialties.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Denial Management & Resolution",
+        text: "Rapid identification, analysis, and overturning of denied claims.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Revenue Analytics & Reporting",
+        text: "Actionable insights to improve collections and operational efficiency.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Workflow Automation & System Integration",
+        text: "Reduce manual effort and seamlessly integrate with client EHR and practice management systems.",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "Compliance & Quality Assurance",
+        text: "Ensure adherence to payer and regulatory standards.",
+      },
+    ],
+  },
+};
+
+export const whomWeServeApproachData = {
+  hospital: {
+    titleLine1: "Key Elements of Our",
+    titleLine2: "Approach",
+
+    items: [
+      {
+        title: "Scalable Solutions",
+        text: "Adaptable to hospitals of all sizes and specialties.",
+      },
+      {
+        title: "End-to-End Management",
+        text: "From patient intake to final payment collection.",
+      },
+      {
+        title: "Quality & Compliance",
+        text: "Regular audits to ensure coding and billing accuracy.",
+      },
+      {
+        title: "Data-Driven Insights",
+        text: "Analytics to inform strategic decision-making.",
+      },
+      {
+        title: "Patient-Centric Collections",
+        text: "Maintaining a caring approach while securing revenue.",
+      },
+      {
+        title: "Continuous Optimization",
+        text: "Identifying bottlenecks and improving financial performance.",
+      },
+    ],
+  },
+  physician: {
+    titleLine1: "Key Elements of Our",
+    titleLine2: "Approach",
+
+    items: [
+      {
+        title: "Customized Solutions",
+        text: "Tailored to each practice’s size, specialty, and workflow.",
+      },
+      {
+        title: "End-to-End Management",
+        text: "From patient intake to final payment collection.",
+      },
+      {
+        title: "Denial & Claims Optimization",
+        text: "Proactively resolving issues and ensuring accurate reimbursements.",
+      },
+      {
+        title: "Analytics & Insights",
+        text: "KPI tracking to guide strategic decisions.",
+      },
+      {
+        title: "Continuous Improvement",
+        text: "Monitoring, refining, and optimizing processes for sustained performance.",
+      },
+    ],
+  },
+  medicalBilling: {
+    titleLine1: "Key Elements of Our",
+    titleLine2: "Approach",
+
+    items: [
+      {
+        title: "Customizable Solutions",
+        text: "Tailored to the size, specialty, and workflows of your clients.",
+      },
+      {
+        title: "End-to-End Management",
+        text: "From claim submission to payment posting and reconciliation.",
+      },
+      {
+        title: "Denial Resolution",
+        text: "Proactive monitoring and overturning of denied claims..",
+      },
+      {
+        title: "Data-Driven Insights",
+        text: "Analytics and KPIs to guide strategic decisions.",
+      },
+      {
+        title: "Continuous Optimization",
+        text: "Ongoing process improvements for sustained financial performance.",
+      },
+    ],
+  },
+};
+
+// Services
 export const rcmCards = [
   {
     title: "Patient Registration & Demographics Entry",
@@ -762,5 +1128,177 @@ export const radvCards = [
     description1:
       "Our experienced coders deliver high accuracy and compliance in RADV projects, while also supporting provider education and documentation improvement to maximize HCC capture.",
     image: "/images/radv/radv6.svg",
+  },
+];
+
+// capabilities
+export const PeopleCards = [
+  {
+    title: "Recruitment",
+    description1:
+      "ProHealth adopts meticulous process aimed at attracting individuals who are not only skilled but also passionate about healthcare and coding. Our recruitment process includes rigorous assessments to ensure that candidates are a good fit for our dynamic and ever-evolving industry.",
+    services: ["", "", "", ""],
+    image: "/images/people/people1.svg",
+  },
+  {
+    title: "Training",
+    description1:
+      "Our training approach aligns with the highest industry standards, ensuring that our staff is equipped with comprehensive knowledge and skills. Our training modules include:",
+    services: [
+      "Intensive courses in medical coding basics, focusing on CPT, ICD-10-CM, and HCPCS Level II codes.",
+      "Specialized training in different coding disciplines, including risk adjustment, outpatient coding, and inpatient coding.",
+    ],
+    image: "/images/people/people2.svg",
+  },
+  {
+    title: "Certifications",
+    description1:
+      "We encourage our staff to obtain certifications from esteemed bodies like AAPC and AHIMA. Maintaining these certifications requires our staff to continuous education, ensuring that they stay abreast of the latest industry development and standards.",
+    services: ["", ""],
+    image: "/images/people/people3.svg",
+  },
+  {
+    title: "Career Advancement",
+    description1:
+      "It is a cornerstone of our staff development strategy. We provide:",
+    services: [
+      "Career Counseling to help our staff navigate professional milestones.",
+      "Opportunities for staff to engage in higher level responsibilities, including auditing, compliance, and practice management.",
+      "A supportive environment that fosters leadership skills, preparing our team members for roles beyond coding.",
+    ],
+    image: "/images/people/people4.svg",
+  },
+  {
+    title: "Workplace Diversity and Flexibility",
+    description1:
+      "We understand the importance of a balanced and fulfilling work life. Our team members enjoy:",
+    services: [
+      "The flexibility to work remotely, catering to the growing trend of telecommuting in the coding industry.",
+      "A diverse work environment where every individual’s contribution is valued and respected.",
+      "Engagement in various roles across the healthcare spectrum for roles beyond coding.",
+    ],
+    image: "/images/people/people5.svg",
+  },
+];
+export const processCards = [
+  {
+    title: "Recruitment",
+    subtitle1: "Initial Consultation",
+    description1:
+      "Our process begins with a comprehensive consultation to understand the specific needs and challenges of our clients. This step involves detailed discussions to gain insights into the client’s current systems and processes.",
+    subtitle2: "Customized Solution Design",
+    description2:
+      "Based on the initial assessment, we design customized solutions tailored to address the unique requirements and goals of each client. This stage ensures that our services align perfectly with client expectations.",
+    image: "/images/process/process1.svg",
+  },
+  {
+    title: "Team Formation and Resource Allocation",
+    subtitle1: "Skilled Team Assignment",
+    description1:
+      "We assign a dedicated team of certified professionals, each specialized in various aspects of medical coding and billing, to your project. This ensures that the most qualified individuals handle your specific needs.",
+    subtitle2: "Resource Allocation",
+    description2:
+      "Necessary resources and tools are allocated to the team to facilitate efficient and accurate service delivery.",
+    image: "/images/process/process2.svg",
+  },
+  {
+    title: "Training and Continuous Learning",
+    subtitle1: "Ongoing Training",
+    description1:
+      "We provide our team with continuous training to keep them updated with the latest coding standards, healthcare regulations, and technological advancement.",
+    subtitle2: "Quality Assurance Training",
+    description2:
+      "Specific training sessions are conducted focusing on quality assurance and error reduction strategies.",
+    image: "/images/process/process3.svg",
+  },
+  {
+    title: "Implementation and Execution",
+    subtitle1: "Process Implementation",
+    description1:
+      "With a well-trained team and clear understanding of client needs, we implement our services. This includes medical coding, billing, compliance audits, and any other agreed-upon services",
+    subtitle2: "Performance Monitoring",
+    description2:
+      "Throughout the execution phase, we closely monitor the performance to ensure adherence to quality standards and client specifications.",
+    image: "/images/process/process4.svg",
+  },
+  {
+    title: "Quality Control and Compliance",
+    subtitle1: "Rigorous Quality Checks",
+    description1:
+      "Regular quality checks are performed to ensure accuracy and compliance with industry standards such as HIPAA.",
+    subtitle2: "Compliance Monitoring",
+    description2:
+      "Continuous monitoring for compliance with healthcare regulations and client-specific requirements.",
+    image: "/images/process/process5.svg",
+  },
+  {
+    title: "Performance and Feedback",
+    subtitle1: "Performance",
+    description1:
+      "We review all teams performance related data including coding accuracy rate, productivity, and other relevant data.",
+    subtitle2: "Feedback Incorporation",
+    description2:
+      "Client feedback is solicited and incorporated into our process for continuous improvement.",
+    image: "/images/process/process6.svg",
+  },
+  {
+    title: "Client Support and Communication",
+    subtitle1: "Dedicated Support",
+    description1:
+      "Our clients have access to dedicated support for any queries or assistance they may need.",
+    subtitle2: "Transparent Communication",
+    description2:
+      "We maintain open and transparent communication with clients throughout our engagement.",
+    image: "/images/process/process7.svg",
+  },
+];
+export const techcards = [
+  {
+    title: "Coding Production Software",
+    subtitle1: "Coding Production platform",
+    description1:
+      "We utilize specialized coding production software that streamlines coding process and enhances accuracy. This platform is tailored to handle the complexity of HCC coding and provide efficient outcomes.",
+    subtitle2: "Increases Efficiency",
+    description2:
+      "It provides individual data analytics on every coder and auditor on their outcome from production and accuracy and helps improve their efficiency.",
+    image: "/images/technology/technology1.svg",
+  },
+  {
+    title: "Data Analytics",
+    subtitle1: "Real-Time Analytics",
+    description1:
+      "Our coding production and quality accuracy platform provides real-time insights into coding operations, identifying trends and areas of improvement.",
+    subtitle2: "",
+    description2: "",
+    image: "/images/technology/technology2.svg",
+  },
+  {
+    title: "Cloud-Based Infrastructure",
+    subtitle1: "Automated Compliance Checks",
+    description1:
+      "Our cloud-based infrastructure enables our coders to access the system remotely, providing flexibility and ensuring continuity of operations.",
+    subtitle2: "Data Security and Backup",
+    description2:
+      "We prioritize data security, with robust backup and recovery procedures in place to safeguard client information.",
+    image: "/images/technology/technology3.svg",
+  },
+  {
+    title: "Compliance",
+    subtitle1: "Automated Compliance Checks",
+    description1:
+      "Our technology includes features for automated compliance checks, ensuring that all coding practices adhere to the latest regulations and guidelines.",
+    subtitle2: "",
+    description2: "",
+    image: "/images/technology/technology4.svg",
+  },
+  {
+    title: "Continuous Technology Updates",
+    subtitle1: "Staying Ahead with Updates",
+    description1:
+      "We continually update our technology to keep pace with the latest developments in medical coding and healthcare IT.",
+    subtitle2: "Training and Support",
+    description2:
+      "Our team receives ongoing training and support to effectively utilize new technologies.",
+    image: "/images/technology/technology5.svg",
   },
 ];
