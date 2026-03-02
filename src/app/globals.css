@@ -47,3 +47,15 @@ body {
   --text-font40: 40px;
   --breakpoint-nav: 960px;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
