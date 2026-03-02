@@ -45,7 +45,13 @@ body {
   --text-font24: 24px;
   --text-font28: 28px;
   --text-font40: 40px;
-  --breakpoint-nav: 960px;
+  --breakpoint-nav: 1252px;
+}
+
+.active-card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  z-index: 10;
 }
 @keyframes marquee {
   0% {

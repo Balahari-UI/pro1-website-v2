@@ -1,40 +1,28 @@
-import { riskCards, riskcodingCards } from "@/app/data/home";
+import Carousel from "@/app/components/ui/Carousel";
+import HeroSection from "@/app/components/ui/HeroSection";
+import {
+  features,
+  riskCards,
+  riskcodingCards,
+  riskfeatures,
+} from "@/app/data/home";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function riskadjustment() {
   return (
     <>
-      <div className="pt-24 ">
+      <div className=" ">
         {/* hero */}
-        <section className="lg:flex justify-between  max-w-350 mx-auto mb-10   ">
-          <div className="lg:w-3/5 max-w-4xl mx-auto lg:px-10  lg:pt-30  flex  flex-col gap-10 mb-10 ">
-            <h1 className="text-5xl text-center lg:text-start md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text p-3 text-transparent ">
-              Risk Adjustment Coding
-            </h1>
-            <p className="text-lg md:text-xl lg:max-w-3xl max-w-2xl mx-auto lg:mx-0 text-center lg:text-start text-[#7E7E7E]">
-              Pro1Health specializes in providing top-tier risk adjustment
+
+        <HeroSection
+          title=" Risk Adjustment Coding"
+          description=" Pro1Health specializes in providing top-tier risk adjustment
               coding solutions tailored to the unique needs of healthcare
               providers. Our services are designed to ensure accuracy,
-              compliance, and optimized revenue for our clients.
-            </p>
-            <button className="px-2 py-1 flex items-center gap-2 text-center border rounded-lg w-45 lg:mt-5 mx-auto lg:mx-0 ">
-              Connect With Us <FaArrowRightLong />
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:w-2/5 justify-center py-10">
-            <div className="w-full max-w-[500px] rounded-[32px] overflow-hidden">
-              <Image
-                src="/images/risk/riskbg.svg"
-                alt="Revenue Cycle Management"
-                width={1000}
-                height={600}
-                className="w-full h-auto rounded-[32px]"
-                priority
-              />
-            </div>
-          </div>
-        </section>{" "}
+              compliance, and optimized revenue for our clients."
+          image="/images/risk/riskbg.svg"
+        />
         {/* card section  */}
         <section className="mt-20 mb-10">
           <div className="space-y-10">
@@ -76,11 +64,9 @@ export default function riskadjustment() {
                       </ul>
                     </div>
                     {card.description2 ? (
-                      <div className="bg-[#F0F0F0] text-start  rounded-lg lg:px-3 lg:py-2 p-2 flex lg:flex-row flex-col  items-center gap-2 w-fit">
-                        <sapn className="text-lg font-semibold ">
-                          Outcome :{" "}
-                        </sapn>
-                        <p className="text-gray-600  ">{card.description2}</p>
+                      <div className="bg-[#F0F0F0] text-start rounded-lg lg:px-3 lg:py-2 p-2 flex lg:flex-row flex-col items-center gap-2 w-fit">
+                        <span className="text-lg font-semibold">Outcome :</span>
+                        <p className="text-gray-600">{card.description2}</p>
                       </div>
                     ) : null}
                   </div>
@@ -101,17 +87,25 @@ export default function riskadjustment() {
             ))}
           </div>
         </section>
-        <section>
-          <div className="bg-[#F8F9FA]">
-            <h1 className="text-lg md:text-4xl font-semibold text-center">
+        <section className="">
+          <div className="bg-[#F8F9FA] pb-10 mb-10">
+            <h1 className="text-lg md:text-4xl font-semibold text-center py-10">
               Deliver Excellence in Risk Adjustment Coding
             </h1>
             <div className="max-w-7xl mx-auto px-6 py-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-10">
                 {riskcodingCards.map((card, index) => (
                   <div
                     key={index}
-                    className="border border-[#E5E5E5] rounded-xl p-6 lg:p-8 flex flex-col gap-4 hover:shadow-lg transition duration-300"
+                    className={`
+        border border-[#E5E5E5]
+        rounded-xl
+        p-6 lg:p-8
+        flex flex-col gap-4
+        hover:shadow-lg
+        transition duration-300
+        ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}
+      `}
                   >
                     <div className="w-14 h-14">
                       <img
@@ -129,6 +123,25 @@ export default function riskadjustment() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="max-w-350 mx-auto ">
+            <h1 className=" text-3xl md:text-4xl text-center py-5">Benefits</h1>
+            <p className="text-lg text-center">
+              Partnering with ProHealth for your risk adjustment coding brings
+              numerous advantages
+            </p>
+            <div className="py-10">
+              <Carousel
+                items={riskfeatures}
+                itemsPerSlideDesktop={3}
+                itemsPerSlideMobile={1}
+                autoPlay={true}
+                interval={7000}
+                showSideButtons={false}
+              />
             </div>
           </div>
         </section>

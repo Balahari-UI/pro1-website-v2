@@ -1,3 +1,4 @@
+import HeroSection from "@/app/components/ui/HeroSection";
 import { drcmCards } from "@/app/data/home";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -5,38 +6,19 @@ import { FaArrowRightLong } from "react-icons/fa6";
 export default function dentalrevenue() {
   return (
     <>
-      <div className="pt-24 px-2">
+      <div className=" px-2 lg:px-0">
         {/* hero */}
-        <section className="lg:flex justify-between  max-w-350 mx-auto mb-10   ">
-          <div className="lg:w-3/5 max-w-4xl mx-auto lg:px-10  lg:pt-30  flex  flex-col gap-10 mb-10 ">
-            <h1 className="text-5xl text-center lg:text-start md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text p-3 text-transparent ">
-              Dental Revenue Cycle Management
-            </h1>
-            <p className="text-lg md:text-xl lg:max-w-3xl max-w-2xl mx-auto lg:mx-0 text-center lg:text-start text-[#7E7E7E]">
-              At Pro1 Health, we specialize in end-to-end Dental RCM services
+
+        <HeroSection
+          title="Dental Revenue Cycle Management"
+          description="At Pro1 Health, we specialize in end-to-end Dental RCM services
               that enable dental practices to maximize collections, streamline
               operations, and reduce write-offs. From verifying eligibility to
               denial management and reporting, we ensure every claim is
               accurate, compliant, and paid faster, Here’s a breakdown of our
-              core Dental RCM services.
-            </p>
-            <button className="px-2 py-1 flex items-center gap-2 text-center border rounded-lg w-45 lg:mt-5 mx-auto lg:mx-0 ">
-              Connect With Us <FaArrowRightLong />
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:w-2/5 justify-center py-10">
-            <div className="w-full max-w-[500px] rounded-[32px] overflow-hidden">
-              <Image
-                src="/images/drcm/drcmbg.svg"
-                alt="Revenue Cycle Management"
-                width={1000}
-                height={600}
-                className="w-full h-auto rounded-[32px]"
-                priority
-              />
-            </div>
-          </div>
-        </section>{" "}
+              core Dental RCM services."
+          image="/images/drcm/drcmbg.svg"
+        />
         {/* card section  */}
         <section className="mt-20 mb-10">
           <div className="space-y-10">

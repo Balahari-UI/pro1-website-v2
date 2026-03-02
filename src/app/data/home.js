@@ -1,3 +1,152 @@
+export const tabs = [
+  {
+    id: 0,
+    title: "Revenue Cycle Management",
+    heading: ["Revenue Cycle Management"],
+    subheading: "Streamlined RCM, Stronger Financial Health",
+    description: `Complete RCM solutions to boost revenue, cut denials, and improve financial performance.`,
+    image: "/images/home/rcm.svg",
+    link: "/mrcm",
+  },
+  {
+    id: 1,
+    title: "Risk Adjustment Coding",
+    heading: ["Risk Adjustment Coding"],
+    subheading: "Outstanding Quality, Delivered Consistently",
+    description: `Accurate, compliant, and SLA-driven coding powered by expert, certified professionals.`,
+    image: "/images/home/risk.svg",
+    link: "/risk-adjustment-coding",
+  },
+  {
+    id: 2,
+    title: "Dental Revenue Cycle Management",
+    heading: ["Dental Revenue Cycle Management"],
+    subheading: "Simplifying Dental Billing, Amplifying Results",
+    description: `Efficient dental billing that maximizes collections and enhances patient experience.`,
+    image: "/images/home/drcm.png",
+    link: "/drcm",
+  },
+];
+
+export const stats = [
+  { value: 99.8, suffix: "%", label: "Accuracy Rate" },
+  { value: 500000, suffix: "+", label: "Claims Processed Annually" },
+  { value: 95, suffix: "%", label: "Client Retention Rate" },
+  { value: 3000, suffix: "+", label: "Employees" },
+];
+
+export const coreCompetencies = [
+  {
+    title: "Deep Domain Expertise",
+    text: "Proven excellence in Risk Adjustment Coding, Revenue Cycle Management (RCM), HEDIS abstraction, RADV audits, and Clinical Documentation Improvement (CDI).",
+    icon: "book",
+  },
+  {
+    title: "Scalable Certified Workforce",
+    text: "A large pool of AAPC- and AHIMA-certified coders, ready to scale as per client requirements.",
+    icon: "award",
+  },
+  {
+    title: "Quality and Compliance Driven",
+    text: "Rigorously compliant with SOC2, HIPAA, and ISO standards, with HITRUST readiness underway.",
+    icon: "shield",
+  },
+  {
+    title: "Proprietary Performance Tracking",
+    text: "Internal tools to monitor productivity, accuracy, and SLA adherence in real-time.",
+    icon: "chart",
+  },
+  {
+    title: "Comprehensive RCM Services",
+    text: "End-to-end capabilities across Medical and Dental RCM, ensuring seamless revenue cycle performance.",
+    icon: "dollar",
+  },
+  {
+    title: "Audit and Documentation Support",
+    text: "In-depth expertise in CDI and audit support to enhance documentation quality and risk score accuracy.",
+    icon: "file",
+  },
+];
+
+export const deliveryPoints = [
+  {
+    title: "Comprehensive RCM Services",
+    text: "From accurate medical coding and charge entry to denial management, AR follow-up, and payment posting - we cover it all.",
+  },
+  {
+    title: "Skilled and Scalable Workforce",
+    text: "Our large team of certified coders and billing professionals ensures fast ramp-up, consistent quality, and domain-specific expertise.",
+  },
+  {
+    title: "Compliance-Driven Operations",
+    text: "We are SOC2, HIPAA, and ISO certified, with HITRUST readiness, ensuring the highest standards of data security and regulatory adherence.",
+  },
+  {
+    title: "Client-Centric Approach",
+    text: "We align with your workflows, timelines, and systems to deliver smooth, transparent, and efficient outcomes.",
+  },
+  {
+    title: "Results That Matter",
+    text: "Improved collections, reduced denials, enhanced risk adjustment accuracy, and better financial performance for providers and payers alike.",
+  },
+];
+
+export const partnerCards = [
+  {
+    id: 1,
+    title: "Data Driven Revenue Excellence",
+    desc: "We deliver scalable RCM solutions that prioritize data integrity, security and quality. Every engagement is focused on efficiency, productivity, and uncompromised quality.",
+    image: "/images/home/whypartner1.svg",
+  },
+  {
+    id: 2,
+    title: "Technology Driven Efficiency",
+    desc: "By combining cutting-edge technology, AI-driven solutions, and expert oversight, we simplify complex revenue cycle tasks with faster results.",
+    image: "/images/home/whypartner2.svg",
+  },
+  {
+    id: 3,
+    title: "Fast, Secure and Reliable",
+    desc: "We combine cutting edge security with AI-enhanced efficiency to ensure your data is handled securely and compliantly.",
+    image: "/images/home/whypartner3.svg",
+  },
+  {
+    id: 4,
+    title: "Choosing Pro1 Health",
+    desc: "Choosing Pro1 Health means choosing a partner who is as invested in your success as you are.",
+    image: "/images/home/whypartner4.svg",
+  },
+  {
+    id: 5,
+    title: "Faster Results, Fewer Hassles",
+    desc: "Our streamlined processes and dedicated account managers ensure smooth onboarding and rapid project execution.",
+    image: "/images/home/whypartner5.svg",
+  },
+  {
+    id: 6,
+    title: "Assured Accuracy",
+    desc: "Every chart, claim, and report undergoes rigorous quality checks to guarantee the highest accuracy and compliance rates.",
+    image: "/images/home/whypartner6.svg",
+  },
+  {
+    id: 7,
+    title: "Scalable Without Compromise",
+    desc: "Whether you need 5 coders or 500, we scale effortlessly while maintaining consistent quality standards.",
+    image: "/images/home/whypartner7.svg",
+  },
+  {
+    id: 8,
+    title: "Full Transparency",
+    desc: "With real-time performance dashboards and regular reports, you will always know exactly where your project stands.",
+    image: "/images/home/whypartner8.svg",
+  },
+  {
+    id: 9,
+    title: "A True Partnership",
+    desc: "We align with your goals, adapt to your workflows, and work as an extension of your team.",
+    image: "/images/home/whypartner9.svg",
+  },
+];
 export const rcmCards = [
   {
     title: "Patient Registration & Demographics Entry",
@@ -208,68 +357,7 @@ export const rcmbillingCards = [
       "We begin by determining your practice’s needs, goals, and billing process.",
   },
 ];
-export const features = [
-  {
-    id: 1,
-    parentClass: "",
-    items: [
-      {
-        wrapperClass: "xl:mb-2",
-        title: "Choosing Pro1 Health",
-        description:
-          "Choosing Pro1 Health means choosing a partner who is as invested in your success as you are. We combine proven expertise with a client-first approach to deliver measurable results.",
-        titleClass: "xl:text-4xl text-2xl font-bold mb-2  ",
-        descClass: "font-medium mb-4 text-justify  ",
-      },
-      {
-        wrapperClass: "",
-        title: "Faster Results, Fewer Hassles",
-        description:
-          "Our streamlined processes and dedicated account managers ensure smooth onboarding and rapid project execution.",
-        titleClass: "xl:text-4xl text-2xl font-bold mb-2  ",
-        descClass: "font-medium mb-4 text-justify  ",
-      },
-      {
-        wrapperClass: "",
-        title: "Assured Accuracy",
-        description:
-          "Every chart, claim, and report undergoes rigorous quality checks to guarantee the highest accuracy and compliance rates.",
-        titleClass: "xl:text-4xl text-2xl font-bold mb-2  ",
-        descClass: "font-medium mb-4 text-justify  ",
-      },
-    ],
-  },
-  {
-    id: 2,
-    parentClass: "",
-    items: [
-      {
-        wrapperClass: " ",
-        title: "Scalable Without Compromise",
-        description:
-          "Whether you need 5 coders or 500, we scale effortlessly while maintaining consistent quality standards.",
-        titleClass: "xl:text-4xl text-2xl font-bold mb-2  ",
-        descClass: "font-medium mb-4 text-justify  ",
-      },
-      {
-        wrapperClass: " ",
-        title: "Full Transparency",
-        description:
-          "With real-time performance dashboards and regular reports, you’ll always know exactly where your project stands.",
-        titleClass: "xl:text-4xl text-2xl font-bold mb-2  ",
-        descClass: "font-medium mb-4 text-justify  ",
-      },
-      {
-        wrapperClass: " ",
-        title: "A True Partnership",
-        description:
-          "We align with your goals, adapt to your workflows, and work as an extension of your team—not just as an outsourced vendor.",
-        titleClass: "xl:text-4xl text-2xl font-bold mb-2  ",
-        descClass: "font-medium mb-4 text-justify  ",
-      },
-    ],
-  },
-];
+
 export const rcmlogos = [
   "/images/techlogo/AdvancedMD.png",
   "/images/techlogo/Allscripts.png",
@@ -509,9 +597,170 @@ export const riskCards = [
 ];
 export const riskcodingCards = [
   {
-    logo: "images/rcm/cs-1.svg",
-    title: " Requirement Analysis",
+    logo: "images/risk/rs-1.svg",
+    title: "Comprehensive Chart Review",
     description:
-      "We begin by determining your practice’s needs, goals, and billing process.",
+      "Detailed examination of patient medical records to ensure every diagnosis is accurately captured and coded.",
+  },
+  {
+    logo: "images/risk/rs-2.svg",
+    title: " Accuracy in HCC Coding",
+    description:
+      "Specialized in HCC coding to accurately reflect patient health status and ensure appropriate risk adjustment.",
+  },
+  {
+    logo: "images/risk/rs-3.svg",
+    title: " Global Delivery Team",
+    description: "Certified coders with rich experience in HCC coding.",
+  },
+  {
+    logo: "images/risk/rs-4.svg",
+    title: " Compliance Audits",
+    description:
+      "Rigorous audits to ensure coding practices are compliant with CMS guidelines and other regulatory standards.",
+  },
+  {
+    logo: "images/risk/rs-5.svg",
+    title: " Data Validation and Analysis",
+    description:
+      "In-depth analysis of coding data to identify trends, anomalies, and opportunities for improvement.",
+  },
+];
+export const riskfeatures = [
+  {
+    title: "Data-Driven Insights",
+    description:
+      "We provide valuable insights from data analysis, aiding in strategic decision-making for healthcare practices.",
+  },
+  {
+    title: "Customized, Flexible Solutions",
+    description:
+      "Our approach is tailored to meet the specific needs of each client, ensuring the most effective outcomes.",
+  },
+  {
+    title: "Continuous Support",
+    description:
+      "We offer ongoing support to meet with the latest coding standards and practices.",
+  },
+  {
+    title: "Enhanced Accuracy and Compliance",
+    description:
+      "Our expert coders ensure the highest levels of accuracy, reducing the risk of errors and non-compliance.",
+  },
+  {
+    title: "Optimized Revenue",
+    description:
+      "Accurate coding leads to proper risk assessment, ensuring that healthcare providers are reimbursed appropriately.",
+  },
+  {
+    title: "Reduced Administrative Burden",
+    description:
+      "Our services streamline the coding process, allowing healthcare providers to focus more on patient care.",
+  },
+];
+export const cdiCards = [
+  {
+    title: "CDI Services",
+    description1:
+      "Improve provider documentation and ensure complete diagnosis capture with our CDI services. We conduct retrospective and concurrent reviews to:",
+    description2:
+      "Our CDI experts work hand-in-hand with coding and QA teams, delivering actionable insights that improve both compliance and revenue outcomes.",
+    subheading1: "",
+    services: [
+      "Identify documentation gaps",
+      "Send compliant provider queries",
+      "Enhance audit readiness and RAF performance",
+      "Maintain audit trails for RADV and internal QA validation",
+    ],
+
+    image: "/images/cdi/cdi1.svg",
+  },
+];
+// data/hedisServices.js
+
+export const hedisServices = [
+  {
+    id: 1,
+    title: "Data Collection & Analysis",
+    description:
+      "Rigorous gathering & analysis of healthcare data relevant to HEDIS measures.",
+    image: "/images/hedis/hedis1.svg",
+  },
+  {
+    id: 2,
+    title: "Performance Improvement Planning",
+    description:
+      "Assisting healthcare providers in developing strategies to improve performance based on HEDIS results.",
+    image: "/images/hedis/hedis2.svg",
+  },
+  {
+    id: 3,
+    title: "Audit Support",
+    description:
+      "Offering support during HEDIS audits to ensure compliance & accuracy in reporting.",
+    image: "/images/hedis/hedis3.svg",
+  },
+  {
+    id: 4,
+    title: "Quality Assurance",
+    description:
+      "Ensuring the accuracy and integrity of data reported in compliance with HEDIS Specifications.",
+    image: "/images/hedis/hedis4.svg",
+  },
+];
+export const hedisCards = [
+  {
+    title: "Services for HEDIS Abstraction",
+    description1:
+      "Close care gaps and improve quality scores with our HEDIS abstraction services. Our team supports both administrative and hybrid abstraction, offering",
+    description2:
+      "We provide flexible, scalable staffing to meet peak-season demand and ongoing HEDIS needs.",
+    subheading1: "",
+    services: [
+      "Chase logic development",
+      "Record retrieval & chart review",
+      "Clinical abstraction by trained HEDIS specialists",
+      "Internal QA & real-time tracking",
+    ],
+
+    image: "/images/hedis/hedis.svg",
+  },
+];
+export const radvCards = [
+  {
+    title: "Enhancing Coding Accuracy and RAF Scores",
+    description1:
+      "Our coding specialists are focused on improving coding accuracy and enhancing RAF scores, which ultimately supports better healthcare outcomes and ensures appropriate benefits for providers.Our proactive approach not only reduces coding errors but also strengthens payer-provider relationships and improves population health outcomes.",
+    image: "/images/radv/radv1.svg",
+  },
+  {
+    title: "Provider Education for Documentation Improvement",
+    description1:
+      "We believe in collaboration over correction. Our coders take the extra step to educate providers on best practices for clinical documentation, including specificity, chronicity, and linkage. This education minimizes the risk of HCC code deletions due to insufficient documentation and helps establish a long-term improvement in documentation habits. These efforts lead to more accurate risk scoring and better compliance with regulatory requirements year over year.",
+    image: "/images/radv/radv2.svg",
+  },
+  {
+    title: "Identifying Diagnosis Gaps Through Standardized Feedback",
+    description1:
+      "Our coders guide providers on documentation best practices, helping prevent HCC code deletions and ensuring accurate future risk scores.",
+    image: "/images/radv/radv1.svg",
+  },
+  {
+    title: "Dedicated Audit Team for Full Coverage and SLA Compliance",
+    description1:
+      "Our specialist audit team ensures 100% audit coverage and meets client SLAs through rigorous and structured quality checks.",
+    image: "/images/radv/radv4.svg",
+  },
+  {
+    title: "Reliable Management of Client Deliverables",
+    description1:
+      "We treat client deliverables with the utmost care, ensuring that all data transfers, reports, and files are handled securely and delivered on time. Our operations team follows strict quality control protocols and uses automated tracking systems to meet tight deadlines and compliance standards. We pride ourselves on being a trusted extension of our client’s internal team, offering reliability, transparency, and seamless communication throughout the engagement.",
+    image: "/images/radv/radv5.svg",
+  },
+  {
+    title: "Expertise in RADV Projects and Comprehensive Quality Coding",
+    description1:
+      "Our experienced coders deliver high accuracy and compliance in RADV projects, while also supporting provider education and documentation improvement to maximize HCC capture.",
+    image: "/images/radv/radv6.svg",
   },
 ];

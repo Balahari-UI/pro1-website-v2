@@ -1,3 +1,5 @@
+import RouteHeroPage from "@/app/components/ui/RouteHeroPage";
+
 export default function AboutUsPage() {
-  return <div>About Us</div>;
+  return <RouteHeroPage pageKey="about-us" />;
 }
