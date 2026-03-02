@@ -7,8 +7,6 @@ export default function WhyPro1Page() {
         title="Get Started with Pro1 Health"
         description="Experience a seamless revenue cycle—from patient registration through payment. Contact us today to discuss how we can tailor our solutions for your needs. We adapt quickly to client-specific systems and workflows, ensuring smooth integration and optimized billing operations."
         image="/images/whypro-1/whypro1.svg"
-        buttonText="Contact Us"
-        buttonLink="/contact-us"
       />
 
       <section className="pb-10">
