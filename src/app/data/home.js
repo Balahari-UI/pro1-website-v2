@@ -1,21 +1,22 @@
+
 export const tabs = [
   {
     id: 0,
+    title: "Revenue Cycle Management",
+    heading: ["Revenue Cycle Management"],
+    subheading: "Streamlined RCM, Stronger Financial Health",
+    description: `Complete RCM solutions to boost revenue, cut denials, and improve financial performance.`,
+    image: "/images/home/rcm.svg",
+    link: "/mrcm",
+  },
+  {
+    id: 1,
     title: "Risk Adjustment Coding",
     heading: ["Risk Adjustment Coding"],
     subheading: "Outstanding Quality, Delivered Consistently",
     description: `Accurate, compliant, and SLA-driven coding powered by expert, certified professionals.`,
     image: "/images/home/risk.svg",
     link: "/risk-adjustment-coding",
-  },
-  {
-    id: 1,
-    title: "Medical Revenue Cycle Management",
-    heading: ["Medical Revenue Cycle Management"],
-    subheading: "Streamlined RCM, Stronger Financial Health",
-    description: `Complete RCM solutions to boost revenue, cut denials, and improve financial performance.`,
-    image: "/images/home/rcm.svg",
-    link: "/mrcm",
   },
   {
     id: 2,

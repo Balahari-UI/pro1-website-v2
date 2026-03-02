@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
 
 const desktopMenu = [
@@ -46,22 +46,44 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [openDesktopSubmenu, setOpenDesktopSubmenu] = useState(null);
   const closeMobileMenu = () => {
     setMobileOpen(false);
     setOpenSubmenu(null);
   };
 
+  const [hasScrolled, setHasScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setHasScrolled(window.scrollY > 0);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const activeMobileParent =
+    desktopMenu.find((item) =>
+      item.sub?.some((subItem) => subItem.path === pathname),
+    )?.name ?? null;
+
   return (
     <>
-      <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white p-3">
-        <div className="mx-auto flex h-[60px] w-[95%] max-w-[1520px] items-center justify-between">
+      {/* <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white p-3">
+        <div className="mx-auto flex h-[60px] w-[95%] max-w-[1900px] items-center justify-between"> */}
+      <nav
+        className={`fixed top-0 left-0 z-50 w-full bg-white p-3 transition-colors ${
+          hasScrolled
+            ? "border-b border-gray-200"
+            : "border-b border-transparent"
+        }`}
+      >
+        <div className="mx-auto flex h-[60px] w-[95%] max-w-[1900px] items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/header/pro1logo.svg"
               alt="Pro1 Logo"
               width={126}
               height={42}
-              className="h-auto w-[110px] sm:w-[126px]"
+              className="h-auto w-[70px] lg:w-[110px]"
               priority
             />
           </Link>
@@ -73,36 +95,53 @@ export default function Header() {
                   pathname === item.path ||
                   item.sub?.some((subItem) => subItem.path === pathname);
                 return (
-                  <li key={item.name} className="group relative">
+                  <li
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() =>
+                      item.sub ? setOpenDesktopSubmenu(item.name) : null
+                    }
+                    onMouseLeave={() =>
+                      item.sub ? setOpenDesktopSubmenu(null) : null
+                    }
+                  >
                     {item.sub ? (
                       <>
                         <button
-                          className={`flex items-center gap-2 rounded-md px-3 py-2 text-[15px] font-medium transition ${
+                          className={`relative flex items-center gap-2 rounded-md px-3 py-2 text-[17px] font-normal text-black transition after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[3px] after:origin-left after:bg-primary after:transition-transform after:duration-300 ${
                             isActive
-                              ? "text-primary"
-                              : "text-cetacean-blue hover:text-primary"
+                              ? "after:scale-x-100"
+                              : "after:scale-x-0 hover:after:scale-x-100"
                           }`}
                         >
                           {item.name}
-                          <FaChevronDown className="text-xs" />
+                          <FaChevronDown
+                            className={`text-[14px] transition-transform duration-200 ${
+                              openDesktopSubmenu === item.name
+                                ? "rotate-180"
+                                : ""
+                            }`}
+                          />
                         </button>
                         <ul
                           className={[
-                            "invisible absolute left-0 top-full z-50 mt-1 min-w-[290px] rounded-md bg-white py-2 shadow-xl opacity-0 transition",
+                            "absolute left-0 top-full z-50 min-w-[100px] rounded-[12px] bg-white border border-gray-200 pb-5 shadow-xl transition",
                             item.name === "Services"
-                              ? "w-[380px]"
+                              ? "w-[320px]"
                               : "w-[220px]",
-                            "group-hover:visible group-hover:opacity-100",
+                            openDesktopSubmenu === item.name
+                              ? "visible opacity-100"
+                              : "invisible opacity-0",
                           ].join(" ")}
                         >
                           {item.sub.map((subItem) => (
                             <li key={subItem.name}>
                               <Link
                                 href={subItem.path}
-                                className={`block px-4 py-2 text-sm transition ${
+                                className={`group relative block px-5 py-3 text-[16px] transition after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[1px] after:origin-left after:bg-primary after:transition-transform after:duration-300 ${
                                   pathname === subItem.path
-                                    ? "bg-primary text-white"
-                                    : "text-cetacean-blue hover:bg-primary hover:text-white"
+                                    ? "bg-primary text-white after:scale-x-0"
+                                    : "text-[#272727] after:scale-x-100"
                                 }`}
                               >
                                 {subItem.name}
@@ -114,10 +153,10 @@ export default function Header() {
                     ) : (
                       <Link
                         href={item.path}
-                        className={`rounded-md px-3 py-2 text-[15px] font-medium transition ${
+                        className={`relative rounded-md px-3 py-2 text-[17px] font-normal text-black transition after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[3px] after:origin-left after:bg-primary after:transition-transform after:duration-300 ${
                           isActive
-                            ? "text-primary"
-                            : "text-cetacean-blue hover:text-primary"
+                            ? "after:scale-x-100"
+                            : "after:scale-x-0 hover:after:scale-x-100"
                         }`}
                       >
                         {item.name}
@@ -129,7 +168,7 @@ export default function Header() {
             </ul>
             <Link
               href="/contact-us"
-              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+              className="rounded-full bg-primary px-5 py-2 text-[17px] font-semibold text-white transition hover:opacity-90"
             >
               Contact Us
             </Link>
@@ -137,7 +176,7 @@ export default function Header() {
 
           <button
             onClick={() => setMobileOpen(true)}
-            className="nav:hidden text-2xl text-cetacean-blue"
+            className="nav:hidden text-xl text-cetacean-blue"
             aria-label="Toggle menu"
           >
             <FaBars />
@@ -145,97 +184,108 @@ export default function Header() {
         </div>
       </nav>
 
-      {mobileOpen && (
-        <div className="fixed inset-0 z-[60] nav:hidden">
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setMobileOpen(false)}
-          />
-          <div className="absolute right-0 top-0 h-full w-[90%] max-w-[360px] overflow-y-auto bg-white p-6">
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="ml-auto block text-3xl text-cetacean-blue"
-              aria-label="Close menu"
-            >
-              <FaTimes />
-            </button>
-            <ul className="mt-4 space-y-1">
-              {desktopMenu.map((item) => {
-                const isActive =
-                  pathname === item.path ||
-                  item.sub?.some((subItem) => subItem.path === pathname);
-                if (!item.sub) {
-                  return (
-                    <li key={item.name}>
+      <div
+        className={`fixed inset-0 z-[60] nav:hidden overflow-y-auto bg-white pt-[50px] shadow-lg transition-transform duration-300 ease-in-out ${
+          mobileOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <button
+          onClick={() => setMobileOpen(false)}
+          className="absolute top-3 right-[10px] text-[20px] leading-none text-[#272727]"
+          aria-label="Close menu"
+        >
+          <FaTimes />
+        </button>
+
+        <ul className="w-full">
+          {desktopMenu.map((item) => {
+            const isActive =
+              pathname === item.path ||
+              item.sub?.some((subItem) => subItem.path === pathname);
+
+            if (!item.sub) {
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.path}
+                    onClick={closeMobileMenu}
+                    className={`flex items-center justify-between px-5 py-[10px] text-[16px] font-semibold text-[#272727] transition ${
+                      isActive
+                        ? "bg-primary text-white"
+                        : "hover:bg-primary hover:text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              );
+            }
+
+            const isOpen =
+              openSubmenu === item.name ||
+              (!openSubmenu && activeMobileParent === item.name);
+            return (
+              <li key={item.name}>
+                <button
+                  onClick={() =>
+                    setOpenSubmenu((prev) =>
+                      prev === item.name ? null : item.name,
+                    )
+                  }
+                  className={`flex w-full items-center justify-between px-5 py-[10px] text-left text-[16px] font-semibold transition ${
+                    isActive
+                      ? "bg-[#e6f0ff] text-primary"
+                      : "text-[#272727] hover:bg-primary hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                  <FaChevronDown
+                    className={`text-xs transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <ul
+                  className={`overflow-hidden bg-[#f5f5f5] transition-all duration-300 ${
+                    isOpen ? "max-h-[420px]" : "max-h-0"
+                  }`}
+                >
+                  {item.sub.map((subItem) => (
+                    <li key={subItem.name}>
                       <Link
-                        href={item.path}
+                        href={subItem.path}
                         onClick={closeMobileMenu}
-                        className={`block rounded-md px-2 py-2.5 text-base font-medium ${
-                          isActive
-                            ? "text-primary"
-                            : "text-cetacean-blue hover:text-primary"
+                        className={`block border-none py-[10px] pr-5 pl-10 text-[16px] font-medium transition ${
+                          pathname === subItem.path
+                            ? "bg-primary text-white"
+                            : "text-[#555] hover:bg-[#e6f0ff] hover:text-primary"
                         }`}
                       >
-                        {item.name}
+                        {subItem.name}
                       </Link>
                     </li>
-                  );
-                }
-                const isOpen = openSubmenu === item.name;
-                return (
-                  <li key={item.name}>
-                    <button
-                      onClick={() =>
-                        setOpenSubmenu((prev) =>
-                          prev === item.name ? null : item.name,
-                        )
-                      }
-                      className={`flex w-full items-center justify-between rounded-md px-2 py-2.5 text-left text-base font-medium ${
-                        isActive
-                          ? "text-primary"
-                          : "text-cetacean-blue hover:text-primary"
-                      }`}
-                    >
-                      {item.name}
-                      <FaChevronDown
-                        className={`text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                    {isOpen && (
-                      <ul className="mt-1 space-y-1 pl-4">
-                        {item.sub.map((subItem) => (
-                          <li key={subItem.name}>
-                            <Link
-                              href={subItem.path}
-                              onClick={closeMobileMenu}
-                              className={`block rounded-sm px-2 py-2 text-sm ${
-                                pathname === subItem.path
-                                  ? "bg-primary text-white"
-                                  : "text-cetacean-blue hover:bg-primary hover:text-white"
-                              }`}
-                            >
-                              {subItem.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                );
-              })}
-              <li className="pt-2">
-                <Link
-                  href="/contact-us"
-                  onClick={closeMobileMenu}
-                  className="inline-block rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
-                >
-                  Contact Us
-                </Link>
+                  ))}
+                </ul>
               </li>
-            </ul>
-          </div>
-        </div>
-      )}
+            );
+          })}
+
+          <li>
+            <Link
+              href="/contact-us"
+              onClick={closeMobileMenu}
+              className={`flex items-center justify-between px-5 py-[10px] text-[16px] font-semibold transition ${
+                pathname === "/contact-us"
+                  ? "bg-primary text-white"
+                  : "text-[#272727] hover:bg-primary hover:text-white"
+              }`}
+            >
+              Contact Us
+            </Link>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

@@ -66,7 +66,7 @@ export default function HomePage() {
         onMouseEnter={() => setHeroPaused(true)}
         onMouseLeave={() => setHeroPaused(false)}
       >
-        <div className="mx-auto h-full w-[90%] max-w-[1520px]">
+        <div className="mx-auto h-full w-[90%] max-w-[1900px]">
           <div className="flex h-full items-center gap-4 lg:gap-8">
             <div className="flex h-full w-full flex-col justify-start lg:basis-3/5 lg:justify-between">
               <div className="mt-2 lg:mt-5">
@@ -127,10 +127,10 @@ export default function HomePage() {
 
       {/* section2 */}
       <section className="py-14">
-        <div className="mx-auto w-[90%] max-w-[1520px] rounded-2xl bg-gray-50 px-6 py-14 shadow-sm lg:px-16">
+        <div className="mx-auto w-[90%] max-w-[1900px] rounded-2xl border border-[#e5e5e5] bg-[#f4f4f4] px-6 py-14  lg:px-16">
           {/* Wrapper */}
-          <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
-            <div className="grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-4 lg:gap-16">
+          <div className="flex flex-col gap-12 xl:flex-row xl:items-center xl:justify-between">
+            <div className="grid gap-10 text-center sm:grid-cols-2 xl:grid-cols-4 xl:gap-16">
               {stats.map((stat) => (
                 <AnimatedCounter
                   key={stat.label}
@@ -142,11 +142,11 @@ export default function HomePage() {
             </div>
 
             {/* Divider only for large */}
-            <div className="hidden lg:block lg:h-24 lg:w-px lg:bg-gray-300" />
+            <div className="hidden xl:block xl:h-30  xl:w-[3px] xl:bg-[#afafaf]" />
 
-            <div className="w-full lg:w-auto">
+            <div className="w-full xl:w-auto">
               {/* Mobile & Tablet Layout */}
-              <div className="grid grid-cols-2 gap-8 lg:hidden">
+              <div className="grid grid-cols-2 gap-8 xl:hidden">
                 <div className="flex justify-center">
                   <Image
                     src="/images/home/certificate1.png"
@@ -179,7 +179,7 @@ export default function HomePage() {
               </div>
 
               {/* Large Screen Layout */}
-              <div className="hidden items-center gap-12 lg:flex">
+              <div className="hidden items-center gap-12 xl:flex">
                 <Image
                   src="/images/home/certificate1.png"
                   alt="SOC 2 Type 2"
@@ -221,7 +221,7 @@ export default function HomePage() {
           }}
         />
 
-        <div className="mx-auto w-[90%] max-w-[1520px]">
+        <div className="mx-auto w-[90%] max-w-[1900px]">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             {/* Left Content */}
             <div className="lg:col-span-6">
@@ -296,7 +296,7 @@ export default function HomePage() {
 
       {/* section5 */}
       <section className="py-6">
-        <div className="mx-auto w-[90%] max-w-[1520px] rounded-3xl bg-[linear-gradient(261.69deg,_#3e3df3_0.83%,_#ff007c_100%)] px-12 py-16 text-white shadow ">
+        <div className="mx-auto w-[90%] max-w-[1900px] rounded-3xl bg-[linear-gradient(261.69deg,_#3e3df3_0.83%,_#ff007c_100%)] px-12 py-16 text-white shadow ">
           <h2 className="text-3xl font-semibold lg:text-5xl">
             Trusted by Healthcare Providers, Backed by Proven Results
           </h2>
@@ -310,7 +310,7 @@ export default function HomePage() {
 
       {/* section6 */}
       <section className="py-16">
-        <div className="mx-auto w-[92%] max-w-[1520px] rounded-3xl border border-gray-200  p-8">
+        <div className="mx-auto w-[92%] max-w-[1900px] rounded-3xl border border-gray-200  p-8">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             {/* LEFT TITLE */}
             <div className="lg:col-span-3">
@@ -325,7 +325,7 @@ export default function HomePage() {
             <div className="lg:col-span-9">
               <div className="flex flex-col items-center gap-10 md:flex-row md:items-center">
                 {/* IMAGE BLOCK */}
-                <div className="relative h-[420px] w-full max-w-[320px] overflow-hidden rounded-3xl bg-gray-400 shadow-md">
+                <div className="relative h-[420px] w-full max-w-[320px] overflow-hidden rounded-3xl">
                   {partnerCards.map((card, index) => (
                     <div
                       key={index}
@@ -381,7 +381,7 @@ export default function HomePage() {
       </section>
 
       <section className=" bg-[#F8F9FA] py-16 ">
-        <div className="mx-auto grid w-[90%] max-w-[1520px] gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
+        <div className="mx-auto grid w-[90%] max-w-[1900px] gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
           <div className="lg:col-span-8">
             <h2 className="text-4xl font-semibold text-cetacean-blue sm:text-5xl lg:text-[40px]">
               People Advantage

@@ -45,7 +45,7 @@ body {
   --text-font24: 24px;
   --text-font28: 28px;
   --text-font40: 40px;
-  --breakpoint-nav: 960px;
+  --breakpoint-nav: 1252px;
 }
 
 .active-card {

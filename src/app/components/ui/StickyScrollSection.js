@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+
 export default function StickyScrollSection({
   title,
   description,
@@ -8,7 +11,7 @@ export default function StickyScrollSection({
 }) {
   return (
     <section className="py-24">
-      <div className="mx-auto w-[90%] max-w-[1500px]">
+      <div className="mx-auto w-[90%] max-w-[1900px]">
         <div className="grid lg:grid-cols-12 gap-12">
           {/* LEFT SIDE */}
           <div className="lg:col-span-7">
@@ -16,7 +19,7 @@ export default function StickyScrollSection({
               <h2 className="text-4xl sm:text-5xl font-semibold text-cetacean-blue mb-6">
                 {title}
               </h2>
-              <p className="text-lg text-cetacean-blue/80 max-w-xl leading-relaxed">
+              <p className="text-lg text-cetacean-blue max-w-5xl leading-relaxed">
                 {description}
               </p>
             </div>
@@ -30,14 +33,24 @@ export default function StickyScrollSection({
                 className="sticky top-28 mb-6"
                 style={{ zIndex: index + 1 }}
               >
-                <div className="rounded-2xl bg-gray-100 p-6 shadow-md">
-                  <h5 className="text-xl font-semibold text-cetacean-blue flex items-center gap-3">
+                <div className="rounded-2xl bg-[#d9d9d9] pt-6 px-4 pb-4">
+                  <h2 className="text-2xl font-medium text-cetacean-blue flex items-center gap-3">
                     <span className="h-2 w-2 rounded-full bg-primary"></span>
                     {item.title}
-                  </h5>
+                  </h2>
 
                   <div className="mt-4 rounded-xl bg-white p-5 shadow-sm">
-                    <p className="text-gray-700 leading-relaxed">{item.text}</p>
+                    <p className="text-gray-700 leading-relaxed text-[18px] mb-5">
+                      {item.text}
+                    </p>
+                    {item.link && (
+                      <Link
+                        href={item.link}
+                        className="inline-flex items-center gap-2 border border-gray-400 px-6 py-3 rounded-xl text-[#0B0E3F] hover:bg-[#272727] hover:text-white transition"
+                      >
+                        Know More <FaArrowRight size={18} />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

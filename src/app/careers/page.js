@@ -1,3 +1,5 @@
-export default function CareerPage() {
-  return <div>Careers</div>;
+import RouteHeroPage from "@/app/components/ui/RouteHeroPage";
+
+export default function CareersPage() {
+  return <RouteHeroPage pageKey="careers" />;
 }
