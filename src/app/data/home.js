@@ -1169,3 +1169,175 @@ export const aboutcards = [
     image: "/images/about-us/aboutus2.svg",
   },
 ];
+
+// capabilities
+export const PeopleCards = [
+  {
+    title: "Recruitment",
+    description1:
+      "ProHealth adopts meticulous process aimed at attracting individuals who are not only skilled but also passionate about healthcare and coding. Our recruitment process includes rigorous assessments to ensure that candidates are a good fit for our dynamic and ever-evolving industry.",
+    services: ["", "", "", ""],
+    image: "/images/people/people1.svg",
+  },
+  {
+    title: "Training",
+    description1:
+      "Our training approach aligns with the highest industry standards, ensuring that our staff is equipped with comprehensive knowledge and skills. Our training modules include:",
+    services: [
+      "Intensive courses in medical coding basics, focusing on CPT, ICD-10-CM, and HCPCS Level II codes.",
+      "Specialized training in different coding disciplines, including risk adjustment, outpatient coding, and inpatient coding.",
+    ],
+    image: "/images/people/people2.svg",
+  },
+  {
+    title: "Certifications",
+    description1:
+      "We encourage our staff to obtain certifications from esteemed bodies like AAPC and AHIMA. Maintaining these certifications requires our staff to continuous education, ensuring that they stay abreast of the latest industry development and standards.",
+    services: ["", ""],
+    image: "/images/people/people3.svg",
+  },
+  {
+    title: "Career Advancement",
+    description1:
+      "It is a cornerstone of our staff development strategy. We provide:",
+    services: [
+      "Career Counseling to help our staff navigate professional milestones.",
+      "Opportunities for staff to engage in higher level responsibilities, including auditing, compliance, and practice management.",
+      "A supportive environment that fosters leadership skills, preparing our team members for roles beyond coding.",
+    ],
+    image: "/images/people/people4.svg",
+  },
+  {
+    title: "Workplace Diversity and Flexibility",
+    description1:
+      "We understand the importance of a balanced and fulfilling work life. Our team members enjoy:",
+    services: [
+      "The flexibility to work remotely, catering to the growing trend of telecommuting in the coding industry.",
+      "A diverse work environment where every individual’s contribution is valued and respected.",
+      "Engagement in various roles across the healthcare spectrum for roles beyond coding.",
+    ],
+    image: "/images/people/people5.svg",
+  },
+];
+export const processCards = [
+  {
+    title: "Recruitment",
+    subtitle1: "Initial Consultation",
+    description1:
+      "Our process begins with a comprehensive consultation to understand the specific needs and challenges of our clients. This step involves detailed discussions to gain insights into the client’s current systems and processes.",
+    subtitle2: "Customized Solution Design",
+    description2:
+      "Based on the initial assessment, we design customized solutions tailored to address the unique requirements and goals of each client. This stage ensures that our services align perfectly with client expectations.",
+    image: "/images/process/process1.svg",
+  },
+  {
+    title: "Team Formation and Resource Allocation",
+    subtitle1: "Skilled Team Assignment",
+    description1:
+      "We assign a dedicated team of certified professionals, each specialized in various aspects of medical coding and billing, to your project. This ensures that the most qualified individuals handle your specific needs.",
+    subtitle2: "Resource Allocation",
+    description2:
+      "Necessary resources and tools are allocated to the team to facilitate efficient and accurate service delivery.",
+    image: "/images/process/process2.svg",
+  },
+  {
+    title: "Training and Continuous Learning",
+    subtitle1: "Ongoing Training",
+    description1:
+      "We provide our team with continuous training to keep them updated with the latest coding standards, healthcare regulations, and technological advancement.",
+    subtitle2: "Quality Assurance Training",
+    description2:
+      "Specific training sessions are conducted focusing on quality assurance and error reduction strategies.",
+    image: "/images/process/process3.svg",
+  },
+  {
+    title: "Implementation and Execution",
+    subtitle1: "Process Implementation",
+    description1:
+      "With a well-trained team and clear understanding of client needs, we implement our services. This includes medical coding, billing, compliance audits, and any other agreed-upon services",
+    subtitle2: "Performance Monitoring",
+    description2:
+      "Throughout the execution phase, we closely monitor the performance to ensure adherence to quality standards and client specifications.",
+    image: "/images/process/process4.svg",
+  },
+  {
+    title: "Quality Control and Compliance",
+    subtitle1: "Rigorous Quality Checks",
+    description1:
+      "Regular quality checks are performed to ensure accuracy and compliance with industry standards such as HIPAA.",
+    subtitle2: "Compliance Monitoring",
+    description2:
+      "Continuous monitoring for compliance with healthcare regulations and client-specific requirements.",
+    image: "/images/process/process5.svg",
+  },
+  {
+    title: "Performance and Feedback",
+    subtitle1: "Performance",
+    description1:
+      "We review all teams performance related data including coding accuracy rate, productivity, and other relevant data.",
+    subtitle2: "Feedback Incorporation",
+    description2:
+      "Client feedback is solicited and incorporated into our process for continuous improvement.",
+    image: "/images/process/process6.svg",
+  },
+  {
+    title: "Client Support and Communication",
+    subtitle1: "Dedicated Support",
+    description1:
+      "Our clients have access to dedicated support for any queries or assistance they may need.",
+    subtitle2: "Transparent Communication",
+    description2:
+      "We maintain open and transparent communication with clients throughout our engagement.",
+    image: "/images/process/process7.svg",
+  },
+];
+export const techcards = [
+  {
+    title: "Coding Production Software",
+    subtitle1: "Coding Production platform",
+    description1:
+      "We utilize specialized coding production software that streamlines coding process and enhances accuracy. This platform is tailored to handle the complexity of HCC coding and provide efficient outcomes.",
+    subtitle2: "Increases Efficiency",
+    description2:
+      "It provides individual data analytics on every coder and auditor on their outcome from production and accuracy and helps improve their efficiency.",
+    image: "/images/technology/technology1.svg",
+  },
+  {
+    title: "Data Analytics",
+    subtitle1: "Real-Time Analytics",
+    description1:
+      "Our coding production and quality accuracy platform provides real-time insights into coding operations, identifying trends and areas of improvement.",
+    subtitle2: "",
+    description2: "",
+    image: "/images/technology/technology2.svg",
+  },
+  {
+    title: "Cloud-Based Infrastructure",
+    subtitle1: "Automated Compliance Checks",
+    description1:
+      "Our cloud-based infrastructure enables our coders to access the system remotely, providing flexibility and ensuring continuity of operations.",
+    subtitle2: "Data Security and Backup",
+    description2:
+      "We prioritize data security, with robust backup and recovery procedures in place to safeguard client information.",
+    image: "/images/technology/technology3.svg",
+  },
+  {
+    title: "Compliance",
+    subtitle1: "Automated Compliance Checks",
+    description1:
+      "Our technology includes features for automated compliance checks, ensuring that all coding practices adhere to the latest regulations and guidelines.",
+    subtitle2: "",
+    description2: "",
+    image: "/images/technology/technology4.svg",
+  },
+  {
+    title: "Continuous Technology Updates",
+    subtitle1: "Staying Ahead with Updates",
+    description1:
+      "We continually update our technology to keep pace with the latest developments in medical coding and healthcare IT.",
+    subtitle2: "Training and Support",
+    description2:
+      "Our team receives ongoing training and support to effectively utilize new technologies.",
+    image: "/images/technology/technology5.svg",
+  },
+];
