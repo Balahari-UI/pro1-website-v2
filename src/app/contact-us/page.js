@@ -18,7 +18,8 @@ export default function ContactUspage() {
           Global Presence
         </h2>
 
-
+        {/* First Grid */}
+        {/* <div className="row gap-10"> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
           {globalPresence.map((location, index) => (
             <div
