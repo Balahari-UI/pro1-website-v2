@@ -8,7 +8,7 @@ export const tabs = [
     subheading: "Streamlined RCM, Stronger Financial Health",
     description: `Complete RCM solutions to boost revenue, cut denials, and improve financial performance.`,
     image: "/images/home/rcm.svg",
-    link: "/mrcm",
+    link: "/medical-revenue-cycle-management",
   },
   {
     id: 1,
@@ -17,7 +17,7 @@ export const tabs = [
     subheading: "Outstanding Quality, Delivered Consistently",
     description: `Accurate, compliant, and SLA-driven coding powered by expert, certified professionals.`,
     image: "/images/home/risk.svg",
-    link: "/risk-adjustment-coding",
+    link: "/risk-adjustment",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const tabs = [
     subheading: "Simplifying Dental Billing, Amplifying Results",
     description: `Efficient dental billing that maximizes collections and enhances patient experience.`,
     image: "/images/home/drcm.png",
-    link: "/drcm",
+    link: "/dental-revenue-cycle-management",
   },
 ];
 
@@ -260,6 +260,7 @@ export const whomWeServeRevenueData = {
       },
     ],
   },
+
 };
 
 export const whomWeServeCapabilitiesData = {
@@ -422,6 +423,37 @@ export const whomWeServeCapabilitiesData = {
       },
     ],
   },
+  cdi: {
+    images: [
+      "/images/cdi/cdiadvantage1.svg",
+      "/images/cdi/cdiadvantage2.svg",
+    ],
+
+    servicesTitle: "Pro1 Health ensure",
+
+    services: [
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "",
+        text: "Complete & compliant clinical records",
+      },
+      {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "",
+        text: "Reduced denials and documentation-related delays",
+      },
+       {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "",
+        text: "Improved revenue capture and reduced audit exposure",
+      },
+       {
+        icon: "/images/whom-we-serve/capabilites.svg",
+        title: "",
+        text: "Enhanced collaboration between clinical and coding teams",
+      },
+    ],
+  },
 };
 
 export const whomWeServeApproachData = {
@@ -507,6 +539,29 @@ export const whomWeServeApproachData = {
       {
         title: "Continuous Optimization",
         text: "Ongoing process improvements for sustained financial performance.",
+      },
+    ],
+  },
+  cdi: {
+    titleLine1: "Our Approach",
+    titleLine2: "",
+
+    items: [
+      {
+        title: "Assessment & Documentation Review",
+        text: "Deep dive into clinical records to evaluate completeness, specificity, and compliance.",
+      },
+      {
+        title: "Collaborative Query Interventions",
+        text:"Use evidence-based query methodologies to clarify physician documentation and capture the full clinical picture.",
+      },
+      {
+        title: "Provider Engagement & Education",
+        text:"Continuous coaching and feedback loops with clinical teams to sustain high-quality documentation practices.",
+      },
+      {
+        title: "Reporting & Quality Analytics",
+        text:"Deliver actionable insights that reveal documentation trends, performance gaps, and improvement opportunities.",
       },
     ],
   },
@@ -725,24 +780,6 @@ export const rcmbillingCards = [
 ];
 
 export const rcmlogos = [
-  // "/images/techlogo/AdvancedMD.png",
-  // "/images/techlogo/Allscripts.png",
-  // "/images/techlogo/Athena.png",
-  // "/images/techlogo/Cerner.png",
-  // "/images/techlogo/Collaboratemd.png",
-  // "/images/techlogo/eclinicalworks.png",
-  // "/images/techlogo/Epic.png",
-  // "/images/techlogo/GEhealth.png",
-  // "/images/techlogo/hstpathways.png",
-  // "/images/techlogo/kareo.png",
-  // "/images/techlogo/medisoft.png",
-  // "/images/techlogo/micromd.png",
-  // "/images/techlogo/nextgen.png",
-  // "/images/techlogo/oracle.png",
-  // "/images/techlogo/practiceehr.png",
-  // "/images/techlogo/Practicefusion.png",
-  // "/images/techlogo/rxnt.png",
-  // "/images/techlogo/wrshealth.png",
   "/images/techlogo/Epic.png",
   "/images/techlogo/kareo.png",
   "/images/techlogo/eclinicalworks.png",
@@ -760,7 +797,6 @@ export const rcmlogos = [
   "/images/techlogo/Cerner.png",
   "/images/techlogo/Practicefusion.png",
   "/images/techlogo/AdvancedMD.png",
-
 ];
 export const drcmCards = [
   {
@@ -793,7 +829,7 @@ export const drcmCards = [
       "Reminder call/text/email workflows",
       "Coordination with front-desk staff",
     ],
-    benefits: ["", "", ""],
+    benefits: [],
     image: "/images/drcm/drcm2.svg",
   },
   {
@@ -808,7 +844,7 @@ export const drcmCards = [
       "Modifier and treatment plan alignment",
       "Entry into practice management systems (Dentrix, Eaglesoft, Open Dental, etc.)",
     ],
-    benefits: ["", "", ""],
+    benefits: [],
     image: "/images/drcm/drcm3.svg",
   },
   {
@@ -822,7 +858,7 @@ export const drcmCards = [
       "Creation of NEA numbers for supporting documentation",
       "Attachments and narratives handled per payer requirements",
     ],
-    benefits: ["", ""],
+    benefits: [],
     image: "/images/drcm/drcm4.svg",
   },
   {
@@ -836,7 +872,7 @@ export const drcmCards = [
       "Posting primary and secondary claims",
       "Handling adjustments, partial payments, and co-pays",
     ],
-    benefits: ["", ""],
+    benefits: [],
     image: "/images/drcm/drcm5.svg",
   },
   {
@@ -851,7 +887,7 @@ export const drcmCards = [
       "Timely filing issues or missing attachments",
       "Appeal creation and submission with supporting documentation",
     ],
-    benefits: ["", "", ""],
+    benefits: [],
     image: "/images/drcm/drcm6.svg",
   },
   {
@@ -865,7 +901,7 @@ export const drcmCards = [
       "Customized follow-up scripts and cadence",
       "Coordination with patients for balance clarification and resolution",
     ],
-    benefits: ["", "", ""],
+    benefits: [],
     image: "/images/drcm/drcm7.svg",
   },
   {
@@ -880,7 +916,7 @@ export const drcmCards = [
       "AHT (Average Handling Time) & TAT metrics",
       "Custom reports for doctors and practice owners",
     ],
-    benefits: ["", "", ""],
+    benefits: [],
     image: "/images/drcm/drcm8.svg",
   },
   {
@@ -895,7 +931,7 @@ export const drcmCards = [
       "Coordination with DDS for supporting records",
       "Patient communication regarding coverage and balances",
     ],
-    benefits: ["", ""],
+    benefits: [],
     image: "/images/drcm/drcm9.svg",
   },
   {
@@ -912,7 +948,7 @@ export const drcmCards = [
       "Trained teams on all major dental PMS platforms",
       "Transparent communication and regular reporting",
     ],
-    benefits: ["", ""],
+    benefits: [],
     image: "/images/drcm/drcm10.svg",
   },
 ];
@@ -925,7 +961,7 @@ export const riskCards = [
     description2: "",
     subheading2: "",
     subheading1: "",
-    services: ["", "", ""],
+    services: [],
 
     image: "/images/risk/riskrcm1.svg",
   },
@@ -1044,21 +1080,67 @@ export const riskfeatures = [
 ];
 export const cdiCards = [
   {
-    title: "CDI Services",
-    description1:
-      "Improve provider documentation and ensure complete diagnosis capture with our CDI services. We conduct retrospective and concurrent reviews to:",
-    description2:
-      "Our CDI experts work hand-in-hand with coding and QA teams, delivering actionable insights that improve both compliance and revenue outcomes.",
+    title: "Concurrent CDI Review",
+    description1:"",
+    description2:"",
     subheading1: "",
     services: [
-      "Identify documentation gaps",
-      "Send compliant provider queries",
-      "Enhance audit readiness and RAF performance",
-      "Maintain audit trails for RADV and internal QA validation",
+      "Real-time review of documentation during care delivery",
+      "Identification of missed clinical details and clarification opportunities",
+      "Immediate feedback to providers to improve accuracy before claim submission",
     ],
-
     image: "/images/cdi/cdi1.svg",
   },
+   {
+    title: "Retrospective CDI Audits",
+    description1:"",
+    description2:"",
+    subheading1: "",
+    services: [
+     "Thorough analysis of completed medical records",
+     "Detection of documentation gaps, inconsistent or vague entries",
+     "Recommendations for query interventions and clinician education",
+    ],
+    image: "/images/cdi/cdi2.svg",
+  },
+     {
+    title: "Provider Query Management",
+    description1:"",
+    description2:"",
+    subheading1: "",
+    services: [
+      "Structured clinical clarification queries based on industry-accepted standards",
+      "Evidence-based communication to clarify diagnoses, clinical indicators, and care complexity",
+      "Support for physicians in responding with compliant and precise documentation",
+    ],
+    image: "/images/cdi/cdi3.svg",
+  },
+     {
+    title: "Documentation Gap Identification",
+    description1:"",
+    description2:"",
+    subheading1: "",
+    services: [
+    "Detect missing clinical specificity required for accurate coding and billing",
+    "Collaborate with care teams to capture essential information for complete patient records",
+    "Improve coding yield and reduce risk of under-payment or denials"
+    ],
+    image: "/images/cdi/cdi4.svg",
+  },
+     {
+    title: "Education & Feedback",
+    description1:"",
+    description2:"",
+    subheading1: "",
+    services: [
+      "Ongoing education for providers and care teams on documentation best practices",
+      "Sharing of insights on common documentation challenges",
+      "Customized training to align with evolving regulatory and coding guidelines",
+    ],
+    image: "/images/cdi/cdi5.svg",
+  },
+
+
 ];
 // data/hedisServices.js
 
@@ -1193,7 +1275,7 @@ export const PeopleCards = [
     title: "Recruitment",
     description1:
       "ProHealth adopts meticulous process aimed at attracting individuals who are not only skilled but also passionate about healthcare and coding. Our recruitment process includes rigorous assessments to ensure that candidates are a good fit for our dynamic and ever-evolving industry.",
-    services: ["", "", "", ""],
+    services: [, ""],
     image: "/images/people/people1.svg",
   },
   {
@@ -1210,7 +1292,7 @@ export const PeopleCards = [
     title: "Certifications",
     description1:
       "We encourage our staff to obtain certifications from esteemed bodies like AAPC and AHIMA. Maintaining these certifications requires our staff to continuous education, ensuring that they stay abreast of the latest industry development and standards.",
-    services: ["", ""],
+    services: [],
     image: "/images/people/people3.svg",
   },
   {

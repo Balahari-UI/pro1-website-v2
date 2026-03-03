@@ -13,7 +13,7 @@ export default function ContactUspage() {
       />
 
       {/* Global Presence Section */}
-      <section className="w-[90%] mx-auto px-6 py-20">
+      <section className="w-[90%] mx-auto px-6 pb-10">
         <h2 className="text-4xl font-semibold text-center mb-14">
           Global Presence
         </h2>
@@ -42,7 +42,9 @@ export default function ContactUspage() {
                   {location.country}
                 </h3>
 
-                <p className="mb-2  font-[14px] text-gray-400">{location.company}</p>
+                <p className="mb-2  font-[14px] text-gray-400">
+                  {location.company}
+                </p>
 
                 {location.address.map((line, index) => (
                   <p key={index} className="text-cetacean-blue ">
@@ -79,7 +81,9 @@ export default function ContactUspage() {
                     {location.country}
                   </h3>
 
-                  <p className="mb-2 font-[14px] text-gray-400">{location.company}</p>
+                  <p className="mb-2 font-[14px] text-gray-400">
+                    {location.company}
+                  </p>
 
                   {location.address.map((line, index) => (
                     <p key={index} className="text-cetacean-blue ">
