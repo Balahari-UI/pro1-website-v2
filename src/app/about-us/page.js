@@ -52,44 +52,51 @@ export default function AboutUsPage() {
           {aboutcards.map((card, index) => (
             <section
               key={index}
-              className={`w-[90%] mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
-                      ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
+              className={`w-[90%] mx-auto
+        bg-white border border-[#E6E6E6]
+        rounded-2xl
+        p-6 md:p-10
+        flex flex-col lg:flex-row
+        items-center gap-12
+        transition-all duration-300
+        ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
             >
               {/* TEXT SIDE */}
-              <div className="  flex-3">
-                <h2 className="text-[40px] font-bold mb-5 text-cetacean-blue">
+              <div className="w-full lg:w-[65%] text-cetacean-blue">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-tight">
                   {card.title}
                 </h2>
 
-                <p className="text-gray-600 mb-2 text-base">
+                <p className="text-lg leading-[1.7] mb-8">
                   {card.description1}
                 </p>
 
-                <p className="text-gray-600 mb-2 text-base">
+                <p className="text-lg leading-[1.7] mb-8">
                   {card.description2}
                 </p>
 
                 <div className="grid grid-cols-1 gap-8">
                   {/* SERVICES */}
                   <div>
-                    <h3 className="font-semibold text-2xl  mb-3">
+                    <h3 className="text-xl font-semibold mb-4">
                       {card.subheading1}
                     </h3>
 
-                    <ul className="space-y-2">
+                    <ul className="space-y-4">
                       {card.services.map((item, i) =>
                         item ? (
                           <li
                             key={i}
-                            className="flex gap-2 items-start text-cetacean-blue "
+                            className="flex items-start gap-3 text-[16px] leading-[1.6]"
                           >
                             <Image
                               src="/images/rcm/services-tick.svg"
                               alt="rcm"
                               width={30}
-                              height={0}
-                            />{" "}
-                            {item}
+                              height={30}
+                              className="h-10"
+                            />
+                            <span className="mt-2">{item}</span>
                           </li>
                         ) : null,
                       )}
@@ -105,13 +112,13 @@ export default function AboutUsPage() {
               </div>
 
               {/* IMAGE SIDE */}
-              <div className="flex-1 w-full hidden lg:block">
-                <div className="relative w-full h-[250px] sm:h-[320px] md:h-[380px] lg:h-[300px]">
+              <div className="w-full lg:w-[35%] hidden lg:block">
+                <div className="relative w-full h-[380px]">
                   <Image
                     src={card.image}
                     alt={card.title}
                     fill
-                    className="object-cover"
+                    className="object-contain rounded-2xl"
                   />
                 </div>
               </div>
@@ -166,9 +173,8 @@ export default function AboutUsPage() {
                 </div>
 
                 <p className="text-base text-cetacean-blue leading-relaxed">
-                  We uphold mutual respect, transparency,
-                  compliance, aligned with our core values of fulfilment,
-                  ingenuity, and teamwork.
+                  We uphold mutual respect, transparency, compliance, aligned
+                  with our core values of fulfilment, ingenuity, and teamwork.
                 </p>
               </div>
             </div>
@@ -262,18 +268,15 @@ export default function AboutUsPage() {
                 </div>
 
                 <p className="text-base text-cetacean-blue leading-relaxed">
-                  We partner with our clients as an extension of their operations.
-                  Whether it is improving RAF accuracy, strengthening
-                  documentation, supporting audits, optimizing revenue cycles,
-                  our focus remains on measurable outcomes.
+                  We partner with our clients as an extension of their
+                  operations. Whether it is improving RAF accuracy,
+                  strengthening documentation, supporting audits, optimizing
+                  revenue cycles, our focus remains on measurable outcomes.
                 </p>
               </div>
             </div>
           </div>
         </div>
-
-
-
       </section>
 
       <section className="py-10">
@@ -286,9 +289,9 @@ export default function AboutUsPage() {
               </h2> */}
 
               <p className="text-lg leading-relaxed">
-                At Pro1 Health, we don’t just deliver services—we build reliable, compliant, and scalable healthcare solutions that enable our clients to focus on what matters most: patient care.
-
-
+                At Pro1 Health, we don’t just deliver services—we build
+                reliable, compliant, and scalable healthcare solutions that
+                enable our clients to focus on what matters most: patient care.
               </p>
             </div>
 
@@ -319,7 +322,7 @@ export default function AboutUsPage() {
               />
             </div> */}
 
-      {/* 
+      {/*
             <div className="text-cetacean-blue md:order-2 order-1">
               <h2 className="text-3xl md:text-[40px] font-semibold mb-4">
                 Our Commitment

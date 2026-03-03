@@ -73,8 +73,8 @@ export default function HomePage() {
 
       <section
         className="lg:h-[90vh] min-h-[400px] h-[40vh]"
-      // onMouseEnter={() => setHeroPaused(true)}
-      // onMouseLeave={() => setHeroPaused(false)}
+        // onMouseEnter={() => setHeroPaused(true)}
+        // onMouseLeave={() => setHeroPaused(false)}
       >
         <div className="mx-auto h-full w-[90%]">
           <div className="flex h-full items-center gap-4 lg:gap-8">
@@ -245,7 +245,7 @@ ${isFading ? "opacity-0" : "opacity-100"}`}
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             {/* Left Content */}
             <div className="lg:col-span-6">
-              <h2 className="text-4xl font-semibold leading-tight text-cetacean-blue sm:text-5xl lg:text-[56px]">
+              <h2 className="text-4xl font-medium leading-tight text-cetacean-blue sm:text-5xl lg:text-[56px]">
                 Core <br /> Competency
               </h2>
 
@@ -349,10 +349,11 @@ ${isFading ? "opacity-0" : "opacity-100"}`}
                   {partnerCards.map((card, index) => (
                     <div
                       key={index}
-                      className={`absolute inset-0 transition-opacity duration-500 ${index === activePartner
-                        ? "opacity-100 z-10"
-                        : "opacity-0 z-0"
-                        }`}
+                      className={`absolute inset-0 transition-opacity duration-500 ${
+                        index === activePartner
+                          ? "opacity-100 z-10"
+                          : "opacity-0 z-0"
+                      }`}
                     >
                       <Image
                         src={card.image}
@@ -443,6 +444,6 @@ ${isFading ? "opacity-0" : "opacity-100"}`}
           </div>
         </div>
       </section>
-    </main >
+    </main>
   );
 }

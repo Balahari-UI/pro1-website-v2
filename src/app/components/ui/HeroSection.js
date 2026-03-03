@@ -79,7 +79,7 @@ export default function HeroSection({
               {title}
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-gray-600 leading-[1.7]">
+            <p className="mt-6 text-base sm:text-lg lg:text-xl text-[#7e7e7e] leading-[1.7]">
               {description}
             </p>
 
