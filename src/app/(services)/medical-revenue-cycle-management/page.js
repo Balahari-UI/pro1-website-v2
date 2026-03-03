@@ -209,9 +209,9 @@ export default function RevenueCycle() {
       {/* billing process */}
       <section className="mb-10">
         <div className="w-[90%] mx-auto">
-          <div className="bg-[#F0F0F0] text-sm max-w-3xl mx-auto rounded-lg p-2 mb-10">
+          <div className="bg-[#F0F0F0] text-lg  max-w-6xl mx-auto rounded-lg px-7 py-2 mb-10">
             <p>
-              <span className="font-semibold ">
+              <span className="font-semibold text-lg">
                 Let us become your trusted RCM partner :
               </span>
               At Pro1 Health, we don’t just process claims — we optimize your
