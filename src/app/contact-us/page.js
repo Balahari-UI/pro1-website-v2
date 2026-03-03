@@ -101,16 +101,17 @@ export default function ContactUspage() {
 
       {/* Get in Touch Section */}
       <section className="bg-light py-20">
-        <div className="mx-auto px-6 lg:px-20 max-w-7xl">
+        <div className="mx-auto w-[90%]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
             <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center">
               <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold mb-4">
                 Get in Touch
               </h1>
               <p className="text-base mb-2">
-                Whether you’re interested in easing your administrative burdens,
+                Whether you’re interested in easing your administrative burdens
                 or looking for innovative analytics solutions to improve your
-                bottom line, PRO1 Health can help.
+                bottom line, <strong>PRO1 Health</strong> can help. Reach out to
+                our team today — we’d love to hear from you.
               </p>
             </div>
 
@@ -123,5 +124,3 @@ export default function ContactUspage() {
     </div>
   );
 }
-
-
