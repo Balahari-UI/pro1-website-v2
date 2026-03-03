@@ -1302,3 +1302,80 @@ export const techcards = [
     image: "/images/technology/technology5.svg",
   },
 ];
+export const globalPresence = [
+  {
+    id: 1,
+    country: "United States",
+    company: "Pro1 Health Inc",
+    address: [
+      "9442 North Capital of Texas Hwy",
+      "Plaza One, Suite 500",
+      "Austin, TX 78759",
+    ],
+    images: ["/images/contact-us/PRO1_Logo_Digital_PNG_wt.png"], // single image
+  },
+  {
+    id: 2,
+    country: "India - Chennai (Head Office)",
+    company: "Pro1 Health Systems Pvt Ltd",
+    address: [
+      "Tek Meadows, Tower B, 4th Floor",
+      "51, Rajiv Gandhi Salai, OMR",
+      "Sholinganallur, Chennai 600119",
+    ],
+    images: [
+      "/images/contact-us/chennai.jpg",
+      "/images/contact-us/chennai2.png",
+      "/images/contact-us/chennai3.png",
+    ], // carousel
+  },
+  {
+    id: 3,
+    country: "India - Tirunelveli",
+    company: "Branch Office",
+    address: [
+      "Tiliconveli Tech Park",
+      "22, Teachers Colony, Meetper Nagar",
+      "Trivandrum Rd, Tirunelveli, TN 627007",
+    ],
+    images: [
+      "/images/contact-us/tirunelveli.jpg",
+      "/images/contact-us/tirunelveli.jpg",
+      "/images/contact-us/tirunelveli.jpg",
+    ],
+  },
+];
+export const globalPresence1 = [
+  {
+    id: 1,
+    country: "India -Thanjavur",
+    company: "Branch Office",
+    address: [
+      "TIDEL Neo IT Park",
+      "199/2A1A & 199/2B1, Melavasthachavady",
+      "Thanjavur, TN 613005",
+    ],
+    images: [
+      "/images/contact-us/thanjavur.jpg",
+      "/images/contact-us/thanjavur1.jpg",
+      "/images/contact-us/thanjavur2.jpg",
+      "/images/contact-us/thanjavur3.jpg",
+    ],
+  },
+  {
+    id: 2,
+    country: "India - Thoothukudi",
+    company: "Branch Office",
+    address: [
+      "TIDEL Neo IT Park",
+      "Tuticorin Beach Road Salt Pans",
+      "Thoothukudi, TN 628002",
+    ],
+    images: [
+      "/images/contact-us/thoothukudi.jpg",
+      "/images/contact-us/thoothukudi1.jpg",
+      "/images/contact-us/thoothukudi2.jpg",
+      "/images/contact-us/thoothukudi3.jpg",
+    ],
+  },
+];
