@@ -17,14 +17,17 @@ export default function PeoplePage() {
           {PeopleCards.map((card, index) => (
             <section
               key={index}
-              className={`w-[90%] mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
-                                      ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
+              className={` w-[90%] mx-auto bg-white border border-[#E6E6E6] rounded-2xl p-6 md:p-10 flex flex-col lg:flex-row items-center gap-12  transition-all duration-300 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""} `}
             >
               {/* TEXT SIDE */}
-              <div className="  flex-3">
-                <h2 className="text-3xl font-bold mb-5">{card.title}</h2>
+              <div className="w-full lg:w-[65%] text-cetacean-blue">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-tight">
+                  {card.title}
+                </h2>
 
-                <p className="text-gray-600 mb-2">{card.description1}</p>
+                <p className="text-lg font-normal leading-[1.7]  mb-4">
+                  {card.description1}
+                </p>
 
                 <div className="grid grid-cols-1 gap-8">
                   {/* SERVICES */}
@@ -32,14 +35,18 @@ export default function PeoplePage() {
                     <ul className="space-y-2">
                       {card.services.map((item, i) =>
                         item ? (
-                          <li key={i} className="flex gap-2 items-start ">
+                          <li
+                            key={i}
+                            className="flex items-start gap-3 text-[16px] font-normal leading-[1.6]"
+                          >
                             <Image
                               src="/images/rcm/services-tick.svg"
                               alt="rcm"
                               width={30}
-                              height={0}
-                            />{" "}
-                            {item}
+                              height={30}
+                              className="h-10"
+                            />
+                            <span className="mt-2">{item}</span>
                           </li>
                         ) : null,
                       )}
@@ -49,7 +56,7 @@ export default function PeoplePage() {
               </div>
 
               {/* IMAGE SIDE */}
-              <div className="flex-1 w-full hidden lg:block">
+              <div className="w-full lg:w-[35%] hidden lg:block">
                 <div className="relative w-full h-[250px] sm:h-[320px] md:h-[380px] lg:h-[300px]">
                   <Image
                     src={card.image}

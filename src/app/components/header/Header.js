@@ -88,7 +88,10 @@ export default function Header() {
             />
           </Link>
 
-          <div className="hidden nav:flex nav:items-center nav:gap-2 lg:gap-3"  onMouseLeave={() => setOpenDesktopSubmenu(null)}>
+          <div
+            className="hidden nav:flex nav:items-center nav:gap-2 lg:gap-3"
+            onMouseLeave={() => setOpenDesktopSubmenu(null)}
+          >
             <ul className="flex items-center gap-1 lg:gap-2">
               {desktopMenu.map((item) => {
                 const isActive =
@@ -98,9 +101,9 @@ export default function Header() {
                   <li
                     key={item.name}
                     className="relative"
-                     onMouseEnter={() => {
-    if (item.sub) setOpenDesktopSubmenu(item.name);
-  }}
+                    onMouseEnter={() => {
+                      if (item.sub) setOpenDesktopSubmenu(item.name);
+                    }}
                     // onMouseEnter={() =>
                     //   item.sub ? setOpenDesktopSubmenu(item.name) : null
                     // }
@@ -128,9 +131,9 @@ export default function Header() {
                         </button>
                         <ul
                           className={[
-                            "absolute left-0 top-full mt-[-8px] z-50 min-w-[100px] rounded-[12px] bg-white border border-gray-200 pb-5 shadow-xl transition",
+                            "absolute left-0 top-full mt-[-8px] z-50 min-w-[100px] rounded-[12px] bg-white border border-gray-200 pb-5 shadow-xl transitio ",
                             item.name === "Services"
-                              ? "w-[350px]"
+                              ? "w-[370px]"
                               : "w-[220px]",
                             openDesktopSubmenu === item.name
                               ? "visible opacity-100 translate-y-2"
@@ -138,20 +141,20 @@ export default function Header() {
                           ].join(" ")}
                         >
                           <div className="py-3">
-                          {item.sub.map((subItem) => (
-                            <li key={subItem.name} className="px-3">
-                              <Link
-                                href={subItem.path}
-                                className={`group relative block rounded-lg px-4 py-3 text-[16px] transition after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[1px] after:origin-left after:bg-primary after:transition-transform after:duration-300 ${
-                                  pathname === subItem.path
-                                    ? "bg-primary text-white  after:scale-x-0"
-                                    : "text-[#272727] after:scale-x-100"
-                                }`}
-                              >
-                                {subItem.name}
-                              </Link>
-                            </li>
-                          ))}
+                            {item.sub.map((subItem) => (
+                              <li key={subItem.name} className="px-3">
+                                <Link
+                                  href={subItem.path}
+                                  className={`group relative block rounded-lg px-4 py-3 text-[16px] transition after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[1px] after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:bg-primary hover:text-white mt-2 ${
+                                    pathname === subItem.path
+                                      ? "bg-primary text-white after:scale-x-0"
+                                      : "text-[#272727] after:scale-x-100"
+                                  }`}
+                                >
+                                  {subItem.name}
+                                </Link>
+                              </li>
+                            ))}
                           </div>
                         </ul>
                       </>
