@@ -3,5 +3,17 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": [
+
+    "node_modules",
+
+    ".next",
+
+    "dist",
+
+    "build"
+
+  ]
+ 
 }

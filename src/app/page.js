@@ -7,6 +7,7 @@ import { coreCompetencies, partnerCards, stats, tabs } from "./data/home";
 import Tabs from "./components/ui/Tabs";
 import AnimatedCounter from "./components/ui/AnimatedCounter";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { GoShieldCheck } from "react-icons/go";
 
 import {
   FiBookOpen,
@@ -44,7 +45,7 @@ export default function HomePage() {
   const iconMap = {
     book: FiBookOpen,
     award: FiAward,
-    shield: FiShield,
+    shield: GoShieldCheck ,
     chart: FiBarChart2,
     dollar: FiDollarSign,
     file: FiFileText,
@@ -63,8 +64,8 @@ export default function HomePage() {
       {/* Section1 */}
       <section
         className="lg:h-[90vh] min-h-[400px] h-[40vh]"
-        onMouseEnter={() => setHeroPaused(true)}
-        onMouseLeave={() => setHeroPaused(false)}
+        // onMouseEnter={() => setHeroPaused(true)}
+        // onMouseLeave={() => setHeroPaused(false)}
       >
         <div className="mx-auto h-full w-[90%]">
           <div className="flex h-full items-center gap-4 lg:gap-8">
