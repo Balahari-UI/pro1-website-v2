@@ -1,3 +1,4 @@
+import ContactForm from "@/app/components/ContactForm";
 import HeroSection from "@/app/components/ui/HeroSection";
 import { hedisCards, hedisServices } from "@/app/data/home";
 import Image from "next/image";
@@ -134,6 +135,29 @@ export default function HedisAbstractionPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+        {/* form */}
+        <section className="bg-light py-12">
+          <div className="mx-auto px-20 lg:px-40">
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
+              <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
+                <h6 className="text-base font-medium tracking-wide  ">
+                  CONNECT WITH US
+                </h6>
+                <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
+                  Boost quality scores,Ensure HEDIS compliance
+                </h1>
+                <p className="text-base mt-4 max-w-2xl">
+                  Rely on our expert abstractors for accurate, timely, and
+                  compliant HEDIS reporting.
+                </p>
+              </div>
+
+              <div className="rounded-[28px] e">
+                <ContactForm formName="Service request from HEDIS Abstraction" />
+              </div>
+            </div>
           </div>
         </section>
       </div>

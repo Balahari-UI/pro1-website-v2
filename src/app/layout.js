@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import TopButton from "./components/ui/TopButton";
+import QueryProvider from "./components/queryProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,12 +18,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning={true}>
       <body className="antialiased" suppressHydrationWarning={true}>
-        <Header />
-        <TopButton />
-        {/* <QueryProvider>{children}</QueryProvider> */}
-        {children}
+        <QueryProvider>
+          <Header />
+          <TopButton />
+          {children}
 
-        <Footer />
+          {/* {children} */}
+
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );

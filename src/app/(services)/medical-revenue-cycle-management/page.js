@@ -1,3 +1,4 @@
+import ContactForm from "@/app/components/ContactForm";
 import Carouselrun from "@/app/components/ui/Carouselrun";
 import HeroSection from "@/app/components/ui/HeroSection";
 import { rcmbillingCards, rcmCards, rcmlogos } from "@/app/data/home";
@@ -285,6 +286,29 @@ export default function RevenueCycle() {
             gap="gap-16"
             imageHeight="h-12"
           />
+        </div>
+      </section>
+      {/* form */}
+      <section className="bg-light py-12">
+        <div className="mx-auto px-20 lg:px-40">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
+            <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
+              <h6 className="text-base font-medium tracking-wide ">
+                CONNECT WITH US
+              </h6>
+              <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
+                Streamline operations, Accelerate collections
+              </h1>
+              <p className="text-base mt-4 max-w-2xl ">
+                EPartner with us for end-to-end RCM solutions that improve cash
+                flow and let you focus on patient care.
+              </p>
+            </div>
+
+            <div className="rounded-[28px] lg:w-1/2  w-full border border-white/40 bg-white p-5 shadow-[0_24px_80px_rgba(41,23,84,0.18)] sm:p-8">
+              <ContactForm formName="Service request from Medical RCM" />
+            </div>
+          </div>
         </div>
       </section>
     </div>

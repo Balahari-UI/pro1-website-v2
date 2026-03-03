@@ -88,7 +88,7 @@ export default function Header() {
             />
           </Link>
 
-          <div className="hidden nav:flex nav:items-center nav:gap-2 lg:gap-3">
+          <div className="hidden nav:flex nav:items-center nav:gap-2 lg:gap-3"  onMouseLeave={() => setOpenDesktopSubmenu(null)}>
             <ul className="flex items-center gap-1 lg:gap-2">
               {desktopMenu.map((item) => {
                 const isActive =
@@ -98,12 +98,15 @@ export default function Header() {
                   <li
                     key={item.name}
                     className="relative"
-                    onMouseEnter={() =>
-                      item.sub ? setOpenDesktopSubmenu(item.name) : null
-                    }
-                    onMouseLeave={() =>
-                      item.sub ? setOpenDesktopSubmenu(null) : null
-                    }
+                     onMouseEnter={() => {
+    if (item.sub) setOpenDesktopSubmenu(item.name);
+  }}
+                    // onMouseEnter={() =>
+                    //   item.sub ? setOpenDesktopSubmenu(item.name) : null
+                    // }
+                    // onMouseLeave={() =>
+                    //   item.sub ? setOpenDesktopSubmenu(null) : null
+                    // }
                   >
                     {item.sub ? (
                       <>
@@ -125,22 +128,23 @@ export default function Header() {
                         </button>
                         <ul
                           className={[
-                            "absolute left-0 top-full z-50 min-w-[100px] rounded-[12px] bg-white border border-gray-200 pb-5 shadow-xl transition",
+                            "absolute left-0 top-full mt-[-8px] z-50 min-w-[100px] rounded-[12px] bg-white border border-gray-200 pb-5 shadow-xl transition",
                             item.name === "Services"
-                              ? "w-[320px]"
+                              ? "w-[350px]"
                               : "w-[220px]",
                             openDesktopSubmenu === item.name
-                              ? "visible opacity-100"
-                              : "invisible opacity-0",
+                              ? "visible opacity-100 translate-y-2"
+                              : "invisible opacity-0 translate-y-0",
                           ].join(" ")}
                         >
+                          <div className="py-3">
                           {item.sub.map((subItem) => (
-                            <li key={subItem.name}>
+                            <li key={subItem.name} className="px-3">
                               <Link
                                 href={subItem.path}
-                                className={`group relative block px-5 py-3 text-[16px] transition after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[1px] after:origin-left after:bg-primary after:transition-transform after:duration-300 ${
+                                className={`group relative block rounded-lg px-4 py-3 text-[16px] transition after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[1px] after:origin-left after:bg-primary after:transition-transform after:duration-300 ${
                                   pathname === subItem.path
-                                    ? "bg-primary text-white after:scale-x-0"
+                                    ? "bg-primary text-white  after:scale-x-0"
                                     : "text-[#272727] after:scale-x-100"
                                 }`}
                               >
@@ -148,6 +152,7 @@ export default function Header() {
                               </Link>
                             </li>
                           ))}
+                          </div>
                         </ul>
                       </>
                     ) : (
