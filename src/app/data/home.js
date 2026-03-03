@@ -1131,6 +1131,45 @@ export const radvCards = [
   },
 ];
 
+export const aboutusstats = [
+  { value: 95, suffix: "%", label: "Coding Accuracy" },
+  { value: 30, suffix: "%", label: "Reduction in Denials" },
+  { value: 25, suffix: "%", label: "Faster Claims Processing" },
+];
+
+export const aboutcards = [
+  {
+    title: "Our Expertise",
+    description1:
+      "At Pro1 Health, we combine deep domain expertise with robust operational governance. Our leadership team brings decades of hands-on experience in Medicare, Medicaid, and Commercial risk adjustment models, enabling us to support both retrospective and prospective workflows, including concurrent reviews and audit readiness programs.",
+    description2: "",
+    subheading1: "We operate with a quality-first mindset, supported by",
+    subheading2: "",
+    services: [
+      "Structured training and certification programs",
+      "Multi-layered quality audits",
+      "Real-time performance tracking through our internal productivity and quality monitoring tool",
+      "Continuous improvement driven by data, analytics, and client feedback",
+    ],
+    image: "/images/about-us/aboutus1.svg",
+  },
+  {
+    title: "Compliance & Security",
+    description1:
+      "We understand that compliance and data protection are non-negotiable in healthcare. Pro1 Health follows globally recognized standards to ensure secure and compliant operations.",
+    description2: "",
+    subheading1: "Certifications & Standards",
+    subheading2: "",
+    services: [
+      "SOC 2 Compliant",
+      "HIPAA Compliant",
+      "ISO Certified",
+      "HITRUST Certified - e1",
+    ],
+    image: "/images/about-us/aboutus2.svg",
+  },
+];
+
 // capabilities
 export const PeopleCards = [
   {
