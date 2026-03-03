@@ -330,20 +330,20 @@ export default function ContactForm({
   };
 
   /* ---------------------- Infinite Query ---------------------- */
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useInfiniteQuery({
-      queryKey: ["states", debouncedSearch],
-      queryFn: async ({ pageParam = 1 }) => {
-        const res = await fetch(
-          `/api/states?page=${pageParam}&limit=${limit}&search=${debouncedSearch || ""}`,
-        );
-        return res.json();
-      },
-      getNextPageParam: (lastPage, allPages) => {
-        const loaded = allPages.flatMap((p) => p.states).length;
-        return loaded < lastPage.total ? allPages.length + 1 : undefined;
-      },
-    });
+  // const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+  //   useInfiniteQuery({
+  //     queryKey: ["states", debouncedSearch],
+  //     queryFn: async ({ pageParam = 1 }) => {
+  //       const res = await fetch(
+  //         `/api/states?page=${pageParam}&limit=${limit}&search=${debouncedSearch || ""}`,
+  //       );
+  //       return res.json();
+  //     },
+  //     getNextPageParam: (lastPage, allPages) => {
+  //       const loaded = allPages.flatMap((p) => p.states).length;
+  //       return loaded < lastPage.total ? allPages.length + 1 : undefined;
+  //     },
+  //   });
 
   const states = data ? data.pages.flatMap((p) => p.states) : [];
 

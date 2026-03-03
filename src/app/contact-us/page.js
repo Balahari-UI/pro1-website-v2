@@ -18,12 +18,13 @@ export default function ContactUspage() {
           Global Presence
         </h2>
 
-        {/* First Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {globalPresence.map((location) => (
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
+          {globalPresence.map((location, index) => (
             <div
               key={location.id}
-              className="bg-white rounded-md shadow-lg overflow-hidden"
+              className={`bg-white rounded-md shadow-lg overflow-hidden
+        ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}
             >
               <div className="h-56 relative flex justify-center items-center">
                 {location.images.length > 1 ? (
@@ -42,12 +43,12 @@ export default function ContactUspage() {
                   {location.country}
                 </h3>
 
-                <p className="mb-2  font-[14px] text-gray-400">
+                <p className="mb-2 text-sm text-gray-400">
                   {location.company}
                 </p>
 
-                {location.address.map((line, index) => (
-                  <p key={index} className="text-cetacean-blue ">
+                {location.address.map((line, i) => (
+                  <p key={i} className="text-cetacean-blue">
                     {line}
                   </p>
                 ))}
@@ -57,12 +58,12 @@ export default function ContactUspage() {
         </div>
 
         {/* Second Grid */}
-        <div className="my-16 flex justify-center items-center">
+        {/* <div className="my-16 flex justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl">
             {globalPresence1.map((location) => (
               <div
                 key={location.id}
-                className="bg-white rounded-md shadow-lg overflow-hidden"
+                className="col-12 col-md-6 col-lg-3 bg-white rounded-md shadow-lg overflow-hidden"
               >
                 <div className="h-56 relative flex justify-center items-center">
                   {location.images.length > 1 ? (
@@ -94,7 +95,7 @@ export default function ContactUspage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Get in Touch Section */}

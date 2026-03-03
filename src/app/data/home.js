@@ -442,12 +442,12 @@ export const whomWeServeCapabilitiesData = {
         title: "",
         text: "Reduced denials and documentation-related delays",
       },
-       {
+      {
         icon: "/images/whom-we-serve/capabilites.svg",
         title: "",
         text: "Improved revenue capture and reduced audit exposure",
       },
-       {
+      {
         icon: "/images/whom-we-serve/capabilites.svg",
         title: "",
         text: "Enhanced collaboration between clinical and coding teams",
@@ -553,15 +553,15 @@ export const whomWeServeApproachData = {
       },
       {
         title: "Collaborative Query Interventions",
-        text:"Use evidence-based query methodologies to clarify physician documentation and capture the full clinical picture.",
+        text: "Use evidence-based query methodologies to clarify physician documentation and capture the full clinical picture.",
       },
       {
         title: "Provider Engagement & Education",
-        text:"Continuous coaching and feedback loops with clinical teams to sustain high-quality documentation practices.",
+        text: "Continuous coaching and feedback loops with clinical teams to sustain high-quality documentation practices.",
       },
       {
         title: "Reporting & Quality Analytics",
-        text:"Deliver actionable insights that reveal documentation trends, performance gaps, and improvement opportunities.",
+        text: "Deliver actionable insights that reveal documentation trends, performance gaps, and improvement opportunities.",
       },
     ],
   },
@@ -1081,8 +1081,8 @@ export const riskfeatures = [
 export const cdiCards = [
   {
     title: "Concurrent CDI Review",
-    description1:"",
-    description2:"",
+    description1: "",
+    description2: "",
     subheading1: "",
     services: [
       "Real-time review of documentation during care delivery",
@@ -1091,22 +1091,22 @@ export const cdiCards = [
     ],
     image: "/images/cdi/cdi1.svg",
   },
-   {
+  {
     title: "Retrospective CDI Audits",
-    description1:"",
-    description2:"",
+    description1: "",
+    description2: "",
     subheading1: "",
     services: [
-     "Thorough analysis of completed medical records",
-     "Detection of documentation gaps, inconsistent or vague entries",
-     "Recommendations for query interventions and clinician education",
+      "Thorough analysis of completed medical records",
+      "Detection of documentation gaps, inconsistent or vague entries",
+      "Recommendations for query interventions and clinician education",
     ],
     image: "/images/cdi/cdi2.svg",
   },
-     {
+  {
     title: "Provider Query Management",
-    description1:"",
-    description2:"",
+    description1: "",
+    description2: "",
     subheading1: "",
     services: [
       "Structured clinical clarification queries based on industry-accepted standards",
@@ -1115,22 +1115,22 @@ export const cdiCards = [
     ],
     image: "/images/cdi/cdi3.svg",
   },
-     {
+  {
     title: "Documentation Gap Identification",
-    description1:"",
-    description2:"",
+    description1: "",
+    description2: "",
     subheading1: "",
     services: [
-    "Detect missing clinical specificity required for accurate coding and billing",
-    "Collaborate with care teams to capture essential information for complete patient records",
-    "Improve coding yield and reduce risk of under-payment or denials"
+      "Detect missing clinical specificity required for accurate coding and billing",
+      "Collaborate with care teams to capture essential information for complete patient records",
+      "Improve coding yield and reduce risk of under-payment or denials"
     ],
     image: "/images/cdi/cdi4.svg",
   },
-     {
+  {
     title: "Education & Feedback",
-    description1:"",
-    description2:"",
+    description1: "",
+    description2: "",
     subheading1: "",
     services: [
       "Ongoing education for providers and care teams on documentation best practices",
@@ -1481,11 +1481,8 @@ export const globalPresence = [
       "/images/contact-us/tirunelveli.jpg",
       "/images/contact-us/tirunelveli.jpg",
     ],
-  },
-];
-export const globalPresence1 = [
-  {
-    id: 1,
+  }, {
+    id: 4,
     country: "India -Thanjavur",
     company: "Branch Office",
     address: [
@@ -1501,7 +1498,7 @@ export const globalPresence1 = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     country: "India - Thoothukudi",
     company: "Branch Office",
     address: [
@@ -1517,5 +1514,8 @@ export const globalPresence1 = [
     ],
   },
 ];
+// export const globalPresence1 = [
+
+// ];
 
 
