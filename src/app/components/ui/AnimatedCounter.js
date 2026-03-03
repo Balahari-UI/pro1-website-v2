@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
-export default function AnimatedCounter({ value, suffix, label }) {
-  const [display, setDisplay] = useState(0);
+export default function AnimatedCounter({ value, suffix, label, fromValue }) {
+  const startValue = Number.isFinite(fromValue) ? fromValue : 0;
+  const targetValue = Number.isFinite(value) ? value : 0;
+  const [display, setDisplay] = useState(startValue);
   const [started, setStarted] = useState(false);
   const ref = useRef(null);
 
@@ -33,18 +35,18 @@ export default function AnimatedCounter({ value, suffix, label }) {
       if (!startTime) startTime = time;
       const progress = Math.min((time - startTime) / duration, 1);
       const eased = 1 - (1 - progress) ** 4;
-      setDisplay(value * eased);
+      setDisplay(startValue + (targetValue - startValue) * eased);
       if (progress < 1) frameId = requestAnimationFrame(animate);
     };
     frameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameId);
-  }, [started, value]);
+  }, [startValue, started, targetValue]);
 
   const formatted = useMemo(() => {
-    if (value >= 1000) return Math.floor(display).toLocaleString();
-    if (Number.isInteger(value)) return Math.floor(display).toString();
+    if (targetValue >= 1000) return Math.floor(display).toLocaleString();
+    if (Number.isInteger(targetValue)) return Math.floor(display).toString();
     return display.toFixed(1);
-  }, [display, value]);
+  }, [display, targetValue]);
 
   return (
     <div ref={ref} className="text-center">

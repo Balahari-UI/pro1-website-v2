@@ -69,12 +69,15 @@ export default function Header() {
     <>
       {/* <nav className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white p-3">
         <div className="mx-auto flex h-[60px] w-[95%] max- items-center justify-between"> */}
-      <nav
+      {/* <nav
         className={`fixed top-0 left-0 z-50 w-full bg-white p-3 transition-colors ${
           hasScrolled
             ? "border-b border-gray-200"
             : "border-b border-transparent"
         }`}
+      > */}
+      <nav
+        className={`fixed top-0 left-0 z-50 w-full bg-white p-3 transition-all duration-300 ${hasScrolled ? "shadow-[0_2px_10px_rgba(0,0,0,0.15)]" : "shadow-none"}`}
       >
         <div className="mx-auto flex h-[60px] w-[90%]  items-center justify-between">
           <Link href="/" className="flex items-center">
