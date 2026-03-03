@@ -124,14 +124,14 @@ export default function AboutUsPage() {
       <section className="py-10">
         <div className="w-[90%] max-w-[1400px] mx-auto">
           {/* Top Row */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Our Vision */}
             <div>
-              <h1 className="text-3xl md:text-[40px] font-semibold text-cetacean-blue text-center mb-4">
+              <h1 className="text-2xl md:text-[40px] font-semibold text-cetacean-blue text-center mb-4">
                 Our Vision
               </h1>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[110px]">
+              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[150px]">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0">
                   <Image
                     src="/images/about-us/our-vision.svg"
@@ -155,7 +155,7 @@ export default function AboutUsPage() {
                 Our Values
               </h1>
 
-              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[110px]">
+              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[150px]">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0">
                   <Image
                     src="/images/about-us/our-value.svg"
@@ -166,16 +166,37 @@ export default function AboutUsPage() {
                 </div>
 
                 <p className="text-base text-cetacean-blue leading-relaxed">
-                  At Pro1 Health, we uphold mutual respect, transparency, and
+                  We uphold mutual respect, transparency,
                   compliance, aligned with our core values of fulfilment,
                   ingenuity, and teamwork.
+                </p>
+              </div>
+            </div>
+            <div className="">
+              <h1 className="text-2xl md:text-[40px] font-semibold text-cetacean-blue text-center mb-4">
+                Our Infrastructure
+              </h1>
+
+              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[150px]">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0">
+                  <Image
+                    src="/images/about-us/ourinfa.svg"
+                    alt="Infrastructure Icon"
+                    width={60}
+                    height={60}
+                  />
+                </div>
+
+                <p className="text-base text-cetacean-blue leading-relaxed">
+                  Our systems, policies, and workforce are aligned to meet
+                  stringent US healthcare regulatory and audit requirements.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Infrastructure Row */}
-          <div className="flex justify-center mt-10">
+          {/* <div className="flex justify-center mt-10">
             <div className="w-full md:w-1/2">
               <h1 className="text-2xl md:text-[40px] font-semibold text-cetacean-blue text-center mb-4">
                 Our Infrastructure
@@ -197,8 +218,62 @@ export default function AboutUsPage() {
                 </p>
               </div>
             </div>
+          </div> */}
+          <div className="grid md:grid-cols-2 gap-8 mt-10">
+            {/* Our Team */}
+            <div>
+              <h1 className="text-2xl md:text-[40px] font-semibold text-cetacean-blue text-center mb-4">
+                Our Team
+              </h1>
+
+              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[150px]">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0">
+                  <Image
+                    src="/images/risk/rs-3.svg"
+                    alt="Vision Icon"
+                    width={60}
+                    height={60}
+                  />
+                </div>
+
+                <p className="text-base text-cetacean-blue leading-relaxed">
+                  Our strength lies in our people. Pro1 Health is powered by a
+                  highly skilled workforce of certified coders, auditors, CDI
+                  specialists, and RCM professionals, trained to deliver
+                  consistent quality at scale.
+                </p>
+              </div>
+            </div>
+
+            {/*Our Commitment */}
+            <div>
+              <h1 className="text-2xl md:text-[40px] font-semibold text-cetacean-blue text-center mb-4">
+                Our Commitment
+              </h1>
+
+              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[150px]">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0">
+                  <Image
+                    src="/images/risk/rs-2.svg"
+                    alt="Values Icon"
+                    width={60}
+                    height={60}
+                  />
+                </div>
+
+                <p className="text-base text-cetacean-blue leading-relaxed">
+                  We partner with our clients as an extension of their operations.
+                  Whether it is improving RAF accuracy, strengthening
+                  documentation, supporting audits, optimizing revenue cycles,
+                  our focus remains on measurable outcomes.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+
+
+
       </section>
 
       <section className="py-10">
@@ -206,15 +281,14 @@ export default function AboutUsPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* TEXT */}
             <div className="text-cetacean-blue">
-              <h2 className="text-3xl md:text-[40px] font-semibold mb-4">
+              {/* <h2 className="text-3xl md:text-[40px] font-semibold mb-4">
                 Our Team
-              </h2>
+              </h2> */}
 
               <p className="text-lg leading-relaxed">
-                Our strength lies in our people. Pro1 Health is powered by a
-                highly skilled workforce of certified coders, auditors, CDI
-                specialists, and RCM professionals, trained to deliver
-                consistent quality at scale.
+                At Pro1 Health, we don’t just deliver services—we build reliable, compliant, and scalable healthcare solutions that enable our clients to focus on what matters most: patient care.
+
+
               </p>
             </div>
 
@@ -231,11 +305,11 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
-      <section className="py-10">
+      {/* <section className="py-10">
         <div className="w-[90%]  mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* IMAGE (Left on Desktop) */}
-            <div className="flex justify-center md:justify-start md:order-1 order-2">
+          <div className="grid md:grid-cols-2 gap-16 items-center"> */}
+
+      {/* <div className="flex justify-center md:justify-start md:order-1 order-2">
               <Image
                 src="/images/about-us/aboutus3.svg"
                 alt="Commitment"
@@ -243,9 +317,9 @@ export default function AboutUsPage() {
                 height={400}
                 className="w-full max-w-[600px] h-auto"
               />
-            </div>
+            </div> */}
 
-            {/* TEXT */}
+      {/* 
             <div className="text-cetacean-blue md:order-2 order-1">
               <h2 className="text-3xl md:text-[40px] font-semibold mb-4">
                 Our Commitment
@@ -260,10 +334,10 @@ export default function AboutUsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Section7 */}
-      <section className=" pb-10">
+      {/* <section className=" pb-10">
         <div className="w-[90%] max-w-[1000px] mx-auto">
           <div className="mx-auto mt-10  bg-[#F0F0F0] p-5 rounded-[16px]">
             <p className="text-lg font-normal text-cetacean-blue text-left md:text-center leading-relaxed">
@@ -273,7 +347,7 @@ export default function AboutUsPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

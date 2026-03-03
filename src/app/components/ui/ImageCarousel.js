@@ -19,7 +19,7 @@ export default function ImageCarousel({
   }, [images, autoPlay, interval]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-2xl">
+    <div className="relative w-full h-full overflow-hidden">
       {/* Slides */}
       <div
         className="flex transition-transform duration-700 ease-in-out h-full"
@@ -45,9 +45,9 @@ export default function ImageCarousel({
                 prev === 0 ? images.length - 1 : prev - 1,
               )
             }
-            className={`absolute top-1/2 left-3 -translate-y-1/2       
-                 text-white text-2xl font-bold 
-                 w-10 h-10 rounded-full 
+            className={`absolute top-1/2 left-3 -translate-y-1/2
+                 text-white text-2xl font-bold
+                 w-10 h-10
                  flex items-center justify-center
                  transition duration-300`}
           >
@@ -61,9 +61,9 @@ export default function ImageCarousel({
                 prev === images.length - 1 ? 0 : prev + 1,
               )
             }
-            className={`absolute top-1/2 right-3 -translate-y-1/2 
-                 text-white text-2xl font-bold 
-                 w-10 h-10 rounded-full 
+            className={`absolute top-1/2 right-3 -translate-y-1/2
+                 text-white text-2xl font-bold
+                 w-10 h-10 rounded-full
                  flex items-center justify-center
                  transition duration-300`}
           >
@@ -74,3 +74,4 @@ export default function ImageCarousel({
     </div>
   );
 }
+

@@ -463,9 +463,15 @@ export default function ContactForm({
             value={formData.company}
             onChange={handleChange}
           />
+          <InputField
+            label="State"
+            name="state"
+            value={formData.state}
+            onChange={handleChange}
+          />
 
           {/* State Dropdown */}
-          <div ref={dropdownRef} className="relative">
+          {/* <div ref={dropdownRef} className="relative">
             <InputField
               label="State"
               name="state"
@@ -493,10 +499,10 @@ export default function ContactForm({
                 )}
               </div>
             )}
-          </div>
+          </div> */}
         </div>
 
-        <div>
+        {/* <div>
           <label className="block text-[14px] font-medium text-gray-600 mb-2">
             Message
           </label>
@@ -507,6 +513,26 @@ export default function ContactForm({
             onChange={handleChange}
             className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-black focus:ring-1 focus:ring-black outline-none"
           />
+        </div> */}
+        <div className="relative">
+          <textarea
+            name="message"
+            rows={3}
+            value={formData.message}
+            onChange={handleChange}
+            placeholder=" "
+            className="peer w-full border-0 border-b border-black bg-transparent py-3 text-[16px] text-black focus:outline-none focus:border-black resize-none"
+          />
+          <label
+            className={`
+      absolute left-0 top-3 text-[14px] text-gray-500 transition-all duration-300
+      peer-focus:-top-3 peer-focus:text-[13px]
+      peer-placeholder-shown:top-3 peer-placeholder-shown:text-[14px]
+      peer-not-placeholder-shown:-top-3 peer-not-placeholder-shown:text-[13px]
+    `}
+          >
+            Message
+          </label>
         </div>
 
         {recaptchaSiteKey && (
@@ -518,7 +544,7 @@ export default function ContactForm({
         {error && <p className="text-red-600 text-sm">{error}</p>}
         {success && <p className="text-green-600 text-sm">{success}</p>}
 
-        <button
+        {/* <button
           type="submit"
           disabled={submitting}
           className={`w-full rounded-xl py-3 text-sm font-semibold text-white transition ${
@@ -528,11 +554,50 @@ export default function ContactForm({
           }`}
         >
           {submitting ? "Submitting..." : "Submit"}
+        </button> */}
+        <button
+          type="submit"
+          disabled={submitting}
+          className={`w-full mt-6 py-3 text-[16px] font-semibold rounded-md transition ${submitting
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-[#0b1b2b] text-white hover:opacity-90"
+            }`}
+        >
+          {submitting ? "Submitting..." : "Submit"}
         </button>
       </form>
     </>
   );
 }
+
+// function InputField({
+//   label,
+//   name,
+//   type = "text",
+//   value,
+//   onChange,
+//   onFocus,
+//   required = false,
+// }) {
+//   return (
+//     <div>
+//       <label className="block text-[14px] font-medium text-gray-600 mb-2">
+//         {label} {required && <span className="text-red-500">*</span>}
+//       </label>
+//       <input
+//         type={type}
+//         name={name}
+//         value={value}
+//         onChange={onChange}
+//         onFocus={onFocus}
+//         required={required}
+//         autoComplete="off"
+//         className="h-[48px] w-full rounded-xl border border-gray-300 px-4 text-sm focus:border-black focus:ring-1 focus:ring-black outline-none"
+//       />
+//     </div>
+//   );
+// }
+
 
 function InputField({
   label,
@@ -544,10 +609,7 @@ function InputField({
   required = false,
 }) {
   return (
-    <div>
-      <label className="block text-[14px] font-medium text-gray-600 mb-2">
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
+    <div className="relative">
       <input
         type={type}
         name={name}
@@ -555,9 +617,21 @@ function InputField({
         onChange={onChange}
         onFocus={onFocus}
         required={required}
+        placeholder=" "
         autoComplete="off"
-        className="h-[48px] w-full rounded-xl border border-gray-300 px-4 text-sm focus:border-black focus:ring-1 focus:ring-black outline-none"
+        className="peer w-full border-0 border-b border-black bg-transparent py-3 text-[16px] text-black focus:outline-none focus:border-black"
       />
+
+      <label
+        className=
+        {`absolute left-0 top-3 text-[14px] text-gray-500 transition-all duration-300
+          peer-focus:-top-3 peer-focus:text-[13px]
+          peer-placeholder-shown:top-3 peer-placeholder-shown:text-[14px]
+          peer-not-placeholder-shown:-top-3 peer-not-placeholder-shown:text-[13px]
+        `}
+      >
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
     </div>
   );
 }

@@ -16,12 +16,12 @@ export default function clinical() {
           buttonLink=""
         />
         {/* card section  */}
-        <section className="mt-20 mb-10">
+        <section className="mb-10">
           <div className="space-y-10">
             {cdiCards.map((card, index) => (
               <section
                 key={index}
-                className={`max-w-350 mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
+                className={`w-[90%] mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
                         ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
               >
                 {/* TEXT SIDE */}
@@ -76,12 +76,12 @@ export default function clinical() {
 
         {/* form */}
         <section className="bg-light py-12">
-          <div className="mx-auto px-20 lg:px-40">
+          <div className="mx-auto w-[90%]">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
               <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-                <h6 className="text-base font-medium tracking-wide ">
+                {/* <h6 className="text-base font-medium tracking-wide ">
                   CONNECT WITH US
-                </h6>
+                </h6> */}
                 <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold mt-2 py-3">
                   Strengthen documentation, Support accurate coding
                 </h1>
@@ -91,7 +91,7 @@ export default function clinical() {
                 </p>
               </div>
 
-              <div className="rounded-[28px] lg:w-1/2  w-full border border-white/40 bg-white p-5 shadow-[0_24px_80px_rgba(41,23,84,0.18)] sm:p-8">
+               <div className="lg:w-1/2 w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
                 <ContactForm formName="Service request from CDI" />
               </div>
             </div>

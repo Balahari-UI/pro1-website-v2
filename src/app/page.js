@@ -24,12 +24,20 @@ export default function HomePage() {
   const [activePartner, setActivePartner] = useState(0);
 
   const [heroPaused, setHeroPaused] = useState(false);
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    if (heroPaused) return undefined;
+    if (heroPaused) return;
+
     const timer = setInterval(() => {
-      setActiveService((prev) => (prev + 1) % tabs.length);
-    }, 2000);
+      setIsFading(true);
+
+      setTimeout(() => {
+        setActiveService((prev) => (prev + 1) % tabs.length);
+        setIsFading(false);
+      }, 700);
+    }, 5000);
+
     return () => clearInterval(timer);
   }, [heroPaused]);
 
@@ -45,7 +53,7 @@ export default function HomePage() {
   const iconMap = {
     book: FiBookOpen,
     award: FiAward,
-    shield: GoShieldCheck ,
+    shield: GoShieldCheck,
     chart: FiBarChart2,
     dollar: FiDollarSign,
     file: FiFileText,
@@ -62,42 +70,48 @@ export default function HomePage() {
   return (
     <main className="pt-[86px]">
       {/* Section1 */}
+
       <section
         className="lg:h-[90vh] min-h-[400px] h-[40vh]"
-        // onMouseEnter={() => setHeroPaused(true)}
-        // onMouseLeave={() => setHeroPaused(false)}
+      // onMouseEnter={() => setHeroPaused(true)}
+      // onMouseLeave={() => setHeroPaused(false)}
       >
         <div className="mx-auto h-full w-[90%]">
           <div className="flex h-full items-center gap-4 lg:gap-8">
             <div className="flex h-full w-full flex-col justify-start lg:basis-3/5 lg:justify-between">
               <div className="mt-2 lg:mt-5">
-                <h1 className="text-wrap bg-[linear-gradient(94.31deg,#3e3df3_0.73%,#ff007c_97.24%)] bg-clip-text text-4xl md:text-6xl lg:text-7xl leading-tight font-semibold text-transparent">
-                  <span>{tabs[activeService].heading}</span>
-                  {/* <span>{tabs[activeService].heading[1]}</span> */}
-                </h1>
-                <p className="py-1 text-lg md:text-2xl lg:text-3xl font-semibold leading-[1.35] text-primary md:py-4">
-                  {tabs[activeService].subheading}
-                </p>
-                <p className="mt-1 max-w-2xl text-base md:text-lg lg:text-xl leading-[1.6] text-[#7e7e7e]">
-                  {tabs[activeService].description}
-                </p>
-
-                <Link
-                  href={tabs[activeService].link}
-                  className="mt-4 inline-flex items-center gap-2 rounded-[12px] border border-[#afafaf] bg-transparent px-4 py-2 text-[#272727] transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+                <div
+                  className={`transition-opacity duration-700 ease-in-out
+${isFading ? "opacity-0" : "opacity-100"}`}
                 >
-                  Know More <FaArrowRight className="text-base" />
-                </Link>
+                  <h1 className="text-wrap bg-[linear-gradient(94.31deg,#3e3df3_0.73%,#ff007c_97.24%)] bg-clip-text text-4xl md:text-6xl lg:text-7xl leading-tight font-semibold text-transparent">
+                    <span>{tabs[activeService].heading}</span>
+                    {/* <span>{tabs[activeService].heading[1]}</span> */}
+                  </h1>
+                  <p className="py-1 text-lg md:text-2xl lg:text-3xl font-semibold leading-[1.35] text-primary md:py-4">
+                    {tabs[activeService].subheading}
+                  </p>
+                  <p className="mt-1 max-w-2xl text-base md:text-lg lg:text-xl leading-[1.6] text-[#7e7e7e]">
+                    {tabs[activeService].description}
+                  </p>
 
-                <div className="mt-10 flex justify-center gap-2 lg:hidden">
-                  {tabs.map((tab, idx) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setActiveService(idx)}
-                      className={`h-2.5 w-2.5 rounded-full transition ${idx === activeService ? "bg-black" : "bg-gray-400/70"}`}
-                      aria-label={`Slide ${idx + 1}`}
-                    />
-                  ))}
+                  <Link
+                    href={tabs[activeService].link}
+                    className="mt-4 inline-flex items-center gap-2 rounded-[12px] border border-[#afafaf] bg-transparent px-4 py-2 text-[#272727] transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+                  >
+                    Know More <FaArrowRight className="text-base" />
+                  </Link>
+
+                  <div className="mt-10 flex justify-center gap-2 lg:hidden">
+                    {tabs.map((tab, idx) => (
+                      <button
+                        key={tab.id}
+                        onClick={() => setActiveService(idx)}
+                        className={`h-2.5 w-2.5 rounded-full transition ${idx === activeService ? "bg-black" : "bg-gray-400/70"}`}
+                        aria-label={`Slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -111,15 +125,20 @@ export default function HomePage() {
             </div>
 
             <div className="hidden h-full lg:block lg:basis-2/5">
-              <div className="relative h-full min-h-[84vh]">
-                <Image
-                  src={tabs[activeService].image}
-                  alt={tabs[activeService].title}
-                  fill
-                  priority
-                  className="object-contain object-right"
-                  sizes="(min-width:1024px) 40vw, 100vw"
-                />
+              <div
+                className={`transition-opacity duration-700 ease-in-out
+${isFading ? "opacity-0" : "opacity-100"}`}
+              >
+                <div className="relative h-full min-h-[84vh]">
+                  <Image
+                    src={tabs[activeService].image}
+                    alt={tabs[activeService].title}
+                    fill
+                    priority
+                    className="object-contain object-right"
+                    sizes="(min-width:1024px) 40vw, 100vw"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -330,11 +349,10 @@ export default function HomePage() {
                   {partnerCards.map((card, index) => (
                     <div
                       key={index}
-                      className={`absolute inset-0 transition-opacity duration-500 ${
-                        index === activePartner
-                          ? "opacity-100 z-10"
-                          : "opacity-0 z-0"
-                      }`}
+                      className={`absolute inset-0 transition-opacity duration-500 ${index === activePartner
+                        ? "opacity-100 z-10"
+                        : "opacity-0 z-0"
+                        }`}
                     >
                       <Image
                         src={card.image}
@@ -425,6 +443,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }

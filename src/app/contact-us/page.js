@@ -1,29 +1,3 @@
-// import ContactForm from "../components/ContactForm";
-
-// export default function ContactUspage() {
-//   return (
-//     <div>
-//       <section className="bg-light py-50 ">
-//         <div className="mx-auto w-[90%]">
-//           <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
-//             <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-//               <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold mb-4">
-//                 Get in Touch
-//               </h1>
-//               <p className="text-base mb-2">
-//                 Whether you’re interested in easing your administrative burdens or looking for innovative analytics solutions to improve your bottom line, <strong>PRO1 Health</strong> can help. Reach out to our team today — we’d love to hear from you.
-//               </p>
-//             </div>
-//             {/* Form */}
-//            <div className="lg:w-1/2 w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
-//               <ContactForm formName="Service request from Contact Us" />
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
 import HeroSection from "../components/ui/HeroSection";
 import ImageCarousel from "../components/ui/ImageCarousel";
 import { globalPresence, globalPresence1 } from "../data/home";

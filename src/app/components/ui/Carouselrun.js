@@ -178,18 +178,27 @@ function renderItem(item, type, imageHeight) {
     //       className={`${imageHeight} w-auto object-contain transition`}
     //     />
     //   );
-    case "image":
-      return (
-        <div className={`${imageHeight} w-auto flex items-center`}>
-          <Image
-            src={item}
-            alt=""
-            width={240}
-            height={80}
-            className="h-full w-auto object-contain transition"
-          />
-        </div>
-      );
+case "image":
+  return (
+    <div
+      className="
+        w-[190px] h-[80px]
+        flex items-center justify-center
+        flex-shrink-0
+        rounded-[15px]
+        bg-[#f8f9fa]
+        p-[10px]
+      "
+    >
+      <Image
+        src={item}
+        alt=""
+        width={160}
+        height={60}
+        className="w-full h-full object-contain"
+      />
+    </div>
+  );
 
     case "media":
       return (
