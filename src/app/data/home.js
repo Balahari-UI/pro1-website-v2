@@ -521,7 +521,7 @@ export const rcmCards = [
     description2:
       "We collect, verify, and enter accurate patient information into your practice management system to build a clean claim from day one.",
     subheading1: "Our Services",
-    subheading2: "Benifits",
+    subheading2: "Benefits",
     services: [
       "Capturing patient demographics (address, SSN, DOB, emergency contact)",
       "Employer and insurance details",
@@ -541,7 +541,7 @@ export const rcmCards = [
     description2:
       "Our team has rich experience in handling patient eligibility verification and will provide quick turnaround.",
     subheading1: "Our Eligibility",
-    subheading2: "Benifits",
+    subheading2: "Benefits",
     services: [
       "Real-time insurance eligibility verification",
       "Pre-authorization and referral acquisition",
@@ -694,55 +694,73 @@ export const rcmbillingCards = [
   },
   {
     logo: "images/rcm/cs-2.svg",
-    title: " Requirement Analysis",
+    title: " Patient Registration & Verification",
     description:
-      "We begin by determining your practice’s needs, goals, and billing process.",
+      "Next, we collect all the relevant information about the patient and verify his insurance coverage.",
   },
   {
     logo: "images/rcm/cs-3.svg",
-    title: " Requirement Analysis",
+    title: "Coding",
     description:
-      "We begin by determining your practice’s needs, goals, and billing process.",
+      "Our certified coders then assign appropriate CPT (Current Procedural Terminology) codes to medical services and procedures.",
   },
   {
     logo: "images/rcm/cs-4.svg",
-    title: " Requirement Analysis",
+    title: "Claim Submission",
     description:
-      "We begin by determining your practice’s needs, goals, and billing process.",
+      "The next step is to submit the medical claim to the appropriate insurance company.",
   },
   {
     logo: "images/rcm/cs-5.svg",
-    title: " Requirement Analysis",
+    title: "Payment Posting",
     description:
-      "We begin by determining your practice’s needs, goals, and billing process.",
+      "Once the claim is processed and the outstanding amount is collected, we record the payments received from the payers and the patients in the system.",
   },
   {
     logo: "images/rcm/cs-6.svg",
-    title: " Requirement Analysis",
+    title: "Follow Up",
     description:
-      "We begin by determining your practice’s needs, goals, and billing process.",
+      "Lastly, we deposit the money to the healthcare providers and submit accurate reports.",
   },
 ];
 
 export const rcmlogos = [
-  "/images/techlogo/AdvancedMD.png",
-  "/images/techlogo/Allscripts.png",
-  "/images/techlogo/Athena.png",
-  "/images/techlogo/Cerner.png",
-  "/images/techlogo/Collaboratemd.png",
-  "/images/techlogo/eclinicalworks.png",
+  // "/images/techlogo/AdvancedMD.png",
+  // "/images/techlogo/Allscripts.png",
+  // "/images/techlogo/Athena.png",
+  // "/images/techlogo/Cerner.png",
+  // "/images/techlogo/Collaboratemd.png",
+  // "/images/techlogo/eclinicalworks.png",
+  // "/images/techlogo/Epic.png",
+  // "/images/techlogo/GEhealth.png",
+  // "/images/techlogo/hstpathways.png",
+  // "/images/techlogo/kareo.png",
+  // "/images/techlogo/medisoft.png",
+  // "/images/techlogo/micromd.png",
+  // "/images/techlogo/nextgen.png",
+  // "/images/techlogo/oracle.png",
+  // "/images/techlogo/practiceehr.png",
+  // "/images/techlogo/Practicefusion.png",
+  // "/images/techlogo/rxnt.png",
+  // "/images/techlogo/wrshealth.png",
   "/images/techlogo/Epic.png",
-  "/images/techlogo/GEhealth.png",
-  "/images/techlogo/hstpathways.png",
   "/images/techlogo/kareo.png",
-  "/images/techlogo/medisoft.png",
-  "/images/techlogo/micromd.png",
-  "/images/techlogo/nextgen.png",
-  "/images/techlogo/oracle.png",
-  "/images/techlogo/practiceehr.png",
-  "/images/techlogo/Practicefusion.png",
+  "/images/techlogo/eclinicalworks.png",
+  "/images/techlogo/GEhealth.png",
   "/images/techlogo/rxnt.png",
+  "/images/techlogo/Athena.png",
+  "/images/techlogo/hstpathways.png",
+  "/images/techlogo/Allscripts.png",
+  "/images/techlogo/nextgen.png",
+  "/images/techlogo/practiceehr.png",
+  "/images/techlogo/medisoft.png",
   "/images/techlogo/wrshealth.png",
+  "/images/techlogo/Collaboratemd.png",
+  "/images/techlogo/micromd.png",
+  "/images/techlogo/Cerner.png",
+  "/images/techlogo/Practicefusion.png",
+  "/images/techlogo/AdvancedMD.png",
+
 ];
 export const drcmCards = [
   {
@@ -751,7 +769,7 @@ export const drcmCards = [
       "We verify insurance eligibility and patient benefits 48 hours before appointments, allowing practices to provide accurate treatment estimates and improve upfront collections.",
     description2: "",
     subheading2: "Includes",
-    subheading1: "Benifits",
+    subheading1: "Benefits",
     services: [
       "Reduces eligibility-related denials",
       "Increases patient satisfaction and co-pay collection",
@@ -1047,30 +1065,29 @@ export const cdiCards = [
 export const hedisServices = [
   {
     id: 1,
-    title: "Data Collection & Analysis",
+    title: "Improved Quality of care",
     description:
-      "Rigorous gathering & analysis of healthcare data relevant to HEDIS measures.",
+      "Our services help healthcare providers identify & address errors, leading to enhanced patient care.",
     image: "/images/hedis/hedis1.svg",
   },
   {
     id: 2,
-    title: "Performance Improvement Planning",
-    description:
-      "Assisting healthcare providers in developing strategies to improve performance based on HEDIS results.",
+    title: "Compliance with industry standards",
+    description:"We ensure that all reporting aligns with NCQA HEDIS specifications, maintaining high standards of compliance.",
     image: "/images/hedis/hedis2.svg",
   },
   {
     id: 3,
-    title: "Audit Support",
+    title: "Improved Quality of care",
     description:
-      "Offering support during HEDIS audits to ensure compliance & accuracy in reporting.",
+      "Accurate and effective HEDIS reporting contributes to better health plan ratings.",
     image: "/images/hedis/hedis3.svg",
   },
   {
     id: 4,
-    title: "Quality Assurance",
+    title: "Compliance with industry standards",
     description:
-      "Ensuring the accuracy and integrity of data reported in compliance with HEDIS Specifications.",
+      "Our analysis provides valuable insights that guide strategic decision-making and quality improvement initiatives.",
     image: "/images/hedis/hedis4.svg",
   },
 ];
@@ -1109,19 +1126,19 @@ export const radvCards = [
     title: "Identifying Diagnosis Gaps Through Standardized Feedback",
     description1:
       "Our coders guide providers on documentation best practices, helping prevent HCC code deletions and ensuring accurate future risk scores.",
-    image: "/images/radv/radv1.svg",
+    image: "/images/radv/radv3.svg",
   },
   {
     title: "Dedicated Audit Team for Full Coverage and SLA Compliance",
     description1:
       "Our specialist audit team ensures 100% audit coverage and meets client SLAs through rigorous and structured quality checks.",
-    image: "/images/radv/radv4.svg",
+    image: "/images/radv/radv5.svg",
   },
   {
     title: "Reliable Management of Client Deliverables",
     description1:
       "We treat client deliverables with the utmost care, ensuring that all data transfers, reports, and files are handled securely and delivered on time. Our operations team follows strict quality control protocols and uses automated tracking systems to meet tight deadlines and compliance standards. We pride ourselves on being a trusted extension of our client’s internal team, offering reliability, transparency, and seamless communication throughout the engagement.",
-    image: "/images/radv/radv5.svg",
+    image: "/images/radv/radv4.svg",
   },
   {
     title: "Expertise in RADV Projects and Comprehensive Quality Coding",
@@ -1221,7 +1238,7 @@ export const PeopleCards = [
 ];
 export const processCards = [
   {
-    title: "Recruitment",
+    title: "Client Engagement and Needs Assessment",
     subtitle1: "Initial Consultation",
     description1:
       "Our process begins with a comprehensive consultation to understand the specific needs and challenges of our clients. This step involves detailed discussions to gain insights into the client’s current systems and processes.",

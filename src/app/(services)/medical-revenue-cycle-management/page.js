@@ -28,12 +28,15 @@ export default function RevenueCycle() {
           className={`grid  items-center justify-between p-10 md:grid-cols-3 grid-cols-1 lg:grid-cols-5 md:gap-20 gap-10 lg:gap-0  border border-[#E5E5E5] rounded-xl bg-[#F8F9FA] max-w-[1400px]  mx-auto`}
         >
           <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">30</h1>
+            <h1 className="text-2xl flex items-center gap-1">
+  <span className="text-xl">&lt;</span>
+  30
+</h1>
             <p className="text-[#7E7E7E] text-lg">Days in AR</p>
           </div>
           <div className="flex flex-col items-center justify-center text-center gap-2 ">
             <h1 className="text-2xl">10-15%</h1>
-            <p className="text-[#7E7E7E] text-lg">REvenue Increase</p>
+            <p className="text-[#7E7E7E] text-lg">Revenue Increase</p>
           </div>
           <div className="flex flex-col items-center justify-center text-center gap-2 ">
             <h1 className="text-2xl">97%</h1>
@@ -48,14 +51,14 @@ export default function RevenueCycle() {
             <p className="text-[#7E7E7E] text-lg">Clean Claims Rate</p>
           </div>
         </div>
-      </section>{" "}
+      </section>
       {/* card section  */}
       <section className="mt-20 mb-10">
         <div className="space-y-10">
           {rcmCards.map((card, index) => (
             <section
               key={index}
-              className={`max-w-350 mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
+              className={`w-[90%] mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
         ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
             >
               {/* TEXT SIDE */}
@@ -78,7 +81,7 @@ export default function RevenueCycle() {
                             alt="rcm"
                             width={30}
                             height={0}
-                          />{" "}
+                          />
                           {item}
                         </li>
                       ))}
@@ -96,7 +99,7 @@ export default function RevenueCycle() {
                             alt="rcm"
                             width={30}
                             height={0}
-                          />{" "}
+                          />
                           {item}
                         </li>
                       ))}
@@ -122,7 +125,7 @@ export default function RevenueCycle() {
       </section>
       {/* medical RCM */}
       <section className="mb-20">
-        <div className="max-w-350 mx-auto flex lg:flex-row flex-col gap-5">
+        <div className="w-[90%] mx-auto flex lg:flex-row flex-col gap-5">
           <div className="flex-1  border border-[#E5E5E5] rounded-2xl w-full p-5">
             <h1 className=" text-lg md:text-3xl font-semibold mb-5 text-center lg:text-start">
               Why Choose Pro1 for Medical RCM ?
@@ -184,7 +187,7 @@ export default function RevenueCycle() {
       </section>
       {/* billing process */}
       <section className="mb-10">
-        <div className="max-w-350 mx-auto">
+        <div className="w-[90%] mx-auto">
           <div className="bg-[#F0F0F0] text-sm max-w-3xl mx-auto rounded-lg p-2 mb-10">
             <p>
               <span className="font-semibold ">
@@ -205,7 +208,7 @@ export default function RevenueCycle() {
               file accurate medical claims.
             </p>
           </div>
-          <div className="max-w-7xl mx-auto px-6 py-5">
+          <div className="w-[90%] mx-auto px-6 py-5">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
               {rcmbillingCards.map((card, index) => (
                 <div
@@ -221,7 +224,7 @@ export default function RevenueCycle() {
                   </div>
 
                   <h1 className="text-lg font-semibold">
-                    {String(index + 1).padStart(2, "0")}. {card.title}
+                    {String(index + 1).padStart(2)}. {card.title}
                   </h1>
 
                   <p className="text-sm text-gray-600">{card.description}</p>
@@ -233,7 +236,7 @@ export default function RevenueCycle() {
       </section>
       <section className="lg:mt-30">
         <div
-          className={`lg:w-[90vw] max-w-350 lg:aspect-[1900/650] p-5 rounded-[15px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] flex flex-col items-start justify-center ps-10 bg-cover bg-center mx-auto  `}
+          className={`lg:w-[90vw] w-[90%] lg:aspect-[1900/650] p-5 rounded-[15px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] flex flex-col items-start justify-center ps-10 bg-cover bg-center mx-auto  `}
           style={{ backgroundImage: "url('/images/rcm/support.svg')" }}
         >
           <h1 className="text-lg md:text-4xl font-semibold mb-10">
@@ -248,7 +251,7 @@ export default function RevenueCycle() {
         </div>
       </section>
       <section className="mb-30 lg:mt-15 my-10">
-        <div className="flex max-w-350 mx-auto border border-[#E5E5E5] rounded-xl lg:py-15 lg:px-10 p-5 gap-8">
+        <div className="flex w-[90%] mx-auto border border-[#E5E5E5] rounded-xl lg:py-15 lg:px-10 p-5 gap-8">
           <div className="flex-4">
             <h1 className="text-lg md:text-4xl font-semibold">
               Our Expertise in PMS Software
@@ -278,34 +281,43 @@ export default function RevenueCycle() {
         </div>
       </section>
       <section className="mb-20">
-        <div className="max-w-350 mx-auto">
-          <Carouselrun
+        <div className="w-[90%] mx-auto">
+          {/* <Carouselrun
             items={rcmlogos}
             type="image"
             speed={60}
             gap="gap-16"
             imageHeight="h-12"
-          />
+          /> */}
+          <Carouselrun
+  items={rcmlogos}
+  type="image"
+  speed={60}
+  gap="gap-6"
+  showDots={false}
+/>
         </div>
       </section>
       {/* form */}
       <section className="bg-light py-12">
-        <div className="mx-auto px-20 lg:px-40">
+               <div className="mx-auto w-[90%]">
+
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
             <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-              <h6 className="text-base font-medium tracking-wide ">
+              {/* <h6 className="text-base font-medium tracking-wide ">
                 CONNECT WITH US
-              </h6>
+              </h6> */}
               <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
                 Streamline operations, Accelerate collections
               </h1>
               <p className="text-base mt-4 max-w-2xl ">
-                EPartner with us for end-to-end RCM solutions that improve cash
+                Partner with us for end-to-end RCM solutions that improve cash
                 flow and let you focus on patient care.
               </p>
             </div>
 
-            <div className="rounded-[28px] lg:w-1/2  w-full border border-white/40 bg-white p-5 shadow-[0_24px_80px_rgba(41,23,84,0.18)] sm:p-8">
+                       <div className="lg:w-1/2 w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
+
               <ContactForm formName="Service request from Medical RCM" />
             </div>
           </div>

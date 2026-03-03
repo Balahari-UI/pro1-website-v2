@@ -14,10 +14,10 @@ export default function HedisAbstractionPage() {
           image="/images/hedis/hedisbg.svg"
         />
         {/* Comprehensive */}
-        <section className="my-10">
+        <section className="mb-10">
           <div className="bg-[#F8F9FA]">
             <h1 className="text-3xl lg:text-4xl lg:text-start text-center max-w-2xl lg:ms-20  py-10">
-              <sapn className="lg:block">Our Comprehensive HEDIS </sapn>measures
+              <span className="lg:block">Our Comprehensive HEDIS </span>measures
               reporting service include
             </h1>
             <div className="px-5 pb-10">
@@ -53,12 +53,12 @@ export default function HedisAbstractionPage() {
           </div>
         </section>
         {/* card section  */}
-        <section className="mt-20 mb-10">
+        <section className=" mb-10">
           <div className="space-y-10">
             {hedisCards.map((card, index) => (
               <section
                 key={index}
-                className={`max-w-350 mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
+                className={`w-[90%] mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
                                 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
               >
                 {/* TEXT SIDE */}
@@ -83,7 +83,7 @@ export default function HedisAbstractionPage() {
                                 alt="rcm"
                                 width={30}
                                 height={0}
-                              />{" "}
+                              />
                               {item}
                             </li>
                           ) : null,
@@ -112,7 +112,7 @@ export default function HedisAbstractionPage() {
         </section>
         <section className="mb-20 relative">
           <div className="max-w-350 mx-auto ">
-            <h1 className="text-3xl md:text-4xl text-center py-10">Benifits</h1>
+            <h1 className="text-3xl md:text-4xl text-center py-10">Benefits</h1>
             <div
               className={`lg:w-[90vw] hidden lg:block max-w-350 lg:aspect-[1900/900]  p-5 rounded-[55px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] flex flex-col items-start justify-center ps-10 bg-cover bg-center mx-auto  `}
               style={{
@@ -139,12 +139,13 @@ export default function HedisAbstractionPage() {
         </section>
         {/* form */}
         <section className="bg-light py-12">
-          <div className="mx-auto px-20 lg:px-40">
+                  <div className="mx-auto w-[90%]">
+
             <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
               <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-                <h6 className="text-base font-medium tracking-wide  ">
+                {/* <h6 className="text-base font-medium tracking-wide  ">
                   CONNECT WITH US
-                </h6>
+                </h6> */}
                 <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
                   Boost quality scores,Ensure HEDIS compliance
                 </h1>
@@ -154,7 +155,8 @@ export default function HedisAbstractionPage() {
                 </p>
               </div>
 
-              <div className="rounded-[28px] e">
+           <div className="lg:w-1/2 w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
+
                 <ContactForm formName="Service request from HEDIS Abstraction" />
               </div>
             </div>

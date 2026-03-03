@@ -12,12 +12,12 @@ export default function TechnologyPage() {
           image="/images/technology/technology.svg"
         />
         {/* card section  */}
-        <section className="mt-20 mb-10">
+        <section className="mb-10">
           <div className="space-y-10">
             {techcards.map((card, index) => (
               <section
                 key={index}
-                className={`max-w-350 mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
+                className={`w-[90%] mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 border border-[#E5E5E5] rounded-xl p-5
                                   ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
               >
                 {/* TEXT SIDE */}
