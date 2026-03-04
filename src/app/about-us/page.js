@@ -200,31 +200,6 @@ export default function AboutUsPage() {
               </div>
             </div>
           </div>
-
-          {/* Infrastructure Row */}
-          {/* <div className="flex justify-center mt-10">
-            <div className="w-full md:w-1/2">
-              <h1 className="text-2xl md:text-[40px] font-semibold text-cetacean-blue text-center mb-4">
-                Our Infrastructure
-              </h1>
-
-              <div className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 min-h-[110px]">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0">
-                  <Image
-                    src="/images/about-us/ourinfa.svg"
-                    alt="Infrastructure Icon"
-                    width={60}
-                    height={60}
-                  />
-                </div>
-
-                <p className="text-base text-cetacean-blue leading-relaxed">
-                  Our systems, policies, and workforce are aligned to meet
-                  stringent US healthcare regulatory and audit requirements.
-                </p>
-              </div>
-            </div>
-          </div> */}
           <div className="grid md:grid-cols-2 gap-8 mt-10">
             {/* Our Team */}
             <div>
@@ -308,49 +283,6 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
-      {/* <section className="py-10">
-        <div className="w-[90%]  mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center"> */}
-
-      {/* <div className="flex justify-center md:justify-start md:order-1 order-2">
-              <Image
-                src="/images/about-us/aboutus3.svg"
-                alt="Commitment"
-                width={800}
-                height={400}
-                className="w-full max-w-[600px] h-auto"
-              />
-            </div> */}
-
-      {/*
-            <div className="text-cetacean-blue md:order-2 order-1">
-              <h2 className="text-3xl md:text-[40px] font-semibold mb-4">
-                Our Commitment
-              </h2>
-
-              <p className="text-lg leading-relaxed">
-                We partner with our clients as an extension of their operations.
-                Whether it is improving RAF accuracy, strengthening
-                documentation, supporting audits, or optimizing revenue cycles,
-                our focus remains on measurable outcomes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Section7 */}
-      {/* <section className=" pb-10">
-        <div className="w-[90%] max-w-[1000px] mx-auto">
-          <div className="mx-auto mt-10  bg-[#F0F0F0] p-5 rounded-[16px]">
-            <p className="text-lg font-normal text-cetacean-blue text-left md:text-center leading-relaxed">
-              At Pro1 Health, we don’t just deliver services—we build reliable,
-              compliant, and scalable healthcare solutions that enable our
-              clients to focus on what matters most: patient care.
-            </p>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }

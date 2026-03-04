@@ -260,7 +260,6 @@ export const whomWeServeRevenueData = {
       },
     ],
   },
-
 };
 
 export const whomWeServeCapabilitiesData = {
@@ -424,10 +423,7 @@ export const whomWeServeCapabilitiesData = {
     ],
   },
   cdi: {
-    images: [
-      "/images/cdi/cdiadvantage1.svg",
-      "/images/cdi/cdiadvantage2.svg",
-    ],
+    images: ["/images/cdi/cdiadvantage1.svg", "/images/cdi/cdiadvantage2.svg"],
 
     servicesTitle: "Pro1 Health ensure",
 
@@ -739,6 +735,14 @@ export const rcmCards = [
     ],
     image: "/images/rcm/service9.svg",
   },
+];
+
+export const rcmstats = [
+  // { value: 30, suffix: "<", label: "Days in AR" },
+  // { fromValue: 10, value: 15, suffix: "%", label: "Revenue Increase" },
+  { value: 97, suffix: "%", label: "First Pass Ratio" },
+  { value: 96, suffix: "%", label: "Collection Ratios" },
+  { value: 98, suffix: "%", label: "Clean Claims Rate" },
 ];
 export const rcmbillingCards = [
   {
@@ -1123,7 +1127,7 @@ export const cdiCards = [
     services: [
       "Detect missing clinical specificity required for accurate coding and billing",
       "Collaborate with care teams to capture essential information for complete patient records",
-      "Improve coding yield and reduce risk of under-payment or denials"
+      "Improve coding yield and reduce risk of under-payment or denials",
     ],
     image: "/images/cdi/cdi4.svg",
   },
@@ -1139,8 +1143,6 @@ export const cdiCards = [
     ],
     image: "/images/cdi/cdi5.svg",
   },
-
-
 ];
 // data/hedisServices.js
 
@@ -1155,7 +1157,8 @@ export const hedisServices = [
   {
     id: 2,
     title: "Compliance with industry standards",
-    description: "We ensure that all reporting aligns with NCQA HEDIS specifications, maintaining high standards of compliance.",
+    description:
+      "We ensure that all reporting aligns with NCQA HEDIS specifications, maintaining high standards of compliance.",
     image: "/images/hedis/hedis2.svg",
   },
   {
@@ -1514,8 +1517,3 @@ export const globalPresence = [
     ],
   },
 ];
-// export const globalPresence1 = [
-
-// ];
-
-

@@ -39,27 +39,6 @@ export default function WhomWeServe() {
           ]}
         />
       </section>
-      {/* <StickyScrollSection
-        title="Who we serve"
-        description="You deserve more than a service provider — a partner who fuels your success..."
-        items={[
-          {
-            title: "Hospitals",
-            text: "We partner with hospitals and healthcare systems...",
-            link: "/hospitals",
-          },
-          {
-            title: "Physician Groups",
-            text: "We support physicians and medical groups...",
-            link: "/physician-groups",
-          },
-          {
-            title: "Medical Billing Companies",
-            text: "We act as a partner to streamline operations...",
-            link: "/medical-billing-companies",
-          },
-        ]}
-      /> */}
     </>
   );
 }

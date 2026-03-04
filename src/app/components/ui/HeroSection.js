@@ -75,7 +75,7 @@ export default function HeroSection({
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           {/* LEFT CONTENT */}
           <div className="lg:col-span-7">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-[1.15] bg-[linear-gradient(94deg,#3e3df3,#ff007c)] bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight font-semibold bg-[linear-gradient(94deg,#3e3df3,#ff007c)] bg-clip-text text-transparent">
               {title}
             </h1>
 

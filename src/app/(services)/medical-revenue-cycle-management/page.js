@@ -1,7 +1,10 @@
+"use client";
+
 import ContactForm from "@/app/components/ContactForm";
+import AnimatedCounter from "@/app/components/ui/AnimatedCounter";
 import Carouselrun from "@/app/components/ui/Carouselrun";
 import HeroSection from "@/app/components/ui/HeroSection";
-import { rcmbillingCards, rcmCards, rcmlogos } from "@/app/data/home";
+import { rcmbillingCards, rcmCards, rcmlogos, rcmstats } from "@/app/data/home";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -11,11 +14,7 @@ export default function RevenueCycle() {
       {/* HERO */}
       <HeroSection
         title=" Revenue Cycle Management"
-        description=" At Pro1 Health, we offer comprehensive Medical Revenue Cycle
-            Management solutions tailored to physician practices, hospitals, and
-            billing companies. Our RCM services ensure timely reimbursements,
-            reduced denials, and complete transparency, allowing providers to
-            focus on patient care while we take care of the rest."
+        description=" At Pro1 Health, we offer comprehensive Medical Revenue Cycle Management solutions tailored to physician practices, hospitals, and billing companies. Our RCM services ensure timely reimbursements, reduced denials, and complete transparency, allowing providers to focus on patient care while we take care of the rest."
         image="/images/rcm/rcm.svg"
         buttonText="Connect With US"
         buttonLink="#Service-form1"
@@ -30,28 +29,27 @@ export default function RevenueCycle() {
           className={`grid  items-center justify-between p-10 md:grid-cols-3 grid-cols-1 lg:grid-cols-5 md:gap-20 gap-10 lg:gap-0  border border-[#E5E5E5] rounded-xl bg-[#F8F9FA] max-w-[1400px]  mx-auto`}
         >
           <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl flex items-center gap-1">
+            <h1 className="text-3xl font-semibold text-cetacean-blue flex items-center gap-1">
               <span className="text-xl">&lt;</span>
               30
             </h1>
             <p className="text-[#7E7E7E] text-lg">Days in AR</p>
           </div>
           <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">10-15%</h1>
+            <h1 className="text-3xl font-semibold text-cetacean-blue">
+              10-15%
+            </h1>
             <p className="text-[#7E7E7E] text-lg">Revenue Increase</p>
           </div>
-          <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">97%</h1>
-            <p className="text-[#7E7E7E] text-lg">First Pass Ratio</p>
-          </div>
-          <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">96%</h1>
-            <p className="text-[#7E7E7E] text-lg">Collection Ratios</p>
-          </div>
-          <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">98%</h1>
-            <p className="text-[#7E7E7E] text-lg">Clean Claims Rate</p>
-          </div>
+
+          {rcmstats.map((stat) => (
+            <AnimatedCounter
+              key={stat.label}
+              value={stat.value}
+              suffix={stat.suffix}
+              label={stat.label}
+            />
+          ))}
         </div>
       </section>
       {/* card section  */}
@@ -303,13 +301,6 @@ export default function RevenueCycle() {
       </section>
       <section className="mb-20">
         <div className="w-[90%] mx-auto">
-          {/* <Carouselrun
-            items={rcmlogos}
-            type="image"
-            speed={60}
-            gap="gap-16"
-            imageHeight="h-12"
-          /> */}
           <Carouselrun
             items={rcmlogos}
             type="image"
@@ -324,9 +315,6 @@ export default function RevenueCycle() {
         <div className="mx-auto w-[90%]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
             <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-              {/* <h6 className="text-base font-medium tracking-wide ">
-                CONNECT WITH US
-              </h6> */}
               <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
                 Streamline operations, Accelerate collections
               </h1>
