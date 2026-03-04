@@ -1,12 +1,13 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import TopButton from "./components/ui/TopButton";
+import { Poppins } from "next/font/google";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 export const metadata = {
   title: "Pro 1 Health System",
@@ -15,13 +16,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning={true}>
-      <body className="antialiased" suppressHydrationWarning={true}>
+    <html
+      lang="en"
+      className={poppins.variable}
+      suppressHydrationWarning={true}
+    >
+      <body
+        className={`${poppins.className} antialiased`}
+        suppressHydrationWarning={true}
+      >
         <Header />
         <TopButton />
-        {/* <QueryProvider>{children}</QueryProvider> */}
         {children}
-
         <Footer />
       </body>
     </html>
