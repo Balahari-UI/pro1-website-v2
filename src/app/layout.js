@@ -1,9 +1,7 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import TopButton from "./components/ui/TopButton";
-import QueryProvider from "./components/queryProvider";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -18,17 +16,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable} suppressHydrationWarning={true}>
-      <body className={`${poppins.className} antialiased`}   suppressHydrationWarning={true}>
-        <QueryProvider>
-          <Header />
-          <TopButton />
-          {children}
-
-          {/* {children} */}
-
-          <Footer />
-        </QueryProvider>
+    <html
+      lang="en"
+      className={poppins.variable}
+      suppressHydrationWarning={true}
+    >
+      <body
+        className={`${poppins.className} antialiased`}
+        suppressHydrationWarning={true}
+      >
+        <Header />
+        <TopButton />
+        {children}
+        <Footer />
       </body>
     </html>
   );

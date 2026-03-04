@@ -1,6 +1,68 @@
 import { sendEmail } from "../../lib/mailer";
 import { NextResponse } from "next/server";
 
+async function verifyRecaptchaToken(token, req) {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  const expectedHost = process.env.RECAPTCHA_EXPECTED_HOST;
+
+  if (!secret) {
+    throw new Error("Server misconfiguration: missing RECAPTCHA_SECRET_KEY");
+  }
+
+  if (!token) {
+    return {
+      ok: false,
+      reason: "Missing reCAPTCHA token",
+    };
+  }
+
+  const remoteIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const formData = new URLSearchParams({
+    secret,
+    response: token,
+  });
+
+  if (remoteIp) {
+    formData.append("remoteip", remoteIp);
+  }
+
+  const response = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formData.toString(),
+      cache: "no-store",
+    },
+  );
+
+  if (!response.ok) {
+    return {
+      ok: false,
+      reason: "Unable to verify reCAPTCHA with Google",
+    };
+  }
+
+  const result = await response.json();
+  if (!result.success) {
+    return {
+      ok: false,
+      reason: `reCAPTCHA failed (${(result["error-codes"] || []).join(", ") || "unknown error"})`,
+    };
+  }
+
+  if (expectedHost && result.hostname && result.hostname !== expectedHost) {
+    return {
+      ok: false,
+      reason: `Invalid reCAPTCHA hostname: ${result.hostname}`,
+    };
+  }
+
+  return { ok: true };
+}
+
 export async function POST(req) {
   try {
     const { name, email, phone, message, jobtitle, state, company, formName } =
@@ -9,14 +71,6 @@ export async function POST(req) {
     await sendEmail({
       to: process.env.TO_EMAIL,
       subject: `New message from ${formName}`,
-      // html: `<p>Name: ${name}</p>
-      // <p>Email: ${email}</p>
-      // <p>Phone: ${phone}</p>
-      // <p>Job Title: ${jobtitle}</p>
-      // <p>State: ${state}</p>
-      // <p>Company: ${company}</p>
-      // <p>Message: ${message}</p>
-      // `,
       html: `<div style="font-family: Arial, sans-serif; background-color: #f4f6f8; padding: 20px;">
         <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
 
@@ -59,9 +113,9 @@ export async function POST(req) {
               </tr>
               <tr>
                 <td style="padding: 8px; font-weight: bold; background: #f9f9f9; vertical-align: top;">Message</td>
-                <td style="padding: 8px;">${(message || "").replace(
+                <td style="padding: 8px;">${(message || "—").replace(
                   /\n/g,
-                  "<br/>"
+                  "<br/>",
                 )}</td>
               </tr>
             </table>

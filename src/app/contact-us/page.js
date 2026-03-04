@@ -23,7 +23,7 @@ export default function ContactUspage() {
           {globalPresence.map((location) => (
             <div
               key={location.id}
-              className="bg-white rounded-md shadow-lg overflow-hidden"
+              className={`bg-white rounded-md shadow-lg overflow-hidden ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}
             >
               <div className="h-56 relative flex justify-center items-center">
                 {location.images.length > 1 ? (
@@ -42,9 +42,7 @@ export default function ContactUspage() {
                   {location.country}
                 </h3>
 
-                <p className="mb-2  font-[14px] text-gray-400">
-                  {location.company}
-                </p>
+                <p className="mb-2 text-sm text-gray-400">{location.company}</p>
 
                 {location.address.map((line, index) => (
                   <p key={index} className="text-cetacean-blue ">

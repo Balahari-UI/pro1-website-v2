@@ -71,22 +71,16 @@ export default function HomePage() {
     <main className="pt-[86px]">
       {/* Section1 */}
 
-      <section
-        className="lg:h-[90vh] min-h-[400px] h-[40vh]"
-        // onMouseEnter={() => setHeroPaused(true)}
-        // onMouseLeave={() => setHeroPaused(false)}
-      >
+      <section className="lg:h-[90vh] min-h-[400px] h-[40vh]">
         <div className="mx-auto h-full w-[90%]">
           <div className="flex h-full items-center gap-4 lg:gap-8">
             <div className="flex h-full w-full flex-col justify-start lg:basis-3/5 lg:justify-between">
               <div className="mt-2 lg:mt-5">
                 <div
-                  className={`transition-opacity duration-700 ease-in-out
-${isFading ? "opacity-0" : "opacity-100"}`}
+                  className={`transition-opacity duration-700 ease-in-out ${isFading ? "opacity-0" : "opacity-100"}`}
                 >
                   <h1 className="text-wrap bg-[linear-gradient(94.31deg,#3e3df3_0.73%,#ff007c_97.24%)] bg-clip-text text-4xl md:text-6xl lg:text-7xl leading-tight font-semibold text-transparent">
                     <span>{tabs[activeService].heading}</span>
-                    {/* <span>{tabs[activeService].heading[1]}</span> */}
                   </h1>
                   <p className="py-1 text-lg md:text-2xl lg:text-3xl font-semibold leading-[1.35] text-primary md:py-4">
                     {tabs[activeService].subheading}
@@ -126,8 +120,7 @@ ${isFading ? "opacity-0" : "opacity-100"}`}
 
             <div className="hidden h-full lg:block lg:basis-2/5">
               <div
-                className={`transition-opacity duration-700 ease-in-out
-${isFading ? "opacity-0" : "opacity-100"}`}
+                className={`transition-opacity duration-700 ease-in-out ${isFading ? "opacity-0" : "opacity-100"}`}
               >
                 <div className="relative h-full min-h-[84vh]">
                   <Image

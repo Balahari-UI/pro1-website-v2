@@ -13,7 +13,7 @@ export default function HedisAbstractionPage() {
           description="Pro1Health commitment to quality healthcare is reflected in our specialized services that focus on Healthcare Effectiveness Data and Information Set (HEDIS) measures. These measures, developed and maintained by National Committee for Quality Assurance (NCQA), is critical tool for health plans to assess the quality of care and services they provide. HEDIS measures cover a broad range of important health issues, including chronic conditions management, preventive services, and patient satisfaction."
           image="/images/hedis/hedisbg.svg"
           buttonText="Connect With US"
-        buttonLink="#Service-form5"
+          buttonLink="#Service-form5"
         />
         {/* Comprehensive */}
         <section className="mb-10">
@@ -54,14 +54,13 @@ export default function HedisAbstractionPage() {
             </div>
           </div>
         </section>
-        {/* card section  */}
-      {/* card section */}
-<section className="mb-16">
-  <div className="space-y-12">
-    {hedisCards.map((card, index) => (
-      <section
-        key={index}
-        className={`w-[90%] mx-auto
+        {/* card section */}
+        <section className="mb-16">
+          <div className="space-y-12">
+            {hedisCards.map((card, index) => (
+              <section
+                key={index}
+                className={`w-[90%] mx-auto
         bg-white border border-[#E6E6E6]
         rounded-2xl
         p-6 md:p-10
@@ -69,68 +68,67 @@ export default function HedisAbstractionPage() {
         items-center gap-12
         transition-all duration-300
         ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
-      >
-        {/* TEXT SIDE — 65% */}
-        <div className="w-full lg:w-[65%] text-cetacean-blue">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-tight">
-            {card.title}
-          </h2>
+              >
+                {/* TEXT SIDE — 65% */}
+                <div className="w-full lg:w-[65%] text-cetacean-blue">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-tight">
+                    {card.title}
+                  </h2>
 
-          <p className="text-lg leading-[1.7] mb-8 text-gray-600">
-            {card.description1}
-          </p>
+                  <p className="text-lg leading-[1.7] mb-8 text-gray-600">
+                    {card.description1}
+                  </p>
 
-          {/* SERVICES */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">
-              {card.subheading1}
-            </h3>
+                  {/* SERVICES */}
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">
+                      {card.subheading1}
+                    </h3>
 
-            <ul className="space-y-4">
-              {card.services.map((item, i) =>
-                item ? (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-[16px] leading-[1.6]"
-                  >
+                    <ul className="space-y-4">
+                      {card.services.map((item, i) =>
+                        item ? (
+                          <li
+                            key={i}
+                            className="flex items-start gap-3 text-[16px] leading-[1.6]"
+                          >
+                            <Image
+                              src="/images/rcm/services-tick.svg"
+                              alt="tick"
+                              width={20}
+                              height={20}
+                              className="mt-1"
+                            />
+                            <span>{item}</span>
+                          </li>
+                        ) : null,
+                      )}
+                    </ul>
+                  </div>
+
+                  {/* DESCRIPTION 2 AS OUTCOME STYLE */}
+                  {card.description2 && (
+                    <p className="text-gray-600 mt-5 leading-[1.7]">
+                      {card.description2}
+                    </p>
+                  )}
+                </div>
+
+                {/* IMAGE SIDE — 35% */}
+                <div className="w-full lg:w-[35%] hidden lg:block">
+                  <div className="relative w-full h-[350px]">
                     <Image
-                      src="/images/rcm/services-tick.svg"
-                      alt="tick"
-                      width={20}
-                      height={20}
-                      className="mt-1"
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-contain rounded-2xl"
                     />
-                    <span>{item}</span>
-                  </li>
-                ) : null
-              )}
-            </ul>
+                  </div>
+                </div>
+              </section>
+            ))}
           </div>
-
-          {/* DESCRIPTION 2 AS OUTCOME STYLE */}
-          {card.description2 && (
-              <p className="text-gray-600 mt-5 leading-[1.7]">
-                {card.description2}
-              </p>
-          )}
-        </div>
-
-        {/* IMAGE SIDE — 35% */}
-        <div className="w-full lg:w-[35%] hidden lg:block">
-          <div className="relative w-full h-[350px]">
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              className="object-contain rounded-2xl"
-            />
-          </div>
-        </div>
-      </section>
-    ))}
-  </div>
-</section>
-
+        </section>
 
         <section className="mb-20 relative">
           <div className="max-w-350 mx-auto ">
@@ -161,13 +159,9 @@ export default function HedisAbstractionPage() {
         </section>
         {/* form */}
         <section className="bg-light py-12" id="Service-form5">
-                  <div className="mx-auto w-[90%]">
-
+          <div className="mx-auto w-[90%]">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
               <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-                {/* <h6 className="text-base font-medium tracking-wide  ">
-                  CONNECT WITH US
-                </h6> */}
                 <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
                   Boost quality scores,Ensure HEDIS compliance
                 </h1>
@@ -177,8 +171,7 @@ export default function HedisAbstractionPage() {
                 </p>
               </div>
 
-           <div className="lg:w-1/2 w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
-
+              <div className="lg:w-1/2 w-full bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
                 <ContactForm formName="Service request from HEDIS Abstraction" />
               </div>
             </div>

@@ -158,9 +158,6 @@ export default function riskadjustment() {
           <div className="mx-auto w-[90%]">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
               <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-                {/* <h6 className="text-base font-medium tracking-wide  ">
-                  CONNECT WITH US
-                </h6> */}
                 <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
                   Drive accuracy, Improve risk scores
                 </h1>

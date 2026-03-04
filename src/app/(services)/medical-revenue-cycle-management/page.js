@@ -41,18 +41,7 @@ export default function RevenueCycle() {
             </h1>
             <p className="text-[#7E7E7E] text-lg">Revenue Increase</p>
           </div>
-          {/* <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">97%</h1>
-            <p className="text-[#7E7E7E] text-lg">First Pass Ratio</p>
-          </div>
-          <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">96%</h1>
-            <p className="text-[#7E7E7E] text-lg">Collection Ratios</p>
-          </div>
-          <div className="flex flex-col items-center justify-center text-center gap-2 ">
-            <h1 className="text-2xl">98%</h1>
-            <p className="text-[#7E7E7E] text-lg">Clean Claims Rate</p>
-          </div> */}
+
           {rcmstats.map((stat) => (
             <AnimatedCounter
               key={stat.label}
@@ -312,13 +301,6 @@ export default function RevenueCycle() {
       </section>
       <section className="mb-20">
         <div className="w-[90%] mx-auto">
-          {/* <Carouselrun
-            items={rcmlogos}
-            type="image"
-            speed={60}
-            gap="gap-16"
-            imageHeight="h-12"
-          /> */}
           <Carouselrun
             items={rcmlogos}
             type="image"
@@ -333,9 +315,6 @@ export default function RevenueCycle() {
         <div className="mx-auto w-[90%]">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
             <div className="lg:w-1/2 text-cetacean-blue flex flex-col justify-center h-full">
-              {/* <h6 className="text-base font-medium tracking-wide ">
-                CONNECT WITH US
-              </h6> */}
               <h1 className="lg:text-4xl text-3xl md:text-5xl font-extrabold  mt-2 py-3">
                 Streamline operations, Accelerate collections
               </h1>
