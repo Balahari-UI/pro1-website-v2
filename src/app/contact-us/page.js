@@ -19,39 +19,49 @@ export default function ContactUspage() {
         </h2>
 
         {/* First Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {globalPresence.map((location) => (
-            <div
-              key={location.id}
-              className={`bg-white rounded-md shadow-lg overflow-hidden ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}
-            >
-              <div className="h-56 relative flex justify-center items-center">
-                {location.images.length > 1 ? (
-                  <ImageCarousel images={location.images} />
-                ) : (
-                  <img
-                    src={location.images[0]}
-                    alt={location.country}
-                    className="w-60 mx-auto h-30"
-                  />
-                )}
-              </div>
+        {/* <div className="row gap-10"> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+          {globalPresence.map((location, index) => {
+            const isLastOdd =
+              globalPresence.length % 2 === 1 &&
+              index === globalPresence.length - 1;
 
-              <div className="p-6">
-                <h3 className="font-semibold text-cetacean-blue text-lg mb-2">
-                  {location.country}
-                </h3>
+            return (
+              <div
+                key={location.id}
+                className={`w-full bg-white rounded-md shadow-lg overflow-hidden
+        ${isLastOdd ? "md:col-start-2 lg:col-start-auto" : ""}`}
+              >
+                <div className="h-56 relative flex justify-center items-center">
+                  {location.images.length > 1 ? (
+                    <ImageCarousel images={location.images} />
+                  ) : (
+                    <img
+                      src={location.images[0]}
+                      alt={location.country}
+                      className="w-60 mx-auto h-30"
+                    />
+                  )}
+                </div>
 
-                <p className="mb-2 text-sm text-gray-400">{location.company}</p>
+                <div className="p-6">
+                  <h3 className="font-semibold text-cetacean-blue text-lg mb-2">
+                    {location.country}
+                  </h3>
 
-                {location.address.map((line, index) => (
-                  <p key={index} className="text-cetacean-blue ">
-                    {line}
+                  <p className="mb-2 text-sm text-gray-400">
+                    {location.company}
                   </p>
-                ))}
+
+                  {location.address.map((line, i) => (
+                    <p key={i} className="text-cetacean-blue">
+                      {line}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Second Grid */}
@@ -60,7 +70,7 @@ export default function ContactUspage() {
             {globalPresence1.map((location) => (
               <div
                 key={location.id}
-                className="bg-white rounded-md shadow-lg overflow-hidden"
+                className=" bg-white rounded-md shadow-lg overflow-hidden"
               >
                 <div className="h-56 relative flex justify-center items-center">
                   {location.images.length > 1 ? (

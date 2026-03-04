@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
+// import { useInfiniteQuery } from "@tanstack/react-query";
 import debounce from "lodash.debounce";
 import Script from "next/script";
+import Modal from "./ui/Modal";
 
 const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
@@ -21,10 +23,11 @@ export default function ContactForm({
     state: defaultValues.state || "",
     message: defaultValues.message || "",
   });
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [captchaScriptLoaded, setCaptchaScriptLoaded] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const recaptchaRef = useRef(null);
   const widgetIdRef = useRef(null);
@@ -32,8 +35,8 @@ export default function ContactForm({
   const [searchTerm, setSearchTerm] = useState(formData.state);
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const loaderRef = useRef(null);
+  // const dropdownRef = useRef(null);
+  // const loaderRef = useRef(null);
 
   const limit = 50;
 
@@ -55,6 +58,7 @@ export default function ContactForm({
   };
 
   const renderRecaptcha = useCallback(() => {
+    if (!recaptchaSiteKey || !recaptchaRef.current) return;
     if (!window.grecaptcha || widgetIdRef.current !== null) return;
 
     const renderMethod =
@@ -69,6 +73,29 @@ export default function ContactForm({
       "error-callback": () => setRecaptchaToken(""),
     });
   }, []);
+
+  useEffect(() => {
+    if (!recaptchaSiteKey) return;
+
+    const tryRender = () => {
+      if (typeof window === "undefined") return;
+      renderRecaptcha();
+    };
+
+    if (captchaScriptLoaded) {
+      tryRender();
+    }
+
+    const timer = setInterval(() => {
+      if (widgetIdRef.current !== null) {
+        clearInterval(timer);
+        return;
+      }
+      tryRender();
+    }, 300);
+
+    return () => clearInterval(timer);
+  }, [captchaScriptLoaded, renderRecaptcha]);
 
   /* ---------------------- Submit ---------------------- */
   const handleSubmit = async (e) => {
@@ -93,7 +120,8 @@ export default function ContactForm({
       const result = await res.json();
       if (!result.success) throw new Error(result.error);
 
-      setSuccess("Your inquiry has been submitted successfully.");
+      // setSuccess("Our team will contact you shortly to assist you further.");
+      setIsModalOpen(true);
       setFormData({
         name: "",
         email: "",
@@ -120,7 +148,11 @@ export default function ContactForm({
         <Script
           src="https://www.google.com/recaptcha/api.js?render=explicit"
           strategy="afterInteractive"
-          onLoad={renderRecaptcha}
+          onLoad={() => setCaptchaScriptLoaded(true)}
+          onReady={() => setCaptchaScriptLoaded(true)}
+          onError={() =>
+            setError("Failed to load captcha. Please refresh and try again.")
+          }
         />
       )}
 
@@ -166,51 +198,8 @@ export default function ContactForm({
             value={formData.state}
             onChange={handleChange}
           />
-
-          {/* State Dropdown */}
-          {/* <div ref={dropdownRef} className="relative">
-            <InputField
-              label="State"
-              name="state"
-              value={searchTerm}
-              onChange={handleChange}
-              onFocus={() => setDropdownOpen(true)}
-            />
-            {dropdownOpen && (
-              <div className="absolute z-20 mt-2 w-full max-h-60 overflow-y-auto rounded-lg border border-gray-200 bg-white shadow-lg">
-                {states.map((s) => (
-                  <div
-                    key={s.isoCode + s.country}
-                    className="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
-                    onClick={() => {
-                      setFormData((prev) => ({ ...prev, state: s.name }));
-                      setSearchTerm(s.name);
-                      setDropdownOpen(false);
-                    }}
-                  >
-                    {s.name} ({s.country})
-                  </div>
-                ))}
-                {isFetchingNextPage && (
-                  <p className="text-center py-2 text-sm">Loading...</p>
-                )}
-              </div>
-            )}
-          </div> */}
         </div>
 
-        {/* <div>
-          <label className="block text-[14px] font-medium text-gray-600 mb-2">
-            Message
-          </label>
-          <textarea
-            name="message"
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-black focus:ring-1 focus:ring-black outline-none"
-          />
-        </div> */}
         <div className="relative">
           <textarea
             name="message"
@@ -234,28 +223,23 @@ export default function ContactForm({
 
         {recaptchaSiteKey && (
           <div>
-            <div ref={recaptchaRef} />
+            <div ref={recaptchaRef} className="min-h-[78px]" />
           </div>
+        )}
+        {!recaptchaSiteKey && (
+          <p className="text-amber-700 text-sm">
+            reCAPTCHA is not configured. Missing
+            `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`.
+          </p>
         )}
 
         {error && <p className="text-red-600 text-sm">{error}</p>}
         {success && <p className="text-green-600 text-sm">{success}</p>}
 
-        {/* <button
-          type="submit"
-          disabled={submitting}
-          className={`w-full rounded-xl py-3 text-sm font-semibold text-white transition ${
-            submitting
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-black hover:bg-[#111216]"
-          }`}
-        >
-          {submitting ? "Submitting..." : "Submit"}
-        </button> */}
         <button
           type="submit"
           disabled={submitting}
-          className={`w-full mt-6 py-3 text-[16px] font-semibold rounded-md transition ${
+          className={`w-full mt-6 py-3 text-[16px] font-semibold rounded-md transition cursor-pointer ${
             submitting
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-[#0b1b2b] text-white hover:opacity-90"
@@ -263,38 +247,28 @@ export default function ContactForm({
         >
           {submitting ? "Submitting..." : "Submit"}
         </button>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <div className="text-center">
+            <div className="text-center py-6">
+              <h2 className="text-2xl font-bold mb-3 text-[#3c3cfb] italic">
+                Thank you for reaching out to us!
+              </h2>
+              <h3 className="text-lg  mb-3 italic">
+                Our team will contact you shortly to assist you further.
+              </h3>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="mt-6 px-6 py-2 bg-cetacean-blue hover:bg-gray-400 text-white rounded-3xl cursor-pointer"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </Modal>
       </form>
     </>
   );
 }
-
-// function InputField({
-//   label,
-//   name,
-//   type = "text",
-//   value,
-//   onChange,
-//   onFocus,
-//   required = false,
-// }) {
-//   return (
-//     <div>
-//       <label className="block text-[14px] font-medium text-gray-600 mb-2">
-//         {label} {required && <span className="text-red-500">*</span>}
-//       </label>
-//       <input
-//         type={type}
-//         name={name}
-//         value={value}
-//         onChange={onChange}
-//         onFocus={onFocus}
-//         required={required}
-//         autoComplete="off"
-//         className="h-[48px] w-full rounded-xl border border-gray-300 px-4 text-sm focus:border-black focus:ring-1 focus:ring-black outline-none"
-//       />
-//     </div>
-//   );
-// }
 
 function InputField({
   label,
